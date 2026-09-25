@@ -397,7 +397,7 @@ export async function record(opt: { dry?: boolean; stills?: number[]; from?: num
   const spawnHeading = Math.atan2(tower.x - spawn[0], tower.y - spawn[1]);
   const hs = surface(spawn[0], spawn[1]);
   const back = (d: number, h: number) => V(spawn[0] - Math.sin(spawnHeading) * d, spawn[1] - Math.cos(spawnHeading) * d, hs + h);
-  const aPos = new THREE.CatmullRomCurve3([A(1250, -700, 420), A(950, -420, 330), A(640, -160, 240), A(380, 20, 160), A(190, 40, 95), back(60, 45), back(14, 17)]);
+  const aPos = new THREE.CatmullRomCurve3([A(950, -520, 400), A(720, -300, 310), A(500, -120, 225), A(310, 20, 150), A(175, 40, 90), back(60, 45), back(14, 17)]);
   const aLook = new THREE.CatmullRomCurve3([V(0, 40, h0 - 30), V(-10, 30, h0 - 10), V(-20, 25, h0), V(-28, 24, h0 + 6), V(-32, 25, h0 + 12), V(-32, 25, h0 + 12), V(tower.x, tower.y, h0 + 8)]);
   const AERIAL = 30;
   shots.push({
@@ -406,9 +406,9 @@ export async function record(opt: { dry?: boolean; stills?: number[]; from?: num
       mode = 'aerial'; hud = false;
       freeCam = { pos: new THREE.Vector3(), look: new THREE.Vector3() };
       lowers = [
-        { title: 'Relleu i ortofoto reals', sub: 'Model del terreny LiDAR de 1-2 m i ortofoto de 25 cm (ICGC)', t0: 7.5, t1: 13.5 },
-        { title: '5.544 volums edificats', sub: 'Cadastre (INSPIRE) amb alçades i teulades mesurades amb LiDAR', t0: 14, t1: 20 },
-        { title: '138.522 arbres', sub: 'Posicions LiDAR i espècies de la DUN 2025 · la resta, estimades', t0: 20.5, t1: 26 },
+        { title: 'El nucli urbà, 80 ha', sub: "Relleu LiDAR d'1 m i ortofoto de 25 cm de l'ICGC", t0: 7.5, t1: 13.5 },
+        { title: '3.504 volums edificats', sub: 'Plantes del Cadastre, alçades i teulades mesurades amb LiDAR', t0: 14, t1: 20 },
+        { title: '928 façanes reals', sub: 'Portes, finestres i balcons llegits un a un de les fotos del Cadastre', t0: 20.5, t1: 26 },
         { title: "Plaça de l'Església", sub: 'Sant Jaume Apòstol · campanar de 32,6 m sobre la plaça (LiDAR)', t0: 26.3, t1: 32.5 },
       ];
     },
@@ -562,6 +562,7 @@ export async function record(opt: { dry?: boolean; stills?: number[]; from?: num
           jumped = true;
         }
       }
+      if (jumped && lt - jumpAt > 7 && !lowers.some((q) => q.title === 'Carrer Major')) lowers = [{ title: 'Carrer Major', sub: 'cada façana, tal com surt a la seva foto del Cadastre', t0: t, t1: t + 5.5 }];
       if (jumped && lt - jumpAt > 1 && !captions.some((q) => q.text.startsWith('Minimapa'))) captions.push({ keys: ['M'], text: 'Minimapa: gira amb tu', sub: 'dibuixat amb carrers, edificis i conreus reals', t0: t, t1: t + 5 });
       const done = rideTo(9.4, lt > 8);
       keysOn.clear();
@@ -940,6 +941,11 @@ export async function record(opt: { dry?: boolean; stills?: number[]; from?: num
           if (stuckT > 1.5 && Math.hypot(input.joyX, input.joyY) > 0.2) { log(`STUCK in ${shot.name} at (${player.x.toFixed(1)}, ${player.y.toFixed(1)})`); stuckT = -5; }
         }
         if (wantFrame(frameNo)) {
+          // the page may have been resized meanwhile (the game resizes the renderer to the window)
+          if (renderer.domElement.width !== W || renderer.domElement.height !== H || cam.camera.aspect !== W / H) {
+            renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+            cam.camera.aspect = W / H; cam.camera.updateProjectionMatrix();
+          }
           renderer.render(scene, cam.camera);
           c.drawImage(renderer.domElement, 0, 0, W, H);
           if (hud) drawHud();

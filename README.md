@@ -109,14 +109,15 @@ La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font 
 ## Vídeo de demostració
 
 `demo/riudoms-3d-demo.mp4` (720p, 30 fps, ~2 min 18 s): vol aeri, passeig a peu i en bicicleta,
-menú i teletransport, pas del dia a la nit. Es va gravar abans de limitar el món al nucli i de dibuixar les façanes de les fotos. Es genera amb el mateix joc, sense gravar la pantalla:
+menú i teletransport, pas del dia a la nit. Es genera amb el mateix joc, sense gravar la pantalla:
 
 1. `npm run dev` i obrir `http://localhost:5173` en una finestra de 1280×720 o més gran.
 2. A la consola del navegador: `(await import('/tools/demo/director.ts')).record()`.
    El guió (`tools/demo/director.ts`) mou el personatge, la bici i la càmera amb entrades simulades
    (la física i les col·lisions són les del joc), dibuixa el HUD i els rètols explicatius i envia cada
    fotograma al servidor de desenvolupament, que els desa a `demo-out/` (`tools/demo/vite-plugin.ts`).
-   `record({ dry: true })` només simula i informa dels recorreguts; `record({ stills: [10, 60] })` en treu fotogrames solts.
+   `record({ dry: true })` només simula i informa dels recorreguts; `record({ stills: [10, 60] })` en treu fotogrames solts;
+   `record({ from: 14.3 })` continua una gravació interrompuda (la simulació és determinista).
 3. `python tools/demo/encode.py`: sintetitza el so ambient a partir dels esdeveniments del guió
    (`tools/demo/audio.py`: vent, ocells, grills, fonts, passos, bicicleta, campanes; sense mostres
    de tercers) i codifica el vídeo amb l'ffmpeg d'`imageio-ffmpeg`.
