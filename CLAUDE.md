@@ -180,6 +180,22 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
   sobre la graella de col·lisions. El so és sintètic, generat a partir dels esdeveniments del guió.
 - **Descartat**: plaques solars detectades a l'ortofoto. No tenen un color prou distintiu (quadrícula de cel·les fosques i línies clares), i per no inventar-les no es posen.
 
+## Nucli urbà i façanes reals
+
+- **Només el poble** (`p_region.py`). El món es limita a les illes cadastrals del nucli que són de debò poble: com a mínim un 12 % construït, i d'això, almenys un 45 % d'ús residencial, comercial, d'oficines o públic.
+  - A cada illa s'hi afegeix una franja de 22 m (els carrers i les voreres perimetrals). Es queda la peça connexa que conté la plaça de l'Església, d'unes 80 ha.
+  - Queden fora: els camps, els polígons industrials, la riera fora del poble i els masos.
+  - Tots els passos del pipeline retallen amb aquest contorn. Fora s'hi veu el relleu en un color neutre, com una maqueta, i una tanca invisible impedeix sortir-ne.
+  - L'ortofoto del nucli s'exporta a 0,25 m/píxel (resolució completa de l'ortofoto de 25 cm).
+- **Façanes llegides de les fotos del Cadastre** (`facade_survey.md`, `p_facade_layouts.py`).
+  - Un agent d'IA amb visió (Claude) ha mirat cada foto de façana del nucli i n'ha fet una fitxa: plantes; obertures de cada planta d'esquerra a dreta, amb tipus, posició i amplada; balcons; persianes; colors; materials; sòcol.
+  - Resultat: 1.003 fotos llegides. 991 són aprofitables, i en 51 d'aquestes l'edifici objectiu no és del tot clar (el centre de la foto cau entre dues cases): s'ha triat el més probable mirant les fotos veïnes, i queden marcades.
+  - Al final hi ha 928 edificis amb la façana principal dibuixada segons la seva foto.
+  - Les fitxes són a `data/raw/facade_survey/batch_*.json`. El shader dibuixa aquestes obertures i els balcons es col·loquen allà on surten a la foto.
+  - Els trams de contorn col·lineals es tracten com una sola façana.
+  - És una lectura visual: les posicions són aproximades (±10 % de l'amplada) i la foto pot ser antiga.
+- **No es pot entrar als edificis.** La planta de cada edifici és sòlida (`Collision.addPolygon`): si el personatge, la bici o un teletransport queden dins d'una planta, en surten pel punt lliure més proper.
+
 ## Què és dada real i què és estimat
 
 ### Dada real (i font)
@@ -241,8 +257,9 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
 | Fanal de la plaça de l'Om, parterre de la Palmera | Disseny i mida aproximats |
 | Espècie de 34.156 arbres fora de camps declarats | Per context: parcs → plàtan/fulla ampla; vora de riera → om; urbà → fulla ampla; alt i estret → xiprer; camp → garrofer o pi |
 | **60.584 arbres fora de l'àrea LiDAR** | Plantació en marc regular dins les parcel·les DUN del cultiu declarat (olivera 7×7 m, avellaner 5×4,5 m...). **Posicions inventades**, cultiu real |
-| Façanes sense foto (2.099 parts) | Paleta per estil i època (blancs trencats, ocres, pedra, maó) |
-| Finestres, portes, persianes i balcons | Procedurals, segons l'estil, l'any i el tipus de paret. No són les obertures reals de cada façana |
+| Façanes sense foto | Paleta per estil i època (blancs trencats, ocres, pedra, maó) |
+| Obertures de la façana principal de carrer de cada edifici amb foto | **Lectura visual per IA de la foto real del Cadastre.** Tipus i nombre d'obertures fiables; posició i mida aproximades; alçades per tipus (porta 2,35 m, finestra 0,95–2,3 m...) |
+| Finestres, portes, persianes i balcons de les altres façanes (patis, segona façana de les cantonades, edificis sense foto) | Procedurals, segons l'estil, l'any i el tipus de paret. No són les obertures reals |
 | Teulades fora de l'àrea LiDAR | A dues aigües (30%) si l'ortofoto dona color de teula; si no, plana |
 | Església | Mides del retaule, porta i rosassa estimades amb les fotos: rosassa de 4 m (l'IPAC i la Viquipèdia en diuen 9, però no quadra amb les fotos). Detall dels contraforts i gablets de les capelles |
 | Posició del mosaic de l'escut | Davant de la porta de l'església, segons les fotos. Disseny aproximat |

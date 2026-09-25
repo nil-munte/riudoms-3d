@@ -67,6 +67,17 @@ class Ctx:
         self.world_local = box(self.tx0, self.ty0, self.tx0 + self.nx * TILE, self.ty0 + self.ny * TILE)
         self.world_utm_tiles = affinity.translate(self.world_local, self.ox, self.oy)
 
+    def set_region(self, region_utm):
+        """Limit the exported world to the town (see p_region.py). Everything that
+        clipped to the tile box (`world_local` / `world_utm_tiles`) now clips to it."""
+        from shapely.geometry import box
+
+        self.region_utm = region_utm
+        self.world_local = self.local(region_utm)
+        self.world_utm_tiles = region_utm
+        near = self.world_local.buffer(60)
+        self.active_tiles = [t for t in range(self.nx * self.ny) if box(*self.tile_bounds(t)).intersects(near)]
+
     def local(self, geom):
         return affinity.translate(geom, -self.ox, -self.oy)
 

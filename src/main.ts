@@ -33,8 +33,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 async function loadTextures(meta: Meta, onP: (f: number) => void) {
   const loader = new THREE.TextureLoader();
   const n = meta.tiles.nx * meta.tiles.ny;
+  const active = new Set(meta.tiles.active ?? Array.from({ length: n }, (_, t) => t));
   let done = 0;
-  return Promise.all(Array.from({ length: n }, (_, t) => new Promise<THREE.Texture>((res) => {
+  return Promise.all(Array.from({ length: n }, (_, t) => new Promise<THREE.Texture | null>((res) => {
+    if (!active.has(t)) { done++; onP(done / n); res(null); return; }
     loader.load(`${DATA}ortho/t${t}.jpg`, (tex) => {
       tex.colorSpace = THREE.SRGBColorSpace;
       tex.anisotropy = 4;
@@ -75,6 +77,12 @@ async function main() {
 
   const scene = new THREE.Scene();
   const collision = new Collision();
+  // the world ends at the edge of the town
+  const fence = meta.fence ?? [];
+  for (let i = 0; i < fence.length; i++) {
+    const a = fence[i], b = fence[(i + 1) % fence.length];
+    collision.addSegment(a[0], a[1], b[0], b[1]);
+  }
   const sky = new SkySystem(scene, renderer);
   if (mobile) sky.sun.shadow.mapSize.set(1024, 1024);
   progress(0.52, 'Construint el terreny…'); await tick();

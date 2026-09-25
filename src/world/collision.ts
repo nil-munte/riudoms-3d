@@ -15,6 +15,8 @@ export class Collision {
   private circles: number[] = [];
   private grid = new Map<number, number[]>();
   private cgrid = new Map<number, number[]>();
+  private polys: Float64Array[] = []; // building footprints (x, y, x, y...): nobody can stand inside them
+  private pgrid = new Map<number, number[]>();
   platforms: Platform[] = [];
 
   private key(cx: number, cy: number) { return (cx + 4096) * 8192 + (cy + 4096); }
@@ -43,6 +45,72 @@ export class Collision {
       if (!l) this.cgrid.set(k, (l = []));
       l.push(id);
     }
+  }
+
+  /** Solid footprint: its edges are walls and a point inside it is pushed out to the nearest edge. */
+  addPolygon(ring: ArrayLike<number>) {
+    const id = this.polys.length;
+    const p = Float64Array.from(ring);
+    this.polys.push(p);
+    let minx = Infinity, miny = Infinity, maxx = -Infinity, maxy = -Infinity;
+    for (let i = 0; i < p.length; i += 2) {
+      const ax = p[i], ay = p[i + 1], j = (i + 2) % p.length;
+      this.addSegment(ax, ay, p[j], p[j + 1]);
+      minx = Math.min(minx, ax); maxx = Math.max(maxx, ax); miny = Math.min(miny, ay); maxy = Math.max(maxy, ay);
+    }
+    for (let cx = Math.floor(minx / CELL); cx <= Math.floor(maxx / CELL); cx++)
+      for (let cy = Math.floor(miny / CELL); cy <= Math.floor(maxy / CELL); cy++) {
+        const k = this.key(cx, cy);
+        let l = this.pgrid.get(k);
+        if (!l) this.pgrid.set(k, (l = []));
+        l.push(id);
+      }
+  }
+
+  /** Nearest point around (x, y) that is outside every footprint and clear of walls. */
+  private escape(x: number, y: number, r: number): [number, number] {
+    for (let d = 0.5; d <= 80; d += d < 10 ? 0.5 : 2) {
+      const n = Math.max(12, Math.ceil(d * 4));
+      for (let k = 0; k < n; k++) {
+        const a = (k / n) * Math.PI * 2;
+        const px = x + Math.cos(a) * d, py = y + Math.sin(a) * d;
+        if (this.insideFootprint(px, py) >= 0) continue;
+        if (!this.nearWall(px, py, r)) return [px, py];
+      }
+    }
+    return [x, y];
+  }
+
+  private nearWall(x: number, y: number, r: number): boolean {
+    for (let cx = Math.floor((x - r) / CELL); cx <= Math.floor((x + r) / CELL); cx++)
+      for (let cy = Math.floor((y - r) / CELL); cy <= Math.floor((y + r) / CELL); cy++) {
+        const l = this.grid.get(this.key(cx, cy));
+        if (!l) continue;
+        for (const id of l) {
+          const s = id * 4;
+          const ax = this.segs[s], ay = this.segs[s + 1], dx = this.segs[s + 2] - ax, dy = this.segs[s + 3] - ay;
+          const ll = dx * dx + dy * dy;
+          const t = ll > 0 ? Math.max(0, Math.min(1, ((x - ax) * dx + (y - ay) * dy) / ll)) : 0;
+          if (Math.hypot(x - ax - dx * t, y - ay - dy * t) < r) return true;
+        }
+      }
+    return false;
+  }
+
+  /** Index of the footprint containing (x, y), or -1. */
+  insideFootprint(x: number, y: number): number {
+    const l = this.pgrid.get(this.key(Math.floor(x / CELL), Math.floor(y / CELL)));
+    if (!l) return -1;
+    for (const id of l) {
+      const p = this.polys[id];
+      let inside = false;
+      for (let i = 0, j = p.length - 2; i < p.length; j = i, i += 2) {
+        const yi = p[i + 1], yj = p[j + 1];
+        if ((yi > y) !== (yj > y) && x < ((p[j] - p[i]) * (y - yi)) / (yj - yi) + p[i]) inside = !inside;
+      }
+      if (inside) return id;
+    }
+    return -1;
   }
 
   get segmentCount() { return this.segs.length / 4; }
@@ -87,7 +155,30 @@ export class Collision {
           }
         }
       }
+      // never inside a building: jump out through the nearest edge
+      const pid = this.insideFootprint(x, y);
+      if (pid >= 0) {
+        const p = this.polys[pid];
+        let bd = Infinity, bx = x, by = y, nx = 0, ny = 0;
+        for (let i = 0; i < p.length; i += 2) {
+          const j = (i + 2) % p.length;
+          const ax = p[i], ay = p[i + 1], dx = p[j] - ax, dy = p[j + 1] - ay;
+          const ll = dx * dx + dy * dy;
+          const t = ll > 0 ? Math.max(0, Math.min(1, ((x - ax) * dx + (y - ay) * dy) / ll)) : 0;
+          const px = ax + dx * t, py = ay + dy * t;
+          const d = Math.hypot(x - px, y - py);
+          if (d < bd) { bd = d; bx = px; by = py; nx = px - x; ny = py - y; }
+        }
+        const l = Math.hypot(nx, ny) || 1;
+        x = bx + (nx / l) * (r + 0.02); y = by + (ny / l) * (r + 0.02);
+        moved = out.hit = true;
+      }
       if (!moved) break;
+    }
+    // still inside (pushed through a party wall into the neighbour): spiral out to the nearest free spot
+    if (this.insideFootprint(x, y) >= 0) {
+      const e = this.escape(x, y, r);
+      x = e[0]; y = e[1]; out.hit = true;
     }
     out.x = x; out.y = y;
     return out;

@@ -1,0 +1,3298 @@
+[
+ {
+  "ref": "6558603CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#e6d6bc",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 1.2,
+   "color": "#c9b595",
+   "material": "paint"
+  },
+  "frame": "#d8d8d6",
+  "shutter": null,
+  "shutters": "none",
+  "door": "#e0e0dc",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.73,
+    "w": 0.22
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.23,
+      "w": 0.14
+     },
+     {
+      "t": "window",
+      "x": 0.52,
+      "w": 0.11
+     },
+     {
+      "t": "window",
+      "x": 0.76,
+      "w": 0.07
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "nau industrial d'una sola alçada amb finestres altes"
+ },
+ {
+  "ref": "6558604CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d4dcb8",
+  "wall_material": "stucco",
+  "ground_wall": "#4f555a",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#4a3a2e",
+  "shutter": "#6b5238",
+  "shutters": "wood_slat",
+  "door": "#6a5a44",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.23,
+    "w": 0.31
+   },
+   {
+    "t": "window",
+    "x": 0.56,
+    "w": 0.18
+   },
+   {
+    "t": "small",
+    "x": 0.58,
+    "w": 0.14
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.15
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.2,
+      "w": 0.1
+     },
+     {
+      "t": "balcony",
+      "x": 0.4,
+      "w": 0.12
+     },
+     {
+      "t": "balcony",
+      "x": 0.67,
+      "w": 0.12
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.92
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.26,
+      "w": 0.1
+     },
+     {
+      "t": "window",
+      "x": 0.43,
+      "w": 0.09
+     },
+     {
+      "t": "balcony",
+      "x": 0.74,
+      "w": 0.28
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.05,
+    "bx1": 0.93
+   }
+  ],
+  "notes": "planta baixa aplacada de pissarra"
+ },
+ {
+  "ref": "6558605CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#d9b27c",
+  "wall_material": "brick",
+  "ground_wall": "#e8cf6a",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0.6,
+   "color": "#b8aea3",
+   "material": "stone"
+  },
+  "frame": "#eeeeee",
+  "shutter": "#c9c3b5",
+  "shutters": "roller",
+  "door": "#4a2a1c",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.27,
+    "w": 0.34
+   },
+   {
+    "t": "door",
+    "x": 0.75,
+    "w": 0.17
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.24,
+      "w": 0.23
+     },
+     {
+      "t": "balcony",
+      "x": 0.47,
+      "w": 0.04
+     },
+     {
+      "t": "balcony",
+      "x": 0.74,
+      "w": 0.23
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.43,
+    "bx1": 0.88
+   }
+  ],
+  "notes": "voladís de formigó amb cantell vermell"
+ },
+ {
+  "ref": "6558606CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 4,
+  "attic": false,
+  "wall": "#e6e2d8",
+  "wall_material": "stucco",
+  "ground_wall": "#d4c4b0",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#3d2f24",
+  "shutter": null,
+  "shutters": "none",
+  "door": "#d9a93a",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "shop",
+    "x": 0.27,
+    "w": 0.3
+   },
+   {
+    "t": "door",
+    "x": 0.72,
+    "w": 0.16
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.12,
+      "w": 0.06
+     },
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.4
+     },
+     {
+      "t": "window",
+      "x": 0.87,
+      "w": 0.07
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.8
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.12,
+      "w": 0.06
+     },
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.4
+     },
+     {
+      "t": "window",
+      "x": 0.87,
+      "w": 0.07
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.8
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.12,
+      "w": 0.06
+     },
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.4
+     },
+     {
+      "t": "window",
+      "x": 0.87,
+      "w": 0.07
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.8
+   }
+  ],
+  "notes": "balcons volats de formigó, planta baixa aplacada de marbre"
+ },
+ {
+  "ref": "6558607CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 1,
+  "attic": false,
+  "wall": "#ecebe6",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#4a4f45",
+  "shutter": null,
+  "shutters": "none",
+  "door": "#4d3a2a",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.39,
+    "w": 0.45
+   },
+   {
+    "t": "window",
+    "x": 0.81,
+    "w": 0.17
+   }
+  ],
+  "upper": [],
+  "notes": "marquesina de formigó, finestra amb reixa"
+ },
+ {
+  "ref": "6558608CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#e0a370",
+  "wall_material": "stucco",
+  "ground_wall": "#a9a49e",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#6b4a30",
+  "shutter": "#e4e4e0",
+  "shutters": "roller",
+  "door": "#b9bcbf",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.1,
+    "w": 0.13
+   },
+   {
+    "t": "garage",
+    "x": 0.41,
+    "w": 0.3
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.19
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.29,
+      "w": 0.28
+     },
+     {
+      "t": "balcony",
+      "x": 0.71,
+      "w": 0.16
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "planta baixa aplacada de granit, tendal a la terrassa"
+ },
+ {
+  "ref": "6558609CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e9dcb4",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.9,
+   "color": "#a88a6a",
+   "material": "paint"
+  },
+  "frame": "#f0f0ec",
+  "shutter": "#f2f2ee",
+  "shutters": "wood_slat",
+  "door": "#3a3a3a",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "window",
+    "x": 0.29,
+    "w": 0.08
+   },
+   {
+    "t": "door",
+    "x": 0.43,
+    "w": 0.1
+   },
+   {
+    "t": "garage",
+    "x": 0.79,
+    "w": 0.27
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.11,
+      "w": 0.08
+     },
+     {
+      "t": "window",
+      "x": 0.32,
+      "w": 0.07
+     },
+     {
+      "t": "balcony",
+      "x": 0.52,
+      "w": 0.1
+     },
+     {
+      "t": "balcony",
+      "x": 0.79,
+      "w": 0.11
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.01,
+    "bx1": 0.9
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.14,
+      "w": 0.07
+     },
+     {
+      "t": "window",
+      "x": 0.35,
+      "w": 0.06
+     },
+     {
+      "t": "balcony",
+      "x": 0.54,
+      "w": 0.09
+     },
+     {
+      "t": "balcony",
+      "x": 0.79,
+      "w": 0.11
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.05,
+    "bx1": 0.9
+   }
+  ],
+  "notes": "cantonada, balcons correguts amb barana blanca"
+ },
+ {
+  "ref": "6558610CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#a39a8e",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.5,
+   "color": "#8f7f70",
+   "material": "paint"
+  },
+  "frame": "#5a4636",
+  "shutter": "#6e5a45",
+  "shutters": "roller",
+  "door": "#6b4a2c",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.24,
+    "w": 0.32
+   },
+   {
+    "t": "door",
+    "x": 0.86,
+    "w": 0.18
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.28,
+      "w": 0.26
+     },
+     {
+      "t": "balcony",
+      "x": 0.74,
+      "w": 0.17
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "voladís de formigó sobre la planta baixa"
+ },
+ {
+  "ref": "6558611CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 3,
+  "attic": false,
+  "wall": "#efefec",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.6,
+   "color": "#8a8a88",
+   "material": "stone"
+  },
+  "frame": "#e8e8e8",
+  "shutter": "#ececec",
+  "shutters": "roller",
+  "door": "#e8e8e8",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.3,
+    "w": 0.34
+   },
+   {
+    "t": "door",
+    "x": 0.81,
+    "w": 0.18
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.26,
+      "w": 0.29
+     },
+     {
+      "t": "balcony",
+      "x": 0.58,
+      "w": 0.08
+     },
+     {
+      "t": "balcony",
+      "x": 0.8,
+      "w": 0.17
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.45,
+    "bx1": 0.9
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.36,
+      "w": 0.07
+     },
+     {
+      "t": "window",
+      "x": 0.59,
+      "w": 0.24
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.1,
+    "bx1": 0.65
+   }
+  ],
+  "notes": "pilastres de maó vist, terrassa a la darrera planta"
+ },
+ {
+  "ref": "6558612CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#d49c78",
+  "wall_material": "brick",
+  "ground_wall": "#c2a69a",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#5a3f2e",
+  "shutter": "#e2d5b0",
+  "shutters": "roller",
+  "door": "#7a4a28",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.28,
+    "w": 0.38
+   },
+   {
+    "t": "door",
+    "x": 0.86,
+    "w": 0.11
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.2,
+      "w": 0.14
+     },
+     {
+      "t": "window",
+      "x": 0.46,
+      "w": 0.2
+     },
+     {
+      "t": "window",
+      "x": 0.82,
+      "w": 0.16
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "cos volat de maó a la planta pis, entrada en porxo, planta baixa de granit rosat"
+ },
+ {
+  "ref": "6558613CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#b3aca2",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 1.0,
+   "color": "#d4948a",
+   "material": "tile"
+  },
+  "frame": "#6b3f2e",
+  "shutter": "#6b3a2a",
+  "shutters": "wood_slat",
+  "door": "#b8b6b0",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "shop",
+    "x": 0.18,
+    "w": 0.16
+   },
+   {
+    "t": "shop",
+    "x": 0.69,
+    "w": 0.27
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.14,
+      "w": 0.05
+     },
+     {
+      "t": "balcony",
+      "x": 0.28,
+      "w": 0.07
+     },
+     {
+      "t": "balcony",
+      "x": 0.7,
+      "w": 0.23
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "cantonada, ràfecs volats amb vora verda, franja central de maó vist"
+ },
+ {
+  "ref": "6558614CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#b5654a",
+  "wall_material": "brick",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#f0f0ee",
+  "shutter": "#f0f0ee",
+  "shutters": "wood_slat",
+  "door": null,
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.59,
+      "w": 0.07
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "casa aïllada amb jardí i tanca; façana lateral amb balcons i garatge"
+ },
+ {
+  "ref": "6558615CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#ece2b0",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.6,
+   "color": "#b4b2ad",
+   "material": "stone"
+  },
+  "frame": "#f2f2f0",
+  "shutter": "#f2f2f0",
+  "shutters": "wood_slat",
+  "door": "#3a3326",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.19,
+    "w": 0.21
+   },
+   {
+    "t": "garage",
+    "x": 0.69,
+    "w": 0.34
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.42,
+      "w": 0.16
+     },
+     {
+      "t": "balcony",
+      "x": 0.7,
+      "w": 0.19
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.2,
+    "bx1": 1.0
+   }
+  ],
+  "notes": "ràfec pla amb cantell blau"
+ },
+ {
+  "ref": "6558616CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 3,
+  "attic": false,
+  "wall": "#9e9588",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#e9e9e6",
+  "shutter": "#e9e9e6",
+  "shutters": "mixed",
+  "door": "#3c3a38",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.1,
+    "w": 0.15
+   },
+   {
+    "t": "door",
+    "x": 0.37,
+    "w": 0.11
+   },
+   {
+    "t": "garage",
+    "x": 0.7,
+    "w": 0.27
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.18,
+      "w": 0.16
+     },
+     {
+      "t": "balcony",
+      "x": 0.43,
+      "w": 0.1
+     },
+     {
+      "t": "window",
+      "x": 0.67,
+      "w": 0.2
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.5
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.2,
+      "w": 0.13
+     },
+     {
+      "t": "balcony",
+      "x": 0.45,
+      "w": 0.09
+     },
+     {
+      "t": "window",
+      "x": 0.72,
+      "w": 0.18
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.03,
+    "bx1": 0.52
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "ref": "6558617CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#c8955e",
+  "wall_material": "brick",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#e6e6e4",
+  "shutter": "#ececea",
+  "shutters": "roller",
+  "door": "#7f8a90",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.26,
+    "w": 0.13
+   },
+   {
+    "t": "window",
+    "x": 0.52,
+    "w": 0.13
+   },
+   {
+    "t": "door",
+    "x": 0.78,
+    "w": 0.26
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.13,
+      "w": 0.09
+     },
+     {
+      "t": "balcony",
+      "x": 0.36,
+      "w": 0.09
+     },
+     {
+      "t": "window",
+      "x": 0.54,
+      "w": 0.14
+     },
+     {
+      "t": "window",
+      "x": 0.78,
+      "w": 0.26
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.13,
+    "bx1": 0.43
+   }
+  ],
+  "notes": "gelosies ceràmiques, porxo d'entrada amb escala, parts arrebossades grises"
+ },
+ {
+  "ref": "6558619CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#ecebe8",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.5,
+   "color": "#8d8f8f",
+   "material": "paint"
+  },
+  "frame": "#5a4230",
+  "shutter": "#d9d9d6",
+  "shutters": "roller",
+  "door": "#2e2a28",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.12,
+    "w": 0.13
+   },
+   {
+    "t": "garage",
+    "x": 0.34,
+    "w": 0.26
+   },
+   {
+    "t": "garage",
+    "x": 0.6,
+    "w": 0.22
+   },
+   {
+    "t": "garage",
+    "x": 0.82,
+    "w": 0.22
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.2,
+      "w": 0.25
+     },
+     {
+      "t": "balcony",
+      "x": 0.45,
+      "w": 0.08
+     },
+     {
+      "t": "balcony",
+      "x": 0.75,
+      "w": 0.18
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.35,
+    "bx1": 0.9
+   }
+  ],
+  "notes": "entrepanys de maó vist, tendal"
+ },
+ {
+  "ref": "6558620CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#b9b5ad",
+  "wall_material": "stucco",
+  "ground_wall": "#cfae78",
+  "ground_material": "brick",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#ecebe7",
+  "shutter": "#ecebe7",
+  "shutters": "mixed",
+  "door": "#3a3a3a",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "small",
+    "x": 0.08,
+    "w": 0.02
+   },
+   {
+    "t": "small",
+    "x": 0.11,
+    "w": 0.02
+   },
+   {
+    "t": "garage",
+    "x": 0.32,
+    "w": 0.29
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.18
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.25,
+      "w": 0.33
+     },
+     {
+      "t": "balcony",
+      "x": 0.69,
+      "w": 0.15
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "planta baixa de maó groc, ràfec de teula"
+ },
+ {
+  "ref": "6558621CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#c2b8a4",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.7,
+   "color": "#bfb29a",
+   "material": "stone"
+  },
+  "frame": "#6b3e2a",
+  "shutter": "#7a4a30",
+  "shutters": "mixed",
+  "door": "#3a3230",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.33,
+    "w": 0.11
+   },
+   {
+    "t": "window",
+    "x": 0.71,
+    "w": 0.1
+   },
+   {
+    "t": "window",
+    "x": 0.91,
+    "w": 0.08
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "gallery",
+      "x": 0.25,
+      "w": 0.46
+     },
+     {
+      "t": "balcony",
+      "x": 0.76,
+      "w": 0.08
+     },
+     {
+      "t": "balcony",
+      "x": 0.89,
+      "w": 0.07
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.55,
+    "bx1": 1.0
+   }
+  ],
+  "notes": "cantonada, tribuna tancada i voladissos revestits de rajola blava"
+ },
+ {
+  "ref": "6558622CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 3,
+  "attic": false,
+  "wall": "#a9a39b",
+  "wall_material": "stone",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#4a3b30",
+  "shutter": "#e6e4e0",
+  "shutters": "roller",
+  "door": "#3a3634",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "window",
+    "x": 0.29,
+    "w": 0.11
+   },
+   {
+    "t": "window",
+    "x": 0.49,
+    "w": 0.13
+   },
+   {
+    "t": "door",
+    "x": 0.89,
+    "w": 0.13
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.05,
+      "w": 0.08
+     },
+     {
+      "t": "window",
+      "x": 0.22,
+      "w": 0.1
+     },
+     {
+      "t": "window",
+      "x": 0.44,
+      "w": 0.11
+     },
+     {
+      "t": "balcony",
+      "x": 0.64,
+      "w": 0.06
+     },
+     {
+      "t": "balcony",
+      "x": 0.8,
+      "w": 0.12
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.57,
+    "bx1": 0.87
+   },
+   {
+    "o": [
+     {
+      "t": "terrace",
+      "x": 0.7,
+      "w": 0.6
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "aplacat de granit, reixes a la planta baixa, àtic reculat amb tancament de vidre, balcó petit a l'extrem esquerre"
+ },
+ {
+  "ref": "6558623CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 2,
+  "attic": false,
+  "wall": "#d49a55",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#5a4030",
+  "shutter": "#ecebe8",
+  "shutters": "roller",
+  "door": "#4a3424",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.15,
+    "w": 0.1
+   },
+   {
+    "t": "window",
+    "x": 0.25,
+    "w": 0.07
+   },
+   {
+    "t": "window",
+    "x": 0.38,
+    "w": 0.13
+   },
+   {
+    "t": "garage",
+    "x": 0.61,
+    "w": 0.17
+   },
+   {
+    "t": "door",
+    "x": 0.87,
+    "w": 0.12
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.39,
+      "w": 0.24
+     },
+     {
+      "t": "window",
+      "x": 0.57,
+      "w": 0.05
+     },
+     {
+      "t": "balcony",
+      "x": 0.69,
+      "w": 0.09
+     },
+     {
+      "t": "balcony",
+      "x": 0.89,
+      "w": 0.11
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.51,
+    "bx1": 1.0
+   }
+  ],
+  "notes": "voladís continu; ala esquerra d'una planta amb terrassa"
+ },
+ {
+  "ref": "6558624CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e3d8a8",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.5,
+   "color": "#9f9588",
+   "material": "stone"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#ececea",
+  "shutters": "roller",
+  "door": "#e8e8e6",
+  "surrounds": true,
+  "railing": "none",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "arch_door",
+    "x": 0.19,
+    "w": 0.1
+   },
+   {
+    "t": "garage",
+    "x": 0.43,
+    "w": 0.21
+   },
+   {
+    "t": "garage",
+    "x": 0.73,
+    "w": 0.24
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.14,
+      "w": 0.08
+     },
+     {
+      "t": "window",
+      "x": 0.43,
+      "w": 0.11
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.14,
+      "w": 0.09
+     },
+     {
+      "t": "window",
+      "x": 0.43,
+      "w": 0.11
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "emmarcaments verds a les obertures, portal d'arc"
+ },
+ {
+  "ref": "6558625CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#b4b2b0",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#6e6e6c",
+   "material": "stone"
+  },
+  "frame": "#dcdcdc",
+  "shutter": "#ececea",
+  "shutters": "roller",
+  "door": "#a8a8a6",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "unknown",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.1,
+    "w": 0.16
+   },
+   {
+    "t": "garage",
+    "x": 0.52,
+    "w": 0.46
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.49,
+      "w": 0.11
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.46,
+      "w": 0.09
+     },
+     {
+      "t": "window",
+      "x": 0.62,
+      "w": 0.09
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "franges decoratives en zig-zag, barana de forja"
+ },
+ {
+  "ref": "6558626CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#c9cbb4",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#e6e2d6",
+  "shutter": null,
+  "shutters": "none",
+  "door": "#3a2a20",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.15,
+    "w": 0.13
+   },
+   {
+    "t": "garage",
+    "x": 0.57,
+    "w": 0.5
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.35,
+      "w": 0.14
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.45,
+      "w": 0.09
+     },
+     {
+      "t": "small",
+      "x": 0.74,
+      "w": 0.08
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "franja i emmarcaments ocres"
+ },
+ {
+  "ref": "6558627CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": false,
+  "floors": 4,
+  "attic": false,
+  "wall": "#b8ad98",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#9a9a90",
+  "shutter": "#8a8f94",
+  "shutters": "wood_slat",
+  "door": "#3a3430",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.57,
+    "w": 0.65
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.18
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.48,
+      "w": 0.17
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.5,
+      "w": 0.17
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "foto descentrada, edifici estret de l'esquerra; façana degradada, barana de forja"
+ },
+ {
+  "ref": "6558628CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#c4a592",
+  "wall_material": "brick",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#9a6a3a",
+  "shutter": "#5a4a3e",
+  "shutters": "roller",
+  "door": "#2a2826",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "window",
+    "x": 0.14,
+    "w": 0.13
+   },
+   {
+    "t": "garage",
+    "x": 0.53,
+    "w": 0.45
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.48,
+      "w": 0.46
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.34,
+      "w": 0.21
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "portes de forja ornamental, obertures reculades"
+ },
+ {
+  "ref": "6558629CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e9e6de",
+  "wall_material": "stucco",
+  "ground_wall": "#b55a3c",
+  "ground_material": "brick",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#4a3a2e",
+  "shutter": "#d8d6d0",
+  "shutters": "roller",
+  "door": "#2f2f2f",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "unknown",
+  "ground": [
+   {
+    "t": "shop",
+    "x": 0.29,
+    "w": 0.5
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.26
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.31,
+      "w": 0.17
+     },
+     {
+      "t": "balcony",
+      "x": 0.76,
+      "w": 0.24
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.36,
+      "w": 0.14
+     },
+     {
+      "t": "balcony",
+      "x": 0.79,
+      "w": 0.22
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "combinació de maó vist i arrebossat blanc"
+ },
+ {
+  "ref": "6558630CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#9c3b33",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#b7a888",
+   "material": "stone"
+  },
+  "frame": "#d8cfb0",
+  "shutter": "#d8cfb0",
+  "shutters": "roller",
+  "door": "#2c2c2a",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.36,
+    "w": 0.43
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.17
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.62,
+      "w": 0.26
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.66,
+      "w": 0.21
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "arrebossat vermell, emmarcaments de pedra clara a la planta baixa"
+ },
+ {
+  "ref": "6558631CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": false,
+  "floors": 4,
+  "attic": true,
+  "wall": "#dcdcdc",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#4a4c50",
+   "material": "paint"
+  },
+  "frame": "#a0703a",
+  "shutter": "#d8ccaa",
+  "shutters": "roller",
+  "door": "#9a6a30",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.39,
+    "w": 0.39
+   },
+   {
+    "t": "door",
+    "x": 0.79,
+    "w": 0.18
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.45,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.63,
+      "w": 0.12
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "small",
+      "x": 0.49,
+      "w": 0.2
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "foto descentrada, edifici blanc de l'esquerra; finestra d'arc a les golfes, barana de forja"
+ },
+ {
+  "ref": "6558632CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#c89660",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.9,
+   "color": "#a88a84",
+   "material": "stone"
+  },
+  "frame": "#a8703a",
+  "shutter": "#d9d0b4",
+  "shutters": "roller",
+  "door": "#a06a3a",
+  "surrounds": true,
+  "railing": "none",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.14,
+    "w": 0.14
+   },
+   {
+    "t": "garage",
+    "x": 0.6,
+    "w": 0.49
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.34,
+      "w": 0.28
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.29,
+      "w": 0.21
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "emmarcaments en relleu a les finestres, sòcol de granit rosat"
+ },
+ {
+  "ref": "6558633CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": true,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e3d6bc",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#ecebe7",
+  "shutters": "roller",
+  "door": "#8a5a30",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.41,
+    "w": 0.53
+   },
+   {
+    "t": "door",
+    "x": 0.78,
+    "w": 0.16
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.49,
+      "w": 0.43
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.61,
+      "w": 0.28
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "finestra d'arc a la darrera planta"
+ },
+ {
+  "ref": "6558634CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d9ceb5",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#7a5a3c",
+  "shutter": "#e6e4de",
+  "shutters": "roller",
+  "door": "#6a4a30",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.36,
+    "w": 0.5
+   },
+   {
+    "t": "door",
+    "x": 0.86,
+    "w": 0.22
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.63,
+      "w": 0.19
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "small",
+      "x": 0.2,
+      "w": 0.05
+     },
+     {
+      "t": "window",
+      "x": 0.66,
+      "w": 0.33
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "façana degradada"
+ },
+ {
+  "ref": "6558635CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#bcbab4",
+  "wall_material": "stucco",
+  "ground_wall": "#a9a7a2",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#e8e8e8",
+  "shutter": "#ececea",
+  "shutters": "roller",
+  "door": "#2e2a28",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.36,
+    "w": 0.37
+   },
+   {
+    "t": "door",
+    "x": 0.78,
+    "w": 0.18
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.46,
+      "w": 0.32
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.22,
+      "w": 0.16
+     },
+     {
+      "t": "window",
+      "x": 0.55,
+      "w": 0.2
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "ref": "6558636CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 2,
+  "attic": false,
+  "wall": "#d2d0ca",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#6a6a68",
+   "material": "stone"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#cbbf9f",
+  "shutters": "roller",
+  "door": "#a86f35",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.29,
+    "w": 0.55
+   },
+   {
+    "t": "door",
+    "x": 0.8,
+    "w": 0.2
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.34,
+      "w": 0.2
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "franges grises horitzontals"
+ },
+ {
+  "ref": "6558637CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d6bd98",
+  "wall_material": "stucco",
+  "ground_wall": "#b0aea8",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0.8,
+   "color": "#c9a26a",
+   "material": "paint"
+  },
+  "frame": "#d9c060",
+  "shutter": "#d8d8d4",
+  "shutters": "roller",
+  "door": "#9a9a98",
+  "surrounds": false,
+  "railing": "masonry",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.79,
+    "w": 0.33
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "gallery",
+      "x": 0.34,
+      "w": 0.39
+     },
+     {
+      "t": "balcony",
+      "x": 0.72,
+      "w": 0.1
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "gallery",
+      "x": 0.34,
+      "w": 0.39
+     },
+     {
+      "t": "balcony",
+      "x": 0.7,
+      "w": 0.1
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "tribunes volades, baranes corbes blanques, porxo reculat a la planta baixa"
+ },
+ {
+  "ref": "6558638CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#b8b6b0",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#9a9894",
+   "material": "stone"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#ececea",
+  "shutters": "roller",
+  "door": "#2e2e30",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.3,
+    "w": 0.34
+   },
+   {
+    "t": "door",
+    "x": 0.72,
+    "w": 0.23
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.3,
+      "w": 0.26
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.28,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "ref": "6558639CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": true,
+  "floors": 4,
+  "attic": false,
+  "wall": "#e3d5b4",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#7a5a44",
+  "shutter": "#7a5a44",
+  "shutters": "roller",
+  "door": "#3a2e26",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.5,
+    "w": 0.7
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.25,
+      "w": 0.15
+     },
+     {
+      "t": "balcony",
+      "x": 0.69,
+      "w": 0.18
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.85
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.75,
+      "w": 0.21
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.7,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "foto descentrada, edifici estret de l'esquerra; franges i emmarcaments rogencs"
+ },
+ {
+  "ref": "6558640CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d9c3a0",
+  "wall_material": "stucco",
+  "ground_wall": "#c9a3a0",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0.8,
+   "color": "#9c9a96",
+   "material": "stone"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#ecebe8",
+  "shutters": "roller",
+  "door": "#6a5a40",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.38,
+    "w": 0.41
+   },
+   {
+    "t": "door",
+    "x": 0.84,
+    "w": 0.17
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.26,
+      "w": 0.26
+     },
+     {
+      "t": "balcony",
+      "x": 0.58,
+      "w": 0.32
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.07,
+    "bx1": 0.71
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.23,
+      "w": 0.29
+     },
+     {
+      "t": "balcony",
+      "x": 0.57,
+      "w": 0.33
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.04,
+    "bx1": 0.72
+   }
+  ],
+  "notes": "foto descentrada, edifici estret de l'esquerra; cos volat, planta baixa rosada"
+ },
+ {
+  "ref": "6558641CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d9b56a",
+  "wall_material": "stucco",
+  "ground_wall": "#c4c4c2",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#4a4a4c",
+  "shutter": "#5a5a5c",
+  "shutters": "roller",
+  "door": "#3a3a3a",
+  "surrounds": true,
+  "railing": "none",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.39,
+    "w": 0.51
+   },
+   {
+    "t": "door",
+    "x": 0.87,
+    "w": 0.1
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.48,
+      "w": 0.46
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.56,
+      "w": 0.29
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "emmarcaments grisos, entrada reculada"
+ },
+ {
+  "ref": "6558642CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e6d7b0",
+  "wall_material": "stucco",
+  "ground_wall": "#8e8c8a",
+  "ground_material": "stone",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#9a6030",
+  "shutter": "#d6c08e",
+  "shutters": "roller",
+  "door": "#9a6030",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "arch_garage",
+    "x": 0.14,
+    "w": 0.23
+   },
+   {
+    "t": "arch_garage",
+    "x": 0.45,
+    "w": 0.27
+   },
+   {
+    "t": "arch_door",
+    "x": 0.89,
+    "w": 0.12
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.24,
+      "w": 0.08
+     },
+     {
+      "t": "balcony",
+      "x": 0.51,
+      "w": 0.1
+     },
+     {
+      "t": "balcony",
+      "x": 0.84,
+      "w": 0.12
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.56,
+      "w": 0.09
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "portals d'arc a la planta baixa de granit, fornícules cegues a la darrera planta"
+ },
+ {
+  "ref": "6558643CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e6d6b3",
+  "wall_material": "stucco",
+  "ground_wall": "#c9a24a",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#a86a30",
+  "shutter": "#d6c49a",
+  "shutters": "roller",
+  "door": "#a86a30",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.29,
+    "w": 0.34
+   },
+   {
+    "t": "door",
+    "x": 0.78,
+    "w": 0.22
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.56,
+      "w": 0.18
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.56,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "barana de forja ornamental, emmarcaments ocres, reixa a la darrera planta"
+ },
+ {
+  "ref": "6558644CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d0a256",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#a86a30",
+  "shutter": "#d6c49a",
+  "shutters": "roller",
+  "door": "#3a3028",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.26,
+    "w": 0.46
+   },
+   {
+    "t": "door",
+    "x": 0.77,
+    "w": 0.24
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.52,
+      "w": 0.23
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.47,
+      "w": 0.25
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "franges horitzontals clares"
+ },
+ {
+  "ref": "6558645CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#dcc39a",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.9,
+   "color": "#b39a88",
+   "material": "stone"
+  },
+  "frame": "#a07050",
+  "shutter": "#c9a592",
+  "shutters": "roller",
+  "door": "#3a2e26",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.15,
+    "w": 0.1
+   },
+   {
+    "t": "garage",
+    "x": 0.64,
+    "w": 0.51
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.55,
+      "w": 0.23
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.58,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "franges horitzontals marronoses"
+ },
+ {
+  "ref": "6558646CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#bfb39a",
+  "wall_material": "stucco",
+  "ground_wall": "#cfb070",
+  "ground_material": "stucco",
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#7a5a3c",
+  "shutter": "#6a9a7a",
+  "shutters": "roller",
+  "door": "#3a3632",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.11,
+    "w": 0.18
+   },
+   {
+    "t": "garage",
+    "x": 0.55,
+    "w": 0.57
+   },
+   {
+    "t": "window",
+    "x": 0.57,
+    "w": 0.57
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.19
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.49,
+      "w": 0.3
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "foto descentrada, edifici de l'esquerra; façana degradada, balcó de forja, reixa sobre el garatge, finestra d'arc a la darrera planta"
+ },
+ {
+  "ref": "6558647CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 4,
+  "attic": false,
+  "wall": "#cfcdc6",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.7,
+   "color": "#6e6e6c",
+   "material": "stone"
+  },
+  "frame": "#6b4a30",
+  "shutter": "#d6ccb0",
+  "shutters": "roller",
+  "door": "#3a3430",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "parapet",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.17,
+    "w": 0.17
+   },
+   {
+    "t": "garage",
+    "x": 0.56,
+    "w": 0.56
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.55,
+      "w": 0.51
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.47,
+      "w": 0.17
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.45,
+      "w": 0.28
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "finestra d'arc a la darrera planta, emmarcaments grisos"
+ },
+ {
+  "ref": "6558648CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 4,
+  "attic": false,
+  "wall": "#d4c8a8",
+  "wall_material": "stone",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#a0602a",
+  "shutter": "#b87438",
+  "shutters": "wood_slat",
+  "door": "#9a5a2a",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "unknown",
+  "ground": [
+   {
+    "t": "door",
+    "x": 0.12,
+    "w": 0.12
+   },
+   {
+    "t": "garage",
+    "x": 0.29,
+    "w": 0.2
+   },
+   {
+    "t": "arch_door",
+    "x": 0.84,
+    "w": 0.15
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.21,
+      "w": 0.14
+     },
+     {
+      "t": "balcony",
+      "x": 0.63,
+      "w": 0.25
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.2,
+      "w": 0.15
+     },
+     {
+      "t": "balcony",
+      "x": 0.61,
+      "w": 0.25
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.21,
+      "w": 0.14
+     },
+     {
+      "t": "balcony",
+      "x": 0.61,
+      "w": 0.24
+     }
+    ],
+    "bal": "individual"
+   }
+  ],
+  "notes": "porxo de dos arcs, carreus a la planta baixa, persianes de llibret de fusta; darrera planta tallada a la foto"
+ },
+ {
+  "ref": "6558650CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#d0b07a",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.6,
+   "color": "#c9a45a",
+   "material": "paint"
+  },
+  "frame": "#e8e6e0",
+  "shutter": "#e8e6e0",
+  "shutters": "roller",
+  "door": "#6a6a66",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.35,
+    "w": 0.33
+   },
+   {
+    "t": "small",
+    "x": 0.36,
+    "w": 0.13
+   },
+   {
+    "t": "arch_door",
+    "x": 0.95,
+    "w": 0.1
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.34,
+      "w": 0.2
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.32,
+      "w": 0.11
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "carreus pintats a la façana, arc a l'extrem dret"
+ },
+ {
+  "ref": "6558652CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 4,
+  "attic": false,
+  "wall": "#d2b88a",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#e6e6e2",
+  "shutters": "roller",
+  "door": "#2e2e2e",
+  "surrounds": true,
+  "railing": "iron",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "garage",
+    "x": 0.6,
+    "w": 0.55
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.5,
+      "w": 0.26
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "balcony",
+      "x": 0.5,
+      "w": 0.22
+     }
+    ],
+    "bal": "individual"
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.52,
+      "w": 0.29
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "final de filera, arc de descàrrega de maó sobre el portal, finestra d'arc a la darrera planta"
+ },
+ {
+  "ref": "6558653CF3565H",
+  "usable": true,
+  "target": "unclear",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#e0d3b8",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": "#eeeeec",
+  "shutter": "#ecebe7",
+  "shutters": "roller",
+  "door": "#efefec",
+  "surrounds": false,
+  "railing": "iron",
+  "roof": "eave",
+  "ground": [
+   {
+    "t": "arch_door",
+    "x": 0.52,
+    "w": 0.4
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.48,
+      "w": 0.27
+     }
+    ],
+    "bal": "none"
+   },
+   {
+    "o": [
+     {
+      "t": "gallery",
+      "x": 0.36,
+      "w": 0.51
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "foto descentrada, edifici de l'esquerra; portal d'arc amb vestíbul, cos volat a la darrera planta"
+ },
+ {
+  "ref": "6558654CF3565H",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 1,
+  "attic": false,
+  "wall": "#c9bfa8",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0,
+   "color": null,
+   "material": "none"
+  },
+  "frame": null,
+  "shutter": null,
+  "shutters": "none",
+  "door": "#4a3a2e",
+  "surrounds": false,
+  "railing": "none",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "arch_garage",
+    "x": 0.72,
+    "w": 0.44
+   }
+  ],
+  "upper": [],
+  "notes": "cantonada, portal d'arc de fusta, arc cegat amb pedaç de maó"
+ },
+ {
+  "ref": "6558655CF3565G",
+  "usable": true,
+  "target": "center",
+  "occluded": false,
+  "floors": 3,
+  "attic": false,
+  "wall": "#bdb3aa",
+  "wall_material": "stucco",
+  "ground_wall": null,
+  "ground_material": null,
+  "plinth": {
+   "h": 0.8,
+   "color": "#5e5e5e",
+   "material": "stone"
+  },
+  "frame": "#c8b060",
+  "shutter": "#d8ccb0",
+  "shutters": "roller",
+  "door": "#c9a940",
+  "surrounds": false,
+  "railing": "masonry",
+  "roof": "cornice",
+  "ground": [
+   {
+    "t": "arch_garage",
+    "x": 0.18,
+    "w": 0.12
+   },
+   {
+    "t": "window",
+    "x": 0.35,
+    "w": 0.07
+   },
+   {
+    "t": "door",
+    "x": 0.75,
+    "w": 0.16
+   }
+  ],
+  "upper": [
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.18,
+      "w": 0.07
+     },
+     {
+      "t": "balcony",
+      "x": 0.39,
+      "w": 0.05
+     },
+     {
+      "t": "gallery",
+      "x": 0.67,
+      "w": 0.52
+     }
+    ],
+    "bal": "continuous",
+    "bx0": 0.0,
+    "bx1": 0.41
+   },
+   {
+    "o": [
+     {
+      "t": "window",
+      "x": 0.2,
+      "w": 0.08
+     },
+     {
+      "t": "window",
+      "x": 0.38,
+      "w": 0.06
+     },
+     {
+      "t": "window",
+      "x": 0.71,
+      "w": 0.45
+     }
+    ],
+    "bal": "none"
+   }
+  ],
+  "notes": "cantonada, tribuna tancada que gira la cantonada, baranes de balustres, finestra de pavès"
+ }
+]

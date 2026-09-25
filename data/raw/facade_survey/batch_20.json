@@ -1,0 +1,66 @@
+[
+  {
+    "ref": "8758903CF3565H",
+    "usable": true,
+    "target": "center",
+    "occluded": true,
+    "floors": 3,
+    "attic": false,
+    "wall": "#c8904e", "wall_material": "tile",
+    "ground_wall": null, "ground_material": null,
+    "plinth": {"h": 1.0, "color": "#948d86", "material": "stone"},
+    "frame": "#5b4636", "shutter": "#85858a", "shutters": "roller",
+    "door": "#9c5f2e",
+    "surrounds": false,
+    "railing": "iron",
+    "roof": "eave",
+    "ground": [{"t": "door", "x": 0.09, "w": 0.10}, {"t": "garage", "x": 0.53, "w": 0.43}],
+    "upper": [
+      {"o": [{"t": "balcony", "x": 0.13, "w": 0.09}, {"t": "balcony", "x": 0.29, "w": 0.09}, {"t": "window", "x": 0.43, "w": 0.17}, {"t": "window", "x": 0.68, "w": 0.25}], "bal": "continuous", "bx0": 0.0, "bx1": 0.31},
+      {"o": [{"t": "balcony", "x": 0.14, "w": 0.08}, {"t": "balcony", "x": 0.29, "w": 0.08}, {"t": "window", "x": 0.44, "w": 0.16}, {"t": "window", "x": 0.68, "w": 0.23}], "bal": "continuous", "bx0": 0.0, "bx1": 0.31}
+    ],
+    "notes": "cossos volats aplacats de rajola a la dreta, balcons reculats a l'esquerra, sòcol de granit"
+  },
+  {
+    "ref": "8758904CF3565H",
+    "usable": true,
+    "target": "unclear",
+    "occluded": false,
+    "floors": 2,
+    "attic": false,
+    "wall": "#e6cf78", "wall_material": "stucco",
+    "ground_wall": null, "ground_material": null,
+    "plinth": {"h": 0.9, "color": "#1e1e1e", "material": "tile"},
+    "frame": "#f2f2f0", "shutter": "#f2f2f0", "shutters": "wood_slat",
+    "door": "#d8d8d6",
+    "surrounds": false,
+    "railing": "iron",
+    "roof": "eave",
+    "ground": [{"t": "garage", "x": 0.28, "w": 0.39}, {"t": "window", "x": 0.73, "w": 0.20}],
+    "upper": [
+      {"o": [{"t": "balcony", "x": 0.28, "w": 0.19}, {"t": "balcony", "x": 0.66, "w": 0.36}], "bal": "continuous", "bx0": 0.0, "bx1": 0.97}
+    ],
+    "notes": "foto entre dos edificis; descrit el de l'esquerra (conté el centre). Tendal sobre el balcó"
+  },
+  {
+    "ref": "8758905CF3565H",
+    "usable": true,
+    "target": "center",
+    "occluded": false,
+    "floors": 2,
+    "attic": false,
+    "wall": "#e8d488", "wall_material": "stucco",
+    "ground_wall": null, "ground_material": null,
+    "plinth": {"h": 1.1, "color": "#d2a038", "material": "paint"},
+    "frame": "#d8d8d4", "shutter": "#d9d4c6", "shutters": "roller",
+    "door": "#2a2622",
+    "surrounds": false,
+    "railing": "iron",
+    "roof": "eave",
+    "ground": [{"t": "door", "x": 0.10, "w": 0.12}, {"t": "window", "x": 0.33, "w": 0.12}, {"t": "garage", "x": 0.67, "w": 0.21}, {"t": "window", "x": 0.90, "w": 0.08}],
+    "upper": [
+      {"o": [{"t": "balcony", "x": 0.18, "w": 0.11}, {"t": "balcony", "x": 0.40, "w": 0.12}, {"t": "window", "x": 0.63, "w": 0.14}, {"t": "window", "x": 0.79, "w": 0.12}, {"t": "small", "x": 0.89, "w": 0.05}], "bal": "continuous", "bx0": 0.07, "bx1": 0.54}
+    ],
+    "notes": "casa de cantonada, cos volat a la dreta de la planta pis, reixes a les finestres de planta baixa"
+  }
+]

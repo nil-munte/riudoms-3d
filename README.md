@@ -34,7 +34,7 @@ Quan t'acostes a un emblemàtic, apareix un rètol amb una dada històrica verif
 ## Build estàtica
 
 ```bash
-npm run build     # genera dist/ (el web + public/data, ~33 MB)
+npm run build     # genera dist/ (el web + public/data, ~28 MB)
 npm run preview   # serveix dist/ a http://localhost:4173
 ```
 
@@ -69,6 +69,8 @@ A Linux o macOS és `.venv/bin/python`.
 | `download_opendata.py` | DUN 2025 (WFS, cultiu per parcel·la) i Equipaments de Catalunya |
 | `process_lidar.py` | LiDAR → DSM de 0,5 m, MDT d'1 m, NDVI (banda NIR) i detecció de capçades d'arbre |
 | `process.py` | Orquestrador: origen local a la plaça de l'Església, tessel·les de 250 m i els passos `p_*.py` |
+| `p_region.py` | Contorn del poble (illes cadastrals edificades amb ús urbà + 22 m de carrers): el món es limita a aquest nucli |
+| `p_facade_layouts.py` | Valida les fitxes de façana llegides de les fotos del Cadastre (`facade_survey.md`, `data/raw/facade_survey/`) |
 | `p_terrain.py` | Model de terreny (MDT LiDAR d'1 m al nucli i de 2 m a la resta, fos amb el MET-5) i ortofoto per tessel·la |
 | `p_buildings.py` | Extrusió de les parts del Cadastre amb la teulada ajustada al LiDAR (plana / una aigua / dues aigües), alçada real de planta, ràfecs i cornises, volums de coberta (casetes, dipòsits, xemeneies) mesurats al LiDAR, color de teulada de l'ortofoto, color de façana de la foto del Cadastre, i classificació de cada paret (carrer / pati / mitgera) |
 | `p_streets.py` | Espai públic real = buit entre illes del Cadastre → calçada (amplada mesurada a l'ortofoto), voreres, places, illetes de rotonda, vorades, passos de vianants, marques vials |
@@ -78,6 +80,8 @@ A Linux o macOS és `.venv/bin/python`.
 | `p_relief.py` | Desnivells del MDT LiDAR d'1 m: escales entre nivells de vianants, murs amb barana i *marges* de pedra seca als camps |
 
 Sortida a `public/data/`: `terrain.bin`, `streets.bin` i `nature.bin` fan servir un format binari petit (capçalera JSON + arrays tipats, vegeu `scripts/binfmt.py`). També hi ha `buildings.json`, `roads.json`, `fields.json`, `props.json`, `landmarks.json`, `relief.json`, `meta.json` (fonts i estadístiques) i `ortho/t*.jpg`.
+
+Les fitxes de façana (`data/raw/facade_survey/`) també són dades curades. Les va fer un agent d'IA amb visió a partir de les fotos del Cadastre, seguint `scripts/facade_survey.md`, i el pipeline no les torna a generar.
 
 La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font de cada fet. No es torna a descarregar automàticament: el web de l'IPAC i RACO bloquegen l'accés automatitzat. Els scripts que s'hi van fer servir són a `data/raw/heritage/sources/`.
 
@@ -105,7 +109,7 @@ La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font 
 ## Vídeo de demostració
 
 `demo/riudoms-3d-demo.mp4` (720p, 30 fps, ~2 min 18 s): vol aeri, passeig a peu i en bicicleta,
-menú i teletransport, pas del dia a la nit. Es genera amb el mateix joc, sense gravar la pantalla:
+menú i teletransport, pas del dia a la nit. Es va gravar abans de limitar el món al nucli i de dibuixar les façanes de les fotos. Es genera amb el mateix joc, sense gravar la pantalla:
 
 1. `npm run dev` i obrir `http://localhost:5173` en una finestra de 1280×720 o més gran.
 2. A la consola del navegador: `(await import('/tools/demo/director.ts')).record()`.

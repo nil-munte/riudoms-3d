@@ -321,6 +321,99 @@ def clean_poly(p: Polygon) -> Polygon | None:
     return orient(p, 1.0)
 
 
+def facade_runs(ring_cm: list, flags: list, first_edge: int):
+    """Consecutive, nearly collinear edges with the same flag form one facade
+    (edges are also split where the roof ridge crosses them). Returns per edge
+    [offset along the run, run length] in cm, and the runs as (edges, length_m, flag)."""
+    n = len(ring_cm) // 2
+    pts = [(ring_cm[i * 2] / 100, ring_cm[i * 2 + 1] / 100) for i in range(n)]
+    L = [math.hypot(pts[(i + 1) % n][0] - pts[i][0], pts[(i + 1) % n][1] - pts[i][1]) for i in range(n)]
+    ang = [math.atan2(pts[(i + 1) % n][1] - pts[i][1], pts[(i + 1) % n][0] - pts[i][0]) for i in range(n)]
+    fl = [flags[first_edge + i] for i in range(n)]
+
+    def joins(i):  # does edge i continue edge i-1?
+        j = (i - 1) % n
+        d = abs(math.atan2(math.sin(ang[i] - ang[j]), math.cos(ang[i] - ang[j])))
+        return fl[i] == fl[j] and d < math.radians(12) and L[i] > 0.01 and L[j] > 0.01
+
+    starts = [i for i in range(n) if not joins(i)]
+    if not starts:  # a single closed run (circle-like footprint): cut anywhere
+        starts = [0]
+    ru = [[0, round(L[i] * 100)] for i in range(n)]
+    runs = []
+    for k, s0 in enumerate(starts):
+        s1 = starts[(k + 1) % len(starts)]
+        edges, i = [], s0
+        while True:
+            edges.append(i)
+            i = (i + 1) % n
+            if i == s1:
+                break
+        tot = sum(L[e] for e in edges)
+        off = 0.0
+        for e in edges:
+            ru[e] = [round(off * 100), round(tot * 100)]
+            off += L[e]
+        runs.append((edges, tot, fl[s0]))
+    return ru, runs
+
+
+def attach_layouts(out_parts: list, bl_list: list, counts: dict):
+    """Facade runs for every part and the photo layout on each building's main street facade."""
+    from p_facade_layouts import load_layouts
+
+    layouts = load_layouts()
+    best: dict[int, tuple] = {}  # building index -> (length, part index, edges)
+    for k, p in enumerate(out_parts):
+        ru_all, e0 = [], 0
+        for ri, ring in enumerate(p["rings"]):
+            ru, runs = facade_runs(ring, p["e"], e0)
+            ru_all += ru
+            if ri == 0:
+                for edges, tot, flag in runs:
+                    if flag == E_STREET and tot >= 2.0 and p["lm"] is None and p["s"] not in (S_INDUSTRIAL,):
+                        if tot > best.get(p["b"], (0,))[0]:
+                            best[p["b"]] = (tot, k, edges)
+            e0 += len(ring) // 2
+        p["ru"] = ru_all
+    lay_list, idx = [], {}
+    used = 0
+    for bi, (tot, k, edges) in best.items():
+        ref = bl_list[bi]["ref"]
+        lay = layouts.get(ref)
+        if not lay:
+            continue
+        if ref not in idx:
+            idx[ref] = len(lay_list)
+            lay_list.append(lay)
+        p = out_parts[k]
+        p["lx"], p["le"] = idx[ref], edges
+        # storeys seen in the photo; storey height from the LiDAR eave
+        n = lay["n"]
+        if p["_hs"] == "lidar" and n != p["f"]:
+            p["fh"] = round(float(min(max((p["_er"] - 0.3) / (n + 0.15), 2.5), 4.6)), 2)
+        p["f"] = n
+        if lay.get("wall"):
+            p["fc"] = lay["wall"]
+        if lay.get("sc"):
+            p["sc"] = lay["sc"]
+        p["br"] = 1 if lay["wm"] == 2 else 0
+        used += 1
+        # the other parts of the same building share the colours seen in the photo
+        for q in out_parts:
+            if q["b"] == bi and q is not p and q["s"] not in (S_INDUSTRIAL,):
+                if lay.get("wall"):
+                    q["fc"] = lay["wall"]
+                if lay.get("sc"):
+                    q["sc"] = lay["sc"]
+    for p in out_parts:
+        p.pop("_er", None)
+        p.pop("_hs", None)
+    counts["facade_layout"] = used
+    counts["facade_layout_records"] = getattr(load_layouts, "raw", 0)
+    attach_layouts.layouts = lay_list
+
+
 def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landmark_refs: dict):
     parts = [p for p in ctx.parts if p.building in ctx.buildings]
     lid = Lidar() if (WORK / "lidar.npz").exists() else None
@@ -330,7 +423,7 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
         if p.floors == 0:  # underground / open courtyards
             continue
         g = clean_poly(p.geom)
-        if g is None or not g.intersects(ctx.world_utm_tiles):
+        if g is None or not ctx.world_utm_tiles.contains(g.representative_point()):
             continue
         keep.append(p)
         geoms.append(g)
@@ -577,8 +670,10 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
             "ev": eaves,
             "cn": cornices,
             "rs": struct,
+            "_er": eave_rel, "_hs": hsrc,
         })
 
+    attach_layouts(out_parts, bl_list, counts)
     if level_cmp:
         arr = np.array(level_cmp)
         per_floor = arr[:, 1] / np.maximum(arr[:, 0], 1)
@@ -587,4 +682,4 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
     ctx.stats["buildings"] = counts
     ctx.stats["building_parts_exported"] = len(out_parts)
     ctx.stats["buildings_exported"] = len(bl_list)
-    return {"parts": out_parts, "buildings": bl_list}
+    return {"parts": out_parts, "buildings": bl_list, "layouts": getattr(attach_layouts, "layouts", [])}

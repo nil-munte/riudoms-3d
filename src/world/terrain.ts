@@ -19,6 +19,7 @@ interface Quad {
 
 interface Tile {
   i: number;
+  active: boolean;
   x0: number;
   y0: number;
   cx: number;
@@ -34,15 +35,48 @@ const QSEGS = [125, 62, 32];
 const QDIST = [80, 160];
 
 /** Adds a world-space detail texture that fades out with distance. */
-export function addDetail(mat: THREE.Material, strength = 0.55, scale = 0.45) {
+/** Colour of the ground outside the town (a neutral, maquette-like base). */
+export const NEUTRAL = 0xcfc7b6;
+
+interface RegionMask { tex: THREE.Texture; box: THREE.Vector4 }
+
+/** Soft mask of the town outline (1 inside, 0 outside, ~10 m fade) for the terrain shader. */
+function regionMask(meta: Meta): RegionMask | null {
+  const r = meta.region;
+  if (!r?.length) return null;
+  const xs = r.map((p) => p[0]), ys = r.map((p) => p[1]);
+  const pad = 40, res = 2;
+  const minx = Math.min(...xs) - pad, miny = Math.min(...ys) - pad;
+  const w = Math.ceil((Math.max(...xs) + pad - minx) / res), h = Math.ceil((Math.max(...ys) + pad - miny) / res);
+  const cv = document.createElement('canvas');
+  cv.width = w; cv.height = h;
+  const c = cv.getContext('2d')!;
+  c.fillStyle = '#000'; c.fillRect(0, 0, w, h);
+  c.filter = 'blur(3px)';
+  c.fillStyle = '#fff';
+  c.beginPath();
+  r.forEach(([x, y], i) => { const px = (x - minx) / res, py = (y - miny) / res; if (i) c.lineTo(px, py); else c.moveTo(px, py); });
+  c.closePath(); c.fill();
+  const tex = new THREE.CanvasTexture(cv);
+  tex.flipY = false;
+  tex.colorSpace = THREE.NoColorSpace;
+  return { tex, box: new THREE.Vector4(minx, miny, w * res, h * res) };
+}
+
+export function addDetail(mat: THREE.Material, strength = 0.55, scale = 0.45, mask: RegionMask | null = null) {
   const dt = detailTex();
+  const neutral = new THREE.Color(NEUTRAL);
   mat.onBeforeCompile = (sh) => {
     sh.uniforms.uDetail = { value: dt };
+    sh.uniforms.uMask = { value: mask?.tex ?? null };
+    sh.uniforms.uMaskBox = { value: mask?.box ?? new THREE.Vector4(0, 0, 1, 1) };
+    sh.uniforms.uNeutral = { value: neutral };
     sh.vertexShader = sh.vertexShader
       .replace('#include <common>', '#include <common>\nvarying vec3 vWPos;')
       .replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\nvWPos = (modelMatrix * vec4(transformed, 1.0)).xyz;');
     sh.fragmentShader = sh.fragmentShader
-      .replace('#include <common>', '#include <common>\nvarying vec3 vWPos;\nuniform sampler2D uDetail;')
+      .replace('#include <common>', '#include <common>\nvarying vec3 vWPos;\nuniform sampler2D uDetail;' +
+        (mask ? '\nuniform sampler2D uMask;\nuniform vec4 uMaskBox;\nuniform vec3 uNeutral;' : ''))
       .replace('#include <map_fragment>', `#include <map_fragment>
         {
           float dist = length(vWPos - cameraPosition);
@@ -51,9 +85,14 @@ export function addDetail(mat: THREE.Material, strength = 0.55, scale = 0.45) {
           float d2 = texture2D(uDetail, vWPos.xz * ${(scale * 0.13).toFixed(4)}).r;
           float d = mix(1.0, (d1 * 0.6 + d2 * 0.4) * 2.0, ${strength.toFixed(2)} * fade);
           diffuseColor.rgb *= d;
-        }`);
+        }` + (mask ? `
+        {
+          vec2 mp = (vec2(vWPos.x, -vWPos.z) - uMaskBox.xy) / uMaskBox.zw;
+          float inside = (mp.x < 0.0 || mp.y < 0.0 || mp.x > 1.0 || mp.y > 1.0) ? 0.0 : texture2D(uMask, mp).r;
+          diffuseColor.rgb = mix(uNeutral, diffuseColor.rgb, inside);
+        }` : ''));
   };
-  mat.customProgramCacheKey = () => 'detail' + strength + scale;
+  mat.customProgramCacheKey = () => 'detail' + strength + scale + (mask ? 'm' : '');
 }
 
 export class Terrain {
@@ -61,16 +100,22 @@ export class Terrain {
   private tiles: Tile[] = [];
   private frame = 0;
 
-  constructor(private hf: HeightField, private meta: Meta, textures: THREE.Texture[]) {
+  constructor(private hf: HeightField, private meta: Meta, textures: (THREE.Texture | null)[]) {
     const { x0, y0, nx, ny } = meta.tiles;
     const S = meta.tile;
+    const mask = regionMask(meta);
+    const neutral = new THREE.MeshLambertMaterial({ color: NEUTRAL });
     for (let j = 0; j < ny; j++) {
       for (let i = 0; i < nx; i++) {
         const t = j * nx + i;
         const tx0 = x0 + i * S, ty0 = y0 + j * S;
-        const mat = new THREE.MeshLambertMaterial({ map: textures[t] });
-        addDetail(mat);
+        let mat: THREE.MeshLambertMaterial;
+        if (textures[t]) {
+          mat = new THREE.MeshLambertMaterial({ map: textures[t] });
+          addDetail(mat, 0.55, 0.45, mask);
+        } else mat = neutral; // outside the town: plain relief, no photo
         const tile: Tile = {
+          active: !!textures[t],
           i: t, x0: tx0, y0: ty0, cx: tx0 + S / 2, cy: ty0 + S / 2, level: -1,
           geoms: [null, null, null, null], mesh: new THREE.Mesh(undefined, mat), lastUsed: [0, 0, 0, 0], quads: null,
         };
@@ -158,6 +203,7 @@ export class Terrain {
     const S = this.meta.tile;
     const minx = x0, miny = y0, maxx = x0 + nx * S, maxy = y0 + ny * S;
     const R = 9000, N = 48;
+    const neutral = new THREE.Color(NEUTRAL).convertSRGBToLinear();
     const pos: number[] = [], col: number[] = [], idx: number[] = [];
     const cx = (minx + maxx) / 2, cy = (miny + maxy) / 2;
     for (let r = 0; r <= N; r++) {
@@ -168,8 +214,7 @@ export class Terrain {
         const d = Math.hypot(x - clx, y - cly);
         const h = this.hf.heightAt(clx, cly) - (inside ? 30 : 0.6 + d * 0.004);
         pos.push(x, h, -y);
-        const v = 0.55 + 0.05 * Math.sin(x * 0.003) * Math.cos(y * 0.002);
-        col.push(v * 0.95, v * 0.9, v * 0.62);
+        col.push(neutral.r, neutral.g, neutral.b);
       }
     }
     for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
@@ -217,6 +262,7 @@ export class Terrain {
       const dy = Math.max(Math.abs(camY - t.cy) - S / 2, 0);
       const d = Math.hypot(dx, dy);
       let lvl = d < DIST[0] ? 0 : d < DIST[1] ? 1 : d < DIST[2] ? 2 : 3;
+      if (!t.active) lvl = Math.max(lvl, 1); // plain relief around the town: 8 m grid is enough
       // limit the number of expensive rebuilds per update, use a coarser level meanwhile
       while (!t.geoms[lvl] && built >= 2 && !force && lvl < 3) lvl++;
       if (!t.geoms[lvl]) {

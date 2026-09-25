@@ -1,10 +1,11 @@
 // Builds the generic buildings (Cadastre footprints + LiDAR / Cadastre
 // heights) as one merged mesh per world tile, plus instanced balconies.
 import * as THREE from 'three';
-import type { BuildingsFile, BuildingPart, Meta } from '../data/types';
+import type { BuildingsFile, BuildingPart, FacadeLayout, Meta } from '../data/types';
 import { E_STREET, S_MID, S_NEW, S_OLD, S_PUBLIC } from '../data/types';
 import { STYLE_SPACING, makeFacadeMaterial } from './facade';
 import { flatRoofTex, railingTex, roofTileTex } from './textures';
+import { layoutTexture } from './layouts';
 import type { Collision } from './collision';
 
 function hash1(a: number, b: number): number {
@@ -50,11 +51,15 @@ class Buf {
 
 export interface BalconyInst { type: number; m: THREE.Matrix4 }
 
+/** Per-block geometry of the balconies read from the facade photos. */
+interface LayoutBalconies { slab: Buf; iron: Buf; glass: Buf; masonry: Buf }
+
 export class Buildings {
   group = new THREE.Group();
   tileGroups: THREE.Group[] = [];
   meshes: THREE.Mesh[] = [];
-  facadeMat = makeFacadeMaterial();
+  facadeMat: THREE.MeshLambertMaterial;
+  layoutCount = 0;
   private balconies: BalconyInst[] = [];
 
   constructor(data: BuildingsFile, meta: Meta, skip: Set<string>, collision: Collision) {
@@ -63,25 +68,34 @@ export class Buildings {
     const bnx = Math.ceil(meta.tiles.nx / 2), bny = Math.ceil(meta.tiles.ny / 2);
     const nt = bnx * bny;
     const blockOf = (t: number) => Math.floor((t % meta.tiles.nx) / 2) + Math.floor(Math.floor(t / meta.tiles.nx) / 2) * bnx;
+    const layouts = data.layouts ?? [];
+    this.layoutCount = layouts.length;
+    this.facadeMat = makeFacadeMaterial(layoutTexture(layouts));
     const walls: Buf[] = [], roofsT: Buf[] = [], roofsF: Buf[] = [], trims: Buf[] = [], eaves: Buf[] = [];
-    for (let t = 0; t < nt; t++) { walls.push(new Buf()); roofsT.push(new Buf()); roofsF.push(new Buf()); trims.push(new Buf()); eaves.push(new Buf()); }
+    const lbal: LayoutBalconies[] = [];
+    for (let t = 0; t < nt; t++) {
+      walls.push(new Buf()); roofsT.push(new Buf()); roofsF.push(new Buf()); trims.push(new Buf()); eaves.push(new Buf());
+      lbal.push({ slab: new Buf(), iron: new Buf(), glass: new Buf(), masonry: new Buf() });
+    }
     for (const p of data.parts) {
       const info = data.buildings[p.b];
       // collision for every part (also landmarks: their custom model sits on the same footprint)
-      for (const ring of p.rings) {
+      // the exterior is solid (nobody ends up inside, not even by a teleport); holes are closed courtyards
+      p.rings.forEach((ring, ri) => {
+        if (ri === 0) { collision.addPolygon(ring.map((v) => v / 100)); return; }
         const n = ring.length / 2;
         for (let i = 0; i < n; i++) {
           const j = (i + 1) % n;
           collision.addSegment(ring[i * 2] / 100, ring[i * 2 + 1] / 100, ring[j * 2] / 100, ring[j * 2 + 1] / 100);
         }
-      }
+      });
       if (p.cm && p.lm && skip.has(p.lm)) continue; // replaced by a custom landmark model
       const t = blockOf(p.t);
       const tx = meta.tiles.x0 + (t % bnx) * S + S / 2;
       const ty = meta.tiles.y0 + Math.floor(t / bnx) * S + S / 2;
       const seed = (strHash(info.ref) % 997) + (p.rings[0][0] % 13);
       const retail = info.use === '4_2_retail' ? 1 : 0;
-      this.addWalls(walls[t], p, tx, ty, seed, retail);
+      this.addWalls(walls[t], p, tx, ty, seed, retail, p.lx !== undefined && p.lx >= 0 ? layouts[p.lx] ?? null : null, lbal[t]);
       this.addRoof(p.roof.k === 0 ? roofsF[t] : roofsT[t], p, tx, ty);
       this.addEaves(eaves[t], p, tx, ty);
       this.addTrims(trims[t], p, tx, ty);
@@ -90,6 +104,10 @@ export class Buildings {
     const flatMat = new THREE.MeshLambertMaterial({ map: flatRoofTex(), vertexColors: true });
     const eaveMat = new THREE.MeshLambertMaterial({ map: roofTileTex(), vertexColors: true, side: THREE.DoubleSide });
     const trimMat = new THREE.MeshLambertMaterial({ vertexColors: true });
+    const lbSlabMat = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide });
+    const lbIronMat = new THREE.MeshLambertMaterial({ map: railingTex(), alphaTest: 0.5, side: THREE.DoubleSide });
+    const lbGlassMat = new THREE.MeshLambertMaterial({ color: 0x9fb4bd, transparent: true, opacity: 0.45, side: THREE.DoubleSide });
+    const lbMasMat = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide });
     for (let t = 0; t < nt; t++) {
       const g = new THREE.Group();
       const tx = meta.tiles.x0 + (t % bnx) * S + S / 2;
@@ -97,7 +115,7 @@ export class Buildings {
       g.position.set(tx, 0, -ty);
       g.userData.cx = tx; g.userData.cy = ty;
       if (walls[t].count) {
-        const m = new THREE.Mesh(walls[t].geometry({ aFac: 2, aInfo: 4, aExtra: 4, aFCol: 3, aSCol: 3 }), this.facadeMat);
+        const m = new THREE.Mesh(walls[t].geometry({ aFac: 2, aInfo: 4, aExtra: 4, aFCol: 3, aSCol: 3, aLay: 1 }), this.facadeMat);
         m.castShadow = m.receiveShadow = true;
         m.name = 'walls';
         g.add(m); this.meshes.push(m);
@@ -108,6 +126,19 @@ export class Buildings {
         m.castShadow = m.receiveShadow = true;
         m.name = 'roof';
         g.add(m); this.meshes.push(m);
+      }
+      const lb = lbal[t];
+      for (const [buf, mat, uvs, cols] of [[lb.slab, lbSlabMat, false, true], [lb.iron, lbIronMat, true, false],
+        [lb.glass, lbGlassMat, true, false], [lb.masonry, lbMasMat, true, true]] as const) {
+        if (!buf.count) continue;
+        const sizes: Record<string, number> = {};
+        if (uvs) sizes.uv = 2;
+        if (cols) sizes.color = 3;
+        const m = new THREE.Mesh(buf.geometry(sizes), mat);
+        m.castShadow = buf !== lb.glass;
+        m.receiveShadow = true;
+        m.name = 'balcony';
+        g.add(m);
       }
       if (trims[t].count) {
         const m = new THREE.Mesh(trims[t].geometry({ color: 3 }), trimMat);
@@ -122,15 +153,18 @@ export class Buildings {
     this.buildBalconies();
   }
 
-  private addWalls(buf: Buf, p: BuildingPart, tx: number, ty: number, seed: number, retail: number) {
+  private addWalls(buf: Buf, p: BuildingPart, tx: number, ty: number, seed: number, retail: number,
+                   layout: FacadeLayout | null, lb: LayoutBalconies) {
     const [fr, fg, fb] = lin(p.fc, 0.3);
     const [sr, sg, sb] = lin(p.sc, 0.02);
     const z0 = p.z0, vg = z0 + 0.3;
     const sp = STYLE_SPACING[p.s];
     const fh = p.fh || 3.0, gh = fh * 1.15;
+    const lay = layout ? p.lx! : -1;
+    const layEdges = new Set(layout ? p.le ?? [] : []);
     let ei = 0;
     const fac = buf.attr('aFac'), inf = buf.attr('aInfo'), ext = buf.attr('aExtra');
-    const fcol = buf.attr('aFCol'), scol = buf.attr('aSCol');
+    const fcol = buf.attr('aFCol'), scol = buf.attr('aSCol'), alay = buf.attr('aLay');
     for (let ri = 0; ri < p.rings.length; ri++) {
       const ring = p.rings[ri];
       const n = ring.length / 2;
@@ -139,27 +173,33 @@ export class Buildings {
         const ax = ring[i * 2] / 100, ay = ring[i * 2 + 1] / 100;
         const bx = ring[j * 2] / 100, by = ring[j * 2 + 1] / 100;
         const dx = bx - ax, dy = by - ay;
-        const L = Math.hypot(dx, dy);
-        if (L < 0.05) continue;
+        const Le = Math.hypot(dx, dy);
+        if (Le < 0.05) continue;
+        // position along the whole facade run (collinear edges form one facade)
+        const ru = p.ru?.[ei];
+        const u0 = ru ? ru[0] / 100 : 0, L = ru ? Math.max(ru[1] / 100, Le) : Le;
         const za = z0 + p.w[ei * 2] / 100, zb = z0 + p.w[ei * 2 + 1] / 100;
         const flag = p.e[ei];
-        const nx = dy / L, ny = -dx / L;
-        // balconies on street facades of residential styles
+        const nx = dy / Le, ny = -dx / Le;
+        const onLayout = ri === 0 && layEdges.has(i) && flag === E_STREET;
+        // procedural balconies on street facades of residential styles (facades without a photo)
         let mask = 0;
-        if (flag === E_STREET && p.f >= 2 && (p.s === S_OLD || p.s === S_MID || p.s === S_NEW || p.s === S_PUBLIC)) {
+        if (!onLayout && flag === E_STREET && p.f >= 2 && (p.s === S_OLD || p.s === S_MID || p.s === S_NEW || p.s === S_PUBLIC)) {
           const ncol = Math.max(1, Math.floor(L / sp));
           const cw = L / ncol;
           const prob = p.s === S_OLD ? 0.6 : p.s === S_MID ? 0.5 : p.s === S_NEW ? 0.4 : 0.15;
+          const runSeed = seed * 31 + Math.round(L * 10);
           for (let c = 0; c < Math.min(ncol, 22); c++) {
             if (cw < 1.6) break;
-            if (hash1(seed * 31 + ei, c) < prob) {
+            if (hash1(runSeed, c) < prob) {
               mask |= 1 << c;
-              const u = (c + 0.5) * cw;
-              const topAt = (za + (zb - za) * (u / L)) - vg;
+              const u = (c + 0.5) * cw - u0; // along this edge
+              if (u < 0 || u > Le) continue;
+              const topAt = (za + (zb - za) * (u / Le)) - vg;
               for (let f = 1; f < p.f; f++) {
                 const base = gh + (f - 1) * fh;
                 if (base + 2.4 > topAt) break;
-                const wx = ax + (dx * u) / L, wy = ay + (dy * u) / L;
+                const wx = ax + (dx * u) / Le, wy = ay + (dy * u) / Le;
                 const m = new THREE.Matrix4();
                 const yaw = Math.atan2(nx, -ny); // local +z = outward normal
                 m.makeRotationY(yaw);
@@ -169,20 +209,72 @@ export class Buildings {
             }
           }
         }
+        if (onLayout && layout) this.layoutBalconies(lb, layout, p, ax, ay, dx, dy, Le, u0, L, vg, gh, fh, tx, ty, Math.min(za, zb) - vg);
         const base = buf.count;
-        const pts: [number, number, number, number][] = [[ax, ay, z0, 0], [bx, by, z0, L], [bx, by, zb, L], [ax, ay, za, 0]];
+        const pts: [number, number, number, number][] = [[ax, ay, z0, 0], [bx, by, z0, Le], [bx, by, zb, Le], [ax, ay, za, 0]];
         for (const [x, y, z, u] of pts) {
           buf.pos.push(x - tx, z, -(y - ty));
           buf.nor.push(nx, 0, -ny);
-          fac.push(u, z - vg);
+          fac.push(u0 + u, z - vg);
           inf.push(L, flag, p.f, p.s + retail * 10 + p.br * 20);
           ext.push((u === 0 ? za : zb) - vg, seed, mask, fh);
           fcol.push(fr, fg, fb);
           scol.push(sr, sg, sb);
+          alay.push(onLayout ? lay : -1);
         }
         buf.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
       }
     }
+  }
+
+  /** Balconies exactly where the photo shows them: one per balcony door, or a continuous one. */
+  private layoutBalconies(lb: LayoutBalconies, l: FacadeLayout, p: BuildingPart, ax: number, ay: number, dx: number, dy: number,
+                          Le: number, u0: number, L: number, vg: number, gh: number, fh: number, tx: number, ty: number, topV: number) {
+    const ux = dx / Le, uy = dy / Le, nx = uy, ny = -ux;
+    const rail = l.rl === 2 ? lb.glass : l.rl === 3 ? lb.masonry : lb.iron;
+    const depth = l.rl === 1 || l.rl === 0 ? 0.5 : 0.85;
+    const [pr, pg, pb] = lin(p.fc, 0.3);
+    l.u.forEach((fl, fi) => {
+      if (!fl.b) return;
+      const base = gh + fi * fh;
+      if (base + 1.2 > topV) return;
+      const spans: [number, number][] = [];
+      if (fl.b === 2) spans.push([fl.b0 * L, fl.b1 * L]);
+      else for (const o of fl.o) if (o[0] === 8) spans.push([(o[1] - o[2] / 2) * L - 0.2, (o[1] + o[2] / 2) * L + 0.2]);
+      for (const [s0, s1] of spans) {
+        // the part of the span on this edge
+        const a = Math.max(s0, u0) - u0, b = Math.min(s1, u0 + Le) - u0;
+        if (b - a < 0.3) continue;
+        const z = vg + base;
+        const P = (along: number, out: number, h: number): [number, number, number] =>
+          [ax + ux * along + nx * out - tx, h, -(ay + uy * along + ny * out - ty)];
+        // slab
+        const sl = lb.slab;
+        const q = (buf: Buf, pts: [number, number, number][], n: [number, number, number], uvs: number[][] | null, col?: number[]) => {
+          const b0 = buf.count;
+          for (let k = 0; k < 4; k++) {
+            buf.pos.push(...pts[k]);
+            buf.nor.push(...n);
+            if (uvs) buf.attr('uv').push(uvs[k][0], uvs[k][1]);
+            if (col) buf.attr('color').push(col[0], col[1], col[2]);
+          }
+          buf.idx.push(b0, b0 + 1, b0 + 2, b0, b0 + 2, b0 + 3);
+        };
+        const N: [number, number, number] = [nx, 0, -ny], S: [number, number, number] = [ux, 0, -uy];
+        const slabCol = [0.82, 0.79, 0.73];
+        q(sl, [P(a, 0, z), P(b, 0, z), P(b, depth, z), P(a, depth, z)].reverse() as any, [0, 1, 0], null, slabCol);
+        q(sl, [P(a, depth, z - 0.14), P(b, depth, z - 0.14), P(b, depth, z), P(a, depth, z)], N, null, slabCol);
+        q(sl, [P(a, 0, z - 0.14), P(a, depth, z - 0.14), P(b, depth, z - 0.14), P(b, 0, z - 0.14)], [0, -1, 0], null, slabCol.map((c) => c * 0.8));
+        q(sl, [P(a, 0, z - 0.14), P(a, depth, z - 0.14), P(a, depth, z), P(a, 0, z)], [-ux, 0, uy], null, slabCol);
+        q(sl, [P(b, depth, z - 0.14), P(b, 0, z - 0.14), P(b, 0, z), P(b, depth, z)], S, null, slabCol);
+        // railing: front and both sides, UVs in metres (1.3 m of pattern per texture repeat)
+        const h = 1.0, w = b - a;
+        const col = l.rl === 3 ? [pr, pg, pb] : undefined;
+        q(rail, [P(a, depth, z), P(b, depth, z), P(b, depth, z + h), P(a, depth, z + h)], N, [[0, 0], [w / 1.3, 0], [w / 1.3, 1], [0, 1]], col);
+        q(rail, [P(a, 0, z), P(a, depth, z), P(a, depth, z + h), P(a, 0, z + h)], [-ux, 0, uy], [[0, 0], [depth / 1.3, 0], [depth / 1.3, 1], [0, 1]], col);
+        q(rail, [P(b, depth, z), P(b, 0, z), P(b, 0, z + h), P(b, depth, z + h)], S, [[0, 0], [depth / 1.3, 0], [depth / 1.3, 1], [0, 1]], col);
+      }
+    });
   }
 
   private addRoof(buf: Buf, p: BuildingPart, tx: number, ty: number) {

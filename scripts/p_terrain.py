@@ -102,14 +102,16 @@ class OrthoMosaic:
     def contains(self, x0, y0, x1, y1):
         return x0 >= self.x0 and x1 <= self.x1 and y0 >= self.y0 and y1 <= self.y1
 
-    def crop(self, x0, y0, x1, y1, px):
+    def crop(self, x0, y0, x1, y1, px, py=None):
         box = ((x0 - self.x0) / self.res, (self.y1 - y1) / self.res, (x1 - self.x0) / self.res, (self.y1 - y0) / self.res)
-        return self.img.resize((px, px), Image.LANCZOS, box=box)
+        return self.img.resize((px, py or px), Image.LANCZOS, box=box)
 
 
 def export_ortho(ctx: Ctx, urban_utm, write: bool = True) -> None:
-    """One JPEG per world tile. Tiles close to the built-up area get 512 px
-    (~0.5 m/px, from the 25 cm ortho), the rest 256 px (~1 m/px)."""
+    """One JPEG per active world tile (the tiles over the town, see
+    Ctx.set_region): 1024 px (~0.25 m/px, the full resolution of the 25 cm
+    ortho) where the 25 cm mosaic covers the tile, else 256 px from the 1 m one.
+    Tiles outside the town get no image (the terrain there is drawn neutral)."""
     core = OrthoMosaic("core")
     wide = OrthoMosaic("wide")
     ctx.core_ortho, ctx.wide_ortho = core, wide
@@ -118,18 +120,30 @@ def export_ortho(ctx: Ctx, urban_utm, write: bool = True) -> None:
                license="CC BY 4.0 ICGC")
     out = OUT / "ortho"
     out.mkdir(parents=True, exist_ok=True)
-    from shapely.geometry import box
-
-    near = urban_utm.buffer(200)
+    active = set(ctx.active_tiles)
     sizes = []
     for t in range(ctx.nx * ctx.ny):
+        f = out / f"t{t}.jpg"
+        if t not in active:
+            if write and f.exists():
+                f.unlink()
+            sizes.append(0)
+            continue
         x0, y0, x1, y1 = ctx.tile_bounds(t)
         X0, Y0, X1, Y1 = x0 + ctx.ox, y0 + ctx.oy, x1 + ctx.ox, y1 + ctx.oy
-        hi = box(X0, Y0, X1, Y1).intersects(near) and core.contains(X0, Y0, X1, Y1)
-        src = core if hi else wide
-        px = 512 if hi else 256
-        if write or not (out / f"t{t}.jpg").exists():
-            im = src.crop(X0, Y0, X1, Y1, px)
-            im.save(out / f"t{t}.jpg", quality=82, optimize=True)
+        # the part covered by the 25 cm mosaic is pasted over the 1 m one
+        ix0, iy0, ix1, iy1 = max(X0, core.x0), max(Y0, core.y0), min(X1, core.x1), min(Y1, core.y1)
+        px = 1024 if ix1 > ix0 and iy1 > iy0 else 256
+        if write or not f.exists():
+            if core.contains(X0, Y0, X1, Y1):
+                im = core.crop(X0, Y0, X1, Y1, px)
+            else:
+                im = wide.crop(X0, Y0, X1, Y1, px)
+                if px == 1024:
+                    k = px / (X1 - X0)
+                    w, h = round((ix1 - ix0) * k), round((iy1 - iy0) * k)
+                    if w > 4 and h > 4:
+                        im.paste(core.crop(ix0, iy0, ix1, iy1, w, h), (round((ix0 - X0) * k), round((Y1 - iy1) * k)))
+            im.save(f, quality=80, optimize=True)
         sizes.append(px)
     ctx.ortho_sizes = sizes

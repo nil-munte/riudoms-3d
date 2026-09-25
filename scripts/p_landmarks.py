@@ -274,6 +274,8 @@ def export(ctx: Ctx, lm):
         if not it or it.get("lat") is None:
             continue
         x, y = lonlat_to_utm(it["lon"], it["lat"])
+        if not world.contains(Point(x - ctx.ox, y - ctx.oy)):
+            continue  # outside the town
         out["teleports"].append({"name": it["name"], "x": round(x - ctx.ox, 2), "y": round(y - ctx.oy, 2)})
     for name, label in EXTRA_PLACES:
         f = next((f for f in ctx.osm if f.tags.get("name") == name), None)
@@ -304,7 +306,10 @@ def export(ctx: Ctx, lm):
     m["porxos"] = {"edges": porxos_edges(ctx, items), "arches": "10 + 6 (IPAC)"}
     x, y = lonlat_to_utm(by_id["placa_esglesia"]["lon"], by_id["placa_esglesia"]["lat"])
     m["casalLogo"] = facade_anchor(ctx, CASAL_REF, (x, y))
-    m["ermita"] = ermita_params(ctx, by_id["ermita_sant_antoni"])
+    e = by_id["ermita_sant_antoni"]
+    ex, ey = lonlat_to_utm(e["lon"], e["lat"])
+    if world.contains(Point(ex - ctx.ox, ey - ctx.oy)):
+        m["ermita"] = ermita_params(ctx, e)
     x, y = lonlat_to_utm(1.05153, 41.13885)
     m["mosaic"] = {"pos": [round(x - ctx.ox, 2), round(y - ctx.oy, 2)], "size": 4.0,
                    "source": "mosaic of the Riudoms coat of arms confirmed by Commons photo; position and size ESTIMATED"}

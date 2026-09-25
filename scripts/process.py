@@ -67,6 +67,15 @@ def main(only: set[str] | None = None) -> None:
     ctx.plaza_esglesia_utm = plaza
     print(f"  origin UTM {ctx.ox}, {ctx.oy}; tiles {ctx.nx}x{ctx.ny} of {TILE} m")
 
+    step("region: the town only")
+    import p_region
+
+    town_blocks = [q for lvl, g in zoning if lvl == "MANZANA" for q in getattr(g, "geoms", [g])]
+    region, rinfo = p_region.find_region(town_blocks, ctx.buildings, ctx.parts, (ox, oy))
+    ctx.set_region(region)
+    ctx.stats["region"] = rinfo | {"active_tiles": len(ctx.active_tiles)}
+    print(f"  {rinfo}, {len(ctx.active_tiles)} active tiles")
+
     step("terrain")
     ctx.terrain = p_terrain.build_terrain_model(ctx)
     if run("terrain"):
@@ -115,7 +124,11 @@ def main(only: set[str] | None = None) -> None:
         "crs": "EPSG:25831 (ETRS89 / UTM 31N) shifted to the origin; x = east, y = north (m)",
         "reference_point_wgs84": [REF_LAT, REF_LON],
         "tile": TILE,
-        "tiles": {"x0": ctx.tx0, "y0": ctx.ty0, "nx": ctx.nx, "ny": ctx.ny, "ortho_px": ctx.ortho_sizes},
+        "tiles": {"x0": ctx.tx0, "y0": ctx.ty0, "nx": ctx.nx, "ny": ctx.ny, "ortho_px": ctx.ortho_sizes,
+                  "active": ctx.active_tiles},
+        # the town: outline (local m) and the fence that keeps the player inside it
+        "region": [[round(x, 1), round(y, 1)] for x, y in ctx.world_local.exterior.coords[:-1]],
+        "fence": [[round(x, 1), round(y, 1)] for x, y in ctx.world_local.buffer(-4).exterior.coords[:-1]],
         "sources": ctx.sources,
         "stats": stats,
     }
