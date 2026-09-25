@@ -5,15 +5,15 @@ import type { BinFile } from '../data/binfmt';
 import type { Meta } from '../data/types';
 import type { HeightField } from './heightfield';
 import {
-  asphaltTex, cobbleTex, dirtTex, gravelTex, pavingTex, settTex, sidewalkTex,
+  asphaltTex, cobbleTex, dirtTex, grassTex, gravelTex, pavingTex, settTex, sidewalkTex,
 } from './textures';
 
 // height above the terrain of each surface (sidewalks sit 12 cm above the road)
 export const OFFSET: Record<string, number> = {
-  asphalt: 0.05, sett: 0.05, cobble: 0.05, sidewalk: 0.17, plaza: 0.09, paving: 0.08, dirt: 0.03, gravel: 0.04, curbtop: 0.17,
+  asphalt: 0.05, sett: 0.05, cobble: 0.05, sidewalk: 0.17, plaza: 0.09, paving: 0.08, dirt: 0.03, gravel: 0.04, curbtop: 0.17, grass: 0.2,
 };
 // metres covered by one texture repeat
-const SCALE: Record<string, number> = { asphalt: 4, sett: 2, cobble: 2, sidewalk: 1, plaza: 2.4, paving: 2.4, dirt: 4, gravel: 2, curbtop: 1 };
+const SCALE: Record<string, number> = { asphalt: 4, sett: 2, cobble: 2, sidewalk: 1, plaza: 2.4, paving: 2.4, dirt: 4, gravel: 2, curbtop: 1, grass: 2 };
 
 function texFor(s: string) {
   switch (s) {
@@ -24,6 +24,7 @@ function texFor(s: string) {
     case 'plaza': return pavingTex();
     case 'paving': return pavingTex();
     case 'dirt': return dirtTex();
+    case 'grass': return grassTex();
     default: return gravelTex();
   }
 }

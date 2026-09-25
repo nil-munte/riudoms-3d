@@ -24,14 +24,17 @@ ORIGIN_WAY_NAME = "Plaça de l'Església"
 class TerrainModel:
     coarse: Grid  # MET-5 (ICGC WCS)
     fine: Grid | None  # 2 m DTM from ICGC LiDAR ground points, blended into MET-5 at its edges
+    fine1: Grid | None = None  # 1 m LiDAR DTM over the urban core, blended into the 2 m one
 
     def height(self, x, y):
-        """Terrain height at UTM coords. Must match src/world/terrain.ts."""
+        """Terrain height at UTM coords. Must match src/world/heightfield.ts:
+        the finest grid that contains the point wins."""
         x = np.asarray(x, dtype=np.float64)
         y = np.asarray(y, dtype=np.float64)
         h = self.coarse.sample(x, y)
-        if self.fine is not None:
-            f = self.fine
+        for f in (self.fine, self.fine1):
+            if f is None:
+                continue
             fh, fw = f.shape
             inside = (x >= f.x0 + f.res) & (x <= f.x0 + (fw - 1) * f.res) & (y <= f.y1 - f.res) & (y >= f.y1 - (fh - 1) * f.res)
             if np.any(inside):

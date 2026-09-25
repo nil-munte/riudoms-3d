@@ -29,6 +29,10 @@ export interface BuildingPart {
   hs: string; // height source l/c/e
   lm: string | null; // landmark id
   cm: number; // 1 = replaced by the custom landmark model
+  fh: number; // storey height (m): LiDAR eave height / Cadastre floors
+  ev: number[][]; // eave / verge quads [x,y,z] x 4 (cm, z above z0)
+  cn: number[][]; // street cornices [x0,y0,x1,y1,z] (cm)
+  rs: { r: number[]; z0: number; z1: number; k: number }[]; // rooftop structures (LiDAR): 0 housing/tank, 1 chimney
 }
 
 export interface BuildingInfo {

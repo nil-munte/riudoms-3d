@@ -3,7 +3,7 @@
 import * as THREE from 'three';
 import type { BuildingsFile, BuildingPart, Meta } from '../data/types';
 import { E_STREET, S_MID, S_NEW, S_OLD, S_PUBLIC } from '../data/types';
-import { FLOOR_H, GROUND_FLOOR_H, STYLE_SPACING, makeFacadeMaterial } from './facade';
+import { STYLE_SPACING, makeFacadeMaterial } from './facade';
 import { flatRoofTex, railingTex, roofTileTex } from './textures';
 import type { Collision } from './collision';
 
@@ -63,8 +63,8 @@ export class Buildings {
     const bnx = Math.ceil(meta.tiles.nx / 2), bny = Math.ceil(meta.tiles.ny / 2);
     const nt = bnx * bny;
     const blockOf = (t: number) => Math.floor((t % meta.tiles.nx) / 2) + Math.floor(Math.floor(t / meta.tiles.nx) / 2) * bnx;
-    const walls: Buf[] = [], roofsT: Buf[] = [], roofsF: Buf[] = [];
-    for (let t = 0; t < nt; t++) { walls.push(new Buf()); roofsT.push(new Buf()); roofsF.push(new Buf()); }
+    const walls: Buf[] = [], roofsT: Buf[] = [], roofsF: Buf[] = [], trims: Buf[] = [], eaves: Buf[] = [];
+    for (let t = 0; t < nt; t++) { walls.push(new Buf()); roofsT.push(new Buf()); roofsF.push(new Buf()); trims.push(new Buf()); eaves.push(new Buf()); }
     for (const p of data.parts) {
       const info = data.buildings[p.b];
       // collision for every part (also landmarks: their custom model sits on the same footprint)
@@ -83,9 +83,13 @@ export class Buildings {
       const retail = info.use === '4_2_retail' ? 1 : 0;
       this.addWalls(walls[t], p, tx, ty, seed, retail);
       this.addRoof(p.roof.k === 0 ? roofsF[t] : roofsT[t], p, tx, ty);
+      this.addEaves(eaves[t], p, tx, ty);
+      this.addTrims(trims[t], p, tx, ty);
     }
     const tileMat = new THREE.MeshLambertMaterial({ map: roofTileTex(), vertexColors: true });
     const flatMat = new THREE.MeshLambertMaterial({ map: flatRoofTex(), vertexColors: true });
+    const eaveMat = new THREE.MeshLambertMaterial({ map: roofTileTex(), vertexColors: true, side: THREE.DoubleSide });
+    const trimMat = new THREE.MeshLambertMaterial({ vertexColors: true });
     for (let t = 0; t < nt; t++) {
       const g = new THREE.Group();
       const tx = meta.tiles.x0 + (t % bnx) * S + S / 2;
@@ -98,11 +102,17 @@ export class Buildings {
         m.name = 'walls';
         g.add(m); this.meshes.push(m);
       }
-      for (const [buf, mat] of [[roofsT[t], tileMat], [roofsF[t], flatMat]] as const) {
+      for (const [buf, mat] of [[roofsT[t], tileMat], [roofsF[t], flatMat], [eaves[t], eaveMat]] as const) {
         if (!buf.count) continue;
         const m = new THREE.Mesh(buf.geometry({ uv: 2, color: 3 }), mat);
         m.castShadow = m.receiveShadow = true;
         m.name = 'roof';
+        g.add(m); this.meshes.push(m);
+      }
+      if (trims[t].count) {
+        const m = new THREE.Mesh(trims[t].geometry({ color: 3 }), trimMat);
+        m.castShadow = m.receiveShadow = true;
+        m.name = 'trim';
         g.add(m); this.meshes.push(m);
       }
       g.traverse((o) => { o.matrixAutoUpdate = false; o.updateMatrix(); });
@@ -117,6 +127,7 @@ export class Buildings {
     const [sr, sg, sb] = lin(p.sc, 0.02);
     const z0 = p.z0, vg = z0 + 0.3;
     const sp = STYLE_SPACING[p.s];
+    const fh = p.fh || 3.0, gh = fh * 1.15;
     let ei = 0;
     const fac = buf.attr('aFac'), inf = buf.attr('aInfo'), ext = buf.attr('aExtra');
     const fcol = buf.attr('aFCol'), scol = buf.attr('aSCol');
@@ -146,7 +157,7 @@ export class Buildings {
               const u = (c + 0.5) * cw;
               const topAt = (za + (zb - za) * (u / L)) - vg;
               for (let f = 1; f < p.f; f++) {
-                const base = GROUND_FLOOR_H + (f - 1) * FLOOR_H;
+                const base = gh + (f - 1) * fh;
                 if (base + 2.4 > topAt) break;
                 const wx = ax + (dx * u) / L, wy = ay + (dy * u) / L;
                 const m = new THREE.Matrix4();
@@ -164,8 +175,8 @@ export class Buildings {
           buf.pos.push(x - tx, z, -(y - ty));
           buf.nor.push(nx, 0, -ny);
           fac.push(u, z - vg);
-          inf.push(L, flag, p.f, p.s + retail * 10);
-          ext.push((u === 0 ? za : zb) - vg, seed, mask, p.br);
+          inf.push(L, flag, p.f, p.s + retail * 10 + p.br * 20);
+          ext.push((u === 0 ? za : zb) - vg, seed, mask, fh);
           fcol.push(fr, fg, fb);
           scol.push(sr, sg, sb);
         }
@@ -225,6 +236,83 @@ export class Buildings {
         // counter-clockwise in (east, north) = facing up in three.js (z = -north)
         if (ux * vy - uy * vx >= 0) buf.idx.push(base + a, base + b, base + c);
         else buf.idx.push(base + a, base + c, base + b);
+      }
+    }
+  }
+
+  /** Roof overhangs (ràfecs) and verges: quads that continue the roof plane. */
+  private addEaves(buf: Buf, p: BuildingPart, tx: number, ty: number) {
+    if (!p.ev?.length) return;
+    const [r0, g0, b0] = lin(p.rc);
+    const uv = buf.attr('uv'), col = buf.attr('color');
+    for (const q of p.ev) {
+      const base = buf.count;
+      const pts: number[][] = [];
+      for (let k = 0; k < 4; k++) pts.push([q[k * 3] / 100, q[k * 3 + 1] / 100, p.z0 + q[k * 3 + 2] / 100]);
+      // normal from the quad
+      const ux = pts[1][0] - pts[0][0], uy = pts[1][1] - pts[0][1], uz = pts[1][2] - pts[0][2];
+      const vx = pts[3][0] - pts[0][0], vy = pts[3][1] - pts[0][1], vz = pts[3][2] - pts[0][2];
+      let nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+      if (nz < 0) { nx = -nx; ny = -ny; nz = -nz; }
+      const l = Math.hypot(nx, ny, nz) || 1;
+      for (const [x, y, z] of pts) {
+        buf.pos.push(x - tx, z, -(y - ty));
+        buf.nor.push(nx / l, nz / l, -ny / l);
+        uv.push(x, y);
+        col.push(Math.min(1, r0 * 1.3), Math.min(1, g0 * 1.3), Math.min(1, b0 * 1.3));
+      }
+      buf.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
+    }
+  }
+
+  /** Cornices on flat-roof street facades and rooftop structures measured by LiDAR. */
+  private addTrims(buf: Buf, p: BuildingPart, tx: number, ty: number) {
+    const col = buf.attr('color');
+    const [fr, fg, fb] = lin(p.fc, 0.3);
+    const [rr, rg, rb] = lin(p.rc);
+    const quad = (pts: number[][], c: [number, number, number]) => {
+      const base = buf.count;
+      const ux = pts[1][0] - pts[0][0], uy = pts[1][1] - pts[0][1], uz = pts[1][2] - pts[0][2];
+      const vx = pts[3][0] - pts[0][0], vy = pts[3][1] - pts[0][1], vz = pts[3][2] - pts[0][2];
+      const nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+      const l = Math.hypot(nx, ny, nz) || 1;
+      for (const [x, y, z] of pts) {
+        buf.pos.push(x - tx, z, -(y - ty));
+        buf.nor.push(nx / l, nz / l, -ny / l);
+        col.push(c[0], c[1], c[2]);
+      }
+      buf.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
+    };
+    // prism from a CCW footprint (x,y) between z0 and z1: walls + top
+    const prism = (ring: number[][], z0: number, z1: number, cw: [number, number, number], ct: [number, number, number]) => {
+      let area = 0;
+      for (let i = 0; i < ring.length; i++) { const a = ring[i], b = ring[(i + 1) % ring.length]; area += a[0] * b[1] - b[0] * a[1]; }
+      const r = area > 0 ? ring : [...ring].reverse();
+      for (let i = 0; i < r.length; i++) {
+        const a = r[i], b = r[(i + 1) % r.length];
+        quad([[a[0], a[1], z0], [b[0], b[1], z0], [b[0], b[1], z1], [a[0], a[1], z1]], cw);
+      }
+      if (r.length === 4) quad([[r[0][0], r[0][1], z1], [r[1][0], r[1][1], z1], [r[2][0], r[2][1], z1], [r[3][0], r[3][1], z1]], ct);
+    };
+    const light: [number, number, number] = [Math.min(1, fr * 1.08), Math.min(1, fg * 1.08), Math.min(1, fb * 1.08)];
+    for (const [x0, y0, x1, y1, z] of p.cn ?? []) {
+      const ax = x0 / 100, ay = y0 / 100, bx = x1 / 100, by = y1 / 100, zz = p.z0 + z / 100;
+      const L = Math.hypot(bx - ax, by - ay) || 1;
+      const nx = (by - ay) / L, ny = -(bx - ax) / L;
+      const o = 0.28;
+      prism([[ax, ay], [bx, by], [bx + nx * o, by + ny * o], [ax + nx * o, ay + ny * o]], zz - 0.22, zz, light, light);
+    }
+    for (const s of p.rs ?? []) {
+      const ring: number[][] = [];
+      for (let i = 0; i < s.r.length; i += 2) ring.push([s.r[i] / 100, s.r[i + 1] / 100]);
+      const z0 = p.z0 + s.z0 / 100 - 0.1, z1 = p.z0 + s.z1 / 100;
+      if (s.k === 1) {
+        // chimney: rendered, a little cap on top
+        const c: [number, number, number] = [0.62, 0.52, 0.45];
+        prism(ring, z0, z1, c, [0.35, 0.33, 0.32]);
+      } else {
+        // stair housing / water tank on a terrace: facade colour walls, roof-coloured top
+        prism(ring, z0, z1, [fr * 0.97, fg * 0.97, fb * 0.97], [rr, rg, rb]);
       }
     }
   }

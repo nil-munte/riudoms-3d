@@ -4,6 +4,7 @@ Outputs data/work/lidar.npz with:
   dsm   0.5 m  highest return per cell (all classes except noise), NaN = no data
   ndvi  0.5 m  NDVI of that highest return (the LAZ carries RGB + NIR)
   dtm   1.0 m  mean of ground points (class 2), gaps filled by diffusion
+  gmask 1.0 m  1 where the cell has measured ground points
   x0, y1       west / north edge of the grids (EPSG:25831)
 and data/work/lidar_trees.json with detected tree crowns (x, y, height, radius).
 
@@ -95,8 +96,9 @@ def main() -> None:
         dtm = (gsum / gcnt).astype(np.float32).reshape(H1, W1)
     dtm[gcnt.reshape(H1, W1) == 0] = np.nan
     print(f"LiDAR: ground coverage {100 * np.isfinite(dtm).mean():.1f}% of 1 m cells")
+    gmask = (gcnt.reshape(H1, W1) > 0).astype(np.uint8)  # cells with measured ground (not interpolated)
     dtm = fill_nan(dtm)
-    np.savez_compressed(WORK / "lidar.npz", dsm=dsm, ndvi=ndvi.astype(np.float16), dtm=dtm,
+    np.savez_compressed(WORK / "lidar.npz", dsm=dsm, ndvi=ndvi.astype(np.float16), dtm=dtm, gmask=gmask,
                         x0=x0, y1=y1)
     detect_trees(dsm, ndvi, dtm, x0, y1)
 

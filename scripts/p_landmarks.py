@@ -48,6 +48,27 @@ EXTRA_PLACES = [  # OSM features used as extra teleports
 ]
 
 
+# Facade decorations of emblematic buildings, from the Commons photos and the heritage
+# research (data/raw/heritage/landmarks.json). "at" = position along the facade (0..1),
+# "face" = point the facade looks at (the square it opens onto).
+DECOR = {
+    "abadia": {"ref": "6461502CF3566B", "face": "placa_esglesia",
+               "src": "Commons: Abadia_-_casa_de_la_Parròquia (P1130377); IPAC / Catalunya Religió",
+               "items": [{"k": "door", "at": 0.6, "w": 1.7, "h": 3.3, "stone": True, "steps": 3},
+                         {"k": "plaque", "at": 0.44, "h": 1.75, "text": ["ABADIA", "Casa de la Parròquia"]},
+                         {"k": "quoins", "at": 0.0}]},
+    "casa_de_la_vila": {"ref": "6560325CF3566A", "face": "placa_om",
+                        "src": "Commons: Casa_de_la_Vila_de_Riudoms_02; IPAC (esgrafiats, balcó de balustres, porta adovellada)",
+                        "items": [{"k": "door", "at": 0.5, "w": 2.3, "h": 3.8, "stone": True, "steps": 1},
+                                  {"k": "balcony", "at": 0.5, "w": 4.4, "floor": 1},
+                                  {"k": "esgrafiat", "at": 0.24, "floor": 1}, {"k": "esgrafiat", "at": 0.76, "floor": 1},
+                                  {"k": "shield", "at": 0.5, "floor": 2}]},
+    "hospital_capella_verge_maria": {"face": None, "src": "Commons: Capella_Verge_Maria (porta adovellada, òcul)",
+                                     "items": [{"k": "door", "at": 0.5, "w": 1.6, "h": 3.2, "stone": True, "steps": 0},
+                                               {"k": "oculus", "at": 0.5, "floor": 1}]},
+}
+
+
 def _load():
     return json.load(open(RAW / "heritage" / "landmarks.json", encoding="utf-8"))
 
@@ -144,6 +165,10 @@ def church_params(ctx: Ctx, items):
 
     def ring(poly):
         return [round(v, 2) for x, y in list(poly.exterior.coords)[:-1] for v in (x - ctx.ox, y - ctx.oy)]
+
+    # zone in front of the facade where the platform steps are modelled by hand (no automatic stairs)
+    W = lambda sv, tv: (fx + ax * sv + cx_ * tv - ctx.ox, fy + ay * sv + cy_ * tv - ctx.oy)
+    ctx.church_front_zone = Polygon([W(-9, t0 - 11), W(-9, t1 + 3), W(1.5, t1 + 3), W(1.5, t0 - 11)])
 
     out = {
         "frame": {"x": round(fx - ctx.ox, 2), "y": round(fy - ctx.oy, 2), "ax": round(ax, 5), "ay": round(ay, 5),
@@ -267,9 +292,11 @@ def export(ctx: Ctx, lm):
     m["church"] = church_params(ctx, items)
     m["damaOferent"] = {"pos": pos("font_dama_oferent"), "statue_top": 5.1,
                         "source": "IPAC hexagonal basin; LiDAR statue top 5.1 m; sizes ESTIMATED from photos"}
-    x, y = lonlat_to_utm(1.051106, 41.138927)
-    m["plazaFountain"] = {"pos": [round(x - ctx.ox, 2), round(y - ctx.oy, 2)],
-                          "source": "1976-77 fountain in front of the Abadia; position ESTIMATED from the tower-top photo"}
+    # the 1976-77 fountain surrounded by shrubs: an oval ~8 x 16 m clearly visible on the 25 cm
+    # orthophoto (UTM 336450.0, 4556005.5), long axis ~7 degrees east of north
+    m["plazaFountain"] = {"pos": [round(336450.0 - ctx.ox, 2), round(4556005.5 - ctx.oy, 2)], "rx": 3.9, "ry": 7.9,
+                          "bearing": 7.0,
+                          "source": "position, size and orientation measured on the ICGC 25 cm orthophoto; design ESTIMATED"}
     m["monumentGaudi"] = {"pos": pos("monument_gaudi"), "height": 10.0,
                           "source": "Josep Piqué 1975, 10 m (riudoms.cat); shape from Commons photos"}
     m["statueGaudi"] = {"pos": pos("escultura_gaudi"), "height": 1.7, "source": "Joan Serramià 2019, 1.70 m"}
@@ -281,7 +308,10 @@ def export(ctx: Ctx, lm):
     x, y = lonlat_to_utm(1.05153, 41.13885)
     m["mosaic"] = {"pos": [round(x - ctx.ox, 2), round(y - ctx.oy, 2)], "size": 4.0,
                    "source": "mosaic of the Riudoms coat of arms confirmed by Commons photo; position and size ESTIMATED"}
-    m["senyera"] = facade_anchor(ctx, "6560325CF3566A", lonlat_to_utm(1.05103, 41.137623))
+    m["decor"] = decorations(ctx, by_id, lm["refs"])
+    # Plaça de l'Om: large ornamental lamp post in the centre (heritage research, jogili / riudoms.cat)
+    m["omLamp"] = {"pos": pos("placa_om"), "source": "research: 'the centre of the square is a large ornamental lamp post with trees'"}
+    m["palmBed"] = palm_bed(ctx)
     # credits of the heritage photos used for modelling (not shown as textures)
     photos = json.load(open(RAW / "heritage" / "photos.json", encoding="utf-8"))
     out["credits"] = [{"title": p.get("commons_title") or p.get("title"), "author": p.get("author"),
@@ -289,6 +319,59 @@ def export(ctx: Ctx, lm):
     save_json(OUT / "landmarks.json", out)
     ctx.stats["signs"] = len(out["signs"])
     ctx.stats["teleports"] = len(out["teleports"])
+
+
+def decorations(ctx: Ctx, by_id, refs):
+    """Pick the street facade of each decorated landmark and export where to put things."""
+    import json as _json
+
+    fac = getattr(ctx, "bfacades", None)
+    if fac is None:
+        fp = WORK / "bfacades.json"
+        fac = _json.load(open(fp)) if fp.exists() else {}
+    out = []
+    for lid, spec in DECOR.items():
+        it = by_id.get(lid)
+        if not it:
+            continue
+        ref = spec.get("ref") or next((r for r, l in refs.items() if l == lid), None)
+        edges = fac.get(ref) or []
+        if not edges:
+            continue
+        target = None
+        if spec.get("face") and by_id.get(spec["face"]):
+            t = by_id[spec["face"]]
+            x, y = lonlat_to_utm(t["lon"], t["lat"])
+            target = (x - ctx.ox, y - ctx.oy)
+        else:
+            x, y = lonlat_to_utm(it["lon"], it["lat"])
+            target = (x - ctx.ox, y - ctx.oy)
+
+        def score(e):
+            mx, my = (e["a"][0] + e["b"][0]) / 2, (e["a"][1] + e["b"][1]) / 2
+            facing = (target[0] - mx) * e["n"][0] + (target[1] - my) * e["n"][1]
+            return e["len"] + (6 if facing > 0 else -20) - 0.15 * math.hypot(target[0] - mx, target[1] - my)
+        e = max(edges, key=score)
+        out.append({"id": lid, "edge": e, "items": spec["items"], "src": spec["src"]})
+    return out
+
+
+def palm_bed(ctx: Ctx):
+    """Raised round lawn bed around the palm of the Plaça de la Palmera (Commons photo)."""
+    park = next((ctx.local(f.geom) for f in ctx.osm if f.tags.get("name", "").lower() == "parc de la palmera"
+                 and f.geom.geom_type in ("Polygon", "MultiPolygon")), None)
+    lp = WORK / "lidar_trees.json"
+    if park is None or not lp.exists():
+        return None
+    best = None
+    for x, y, h, r in json.load(open(lp))["trees"]:
+        p = Point(x - ctx.ox, y - ctx.oy)
+        if park.contains(p) and (best is None or h > best[2]):
+            best = (p.x, p.y, h)
+    if best is None:
+        return None
+    return {"pos": [round(best[0], 2), round(best[1], 2)], "r": 6.5,
+            "source": "Commons photo Pla_a_de_la_Palmera_Riudoms_01: raised round lawn with a stone rim; size ESTIMATED"}
 
 
 def ermita_params(ctx: Ctx, it):

@@ -2,8 +2,9 @@
 
 In the urban area the public space is the gap between the cadastral urban
 blocks (manzanas), so street widths and building lines are exact. That space
-is split into carriageway (OSM centre line buffered by an ESTIMATED lane
-width), sidewalks (the rest), squares and pedestrian ways. Outside the blocks
+is split into carriageway (OSM centre line buffered by the asphalt width MEASURED
+on the 25 cm orthophoto, or an ESTIMATED width per road type when the measurement
+fails), sidewalks (the rest), squares and pedestrian ways. Outside the blocks
 the roads are buffered OSM centre lines. Surfaces come from the OSM
 `surface` tag (asphalt by default for roads, earth for tracks).
 
@@ -17,6 +18,7 @@ import math
 
 import mapbox_earcut as earcut
 import numpy as np
+from scipy import ndimage
 from shapely import STRtree
 from shapely.geometry import LineString, MultiLineString, MultiPolygon, Polygon, box
 from shapely.ops import unary_union
@@ -25,7 +27,7 @@ from binfmt import write_bin
 from common import OUT, save_json
 from ctx import TILE, Ctx
 
-SURFACES = ["asphalt", "sett", "cobble", "sidewalk", "plaza", "paving", "dirt", "gravel", "curbtop"]
+SURFACES = ["asphalt", "sett", "cobble", "sidewalk", "plaza", "paving", "dirt", "gravel", "curbtop", "grass"]
 
 VEHICLE = {"motorway", "trunk", "primary", "secondary", "tertiary", "unclassified", "residential",
            "living_street", "service", "primary_link", "secondary_link", "tertiary_link", "road", "track"}
@@ -122,6 +124,81 @@ def lines_of(g):
     return out
 
 
+def measure_widths(ctx: Ctx, veh, public):
+    """Carriageway width of each urban street measured on the 25 cm orthophoto:
+    every 5 m a luminance profile across the public space is taken; the asphalt is the
+    dark run around the centre line, the sidewalks the brighter bands at both sides.
+    Returns {index in veh: (width, centre offset)} for streets with enough valid stations."""
+    orto = getattr(ctx, "core_ortho", None)
+    if orto is None:
+        return {}
+    arr = orto.arr
+    H, W = arr.shape[:2]
+    res = orto.res
+    out = {}
+    for k, (g, t, w, s) in enumerate(veh):
+        if t["highway"] in ("living_street", "track", "service") or s != "asphalt" or g.length < 20:
+            continue
+        if not g.intersects(public):
+            continue
+        widths, offs = [], []
+        stations = np.arange(6.0, g.length - 6.0, 5.0)
+        for d in stations:
+            p = g.interpolate(d)
+            a = g.interpolate(max(0, d - 1.0)); b = g.interpolate(min(g.length, d + 1.0))
+            dx, dy = b.x - a.x, b.y - a.y
+            L = math.hypot(dx, dy)
+            if L < 1e-6:
+                continue
+            nx, ny = -dy / L, dx / L
+            cross = LineString([(p.x - nx * 14, p.y - ny * 14), (p.x + nx * 14, p.y + ny * 14)])
+            inter = cross.intersection(public)
+            piece = None
+            for ln in lines_of(inter):
+                if ln.distance(p) < 0.3:
+                    piece = ln
+                    break
+            if piece is None:
+                continue
+            (x0, y0), (x1, y1) = piece.coords[0], piece.coords[-1]
+            t0 = (x0 - p.x) * nx + (y0 - p.y) * ny
+            t1 = (x1 - p.x) * nx + (y1 - p.y) * ny
+            if t0 > t1:
+                t0, t1 = t1, t0
+            if t1 - t0 < 4.5:
+                continue
+            ts = np.arange(t0 + 0.1, t1 - 0.1, res)
+            X = p.x + nx * ts + ctx.ox
+            Y = p.y + ny * ts + ctx.oy
+            cc = ((X - orto.x0) / res).astype(int)
+            rr = ((orto.y1 - Y) / res).astype(int)
+            if cc.min() < 0 or rr.min() < 0 or cc.max() >= W or rr.max() >= H:
+                continue
+            px = arr[rr, cc].astype(np.float32)
+            lum = px @ np.array([0.299, 0.587, 0.114])
+            lum = np.convolve(lum, np.ones(3) / 3, mode="same")
+            lo, hi = np.percentile(lum, 20), np.percentile(lum, 85)
+            if hi - lo < 16:
+                continue  # no contrast (deep shade or uniform surface)
+            dark = lum < (lo + hi) / 2
+            # close small bright gaps (road markings, manholes) inside the asphalt
+            dark = ndimage.binary_closing(dark, structure=np.ones(5))
+            i0 = int(np.argmin(np.abs(ts)))
+            if not dark[i0]:
+                continue
+            lab, _ = ndimage.label(dark)
+            run = np.nonzero(lab == lab[i0])[0]
+            dL, dR = ts[run[0]], ts[run[-1]]
+            width = dR - dL
+            if width < 2.8 or (dL - t0) < 0.5 and (t1 - dR) < 0.5 or width > (t1 - t0) - 0.5:
+                continue
+            widths.append(width)
+            offs.append((dL + dR) / 2)
+        if len(widths) >= 3 and len(widths) >= 0.3 * max(1, len(stations)):
+            out[k] = (float(np.median(widths)), float(np.median(offs)))
+    return out
+
+
 def process_streets(ctx: Ctx):
     world = ctx.world_local
     blocks = ctx.local(ctx.blocks_utm)
@@ -164,6 +241,21 @@ def process_streets(ctx: Ctx):
     public = near_blocks.difference(blocks).intersection(road_zone.union(squares_u)).intersection(world)
     public = public.buffer(0)
 
+    # real carriageway widths measured on the orthophoto replace the per-type estimate
+    measured = measure_widths(ctx, veh, public)
+    for k, (w_m, off) in measured.items():
+        g, t, w, s = veh[k]
+        try:
+            gg = g.offset_curve(off) if abs(off) > 0.25 else g
+            if gg.is_empty or gg.geom_type != "LineString":
+                gg = g
+        except Exception:
+            gg = g
+        veh[k] = (gg, t, w_m, s)
+    ctx.stats["street_widths_measured"] = len(measured)
+    ctx.stats["street_widths_candidates"] = sum(1 for g, t, w, s in veh if t["highway"] not in ("living_street", "track", "service")
+                                               and s == "asphalt" and g.intersects(public))
+
     # carriageway per surface (urban roads clipped to the public space, rural roads as buffers).
     # Shared-space streets (living_street, pedestrian) fill the whole width between the blocks.
     carr = {}
@@ -191,11 +283,21 @@ def process_streets(ctx: Ctx):
                         .intersection(carr_all.buffer(2.5)))
     urban_carr_extra = unary_union([p for p in polys(urban_carr_extra) if p.area > 0.5])
 
-    # final surface polygons (priority: plaza > sidewalk > road surfaces > pedestrian)
+    # roundabout islands (lawn): inside closed junction=roundabout rings, beyond the carriageway
+    islands = []
+    for g, t, w, s in veh:
+        if t.get("junction") == "roundabout" and g.is_ring:
+            isl = Polygon(g.coords).buffer(-(w / 2 + 0.3))
+            if not isl.is_empty and isl.area > 4:
+                islands.append(isl)
+    islands_u = unary_union(islands) if islands else Polygon()
+
+    # final surface polygons (priority: island > plaza > sidewalk > road surfaces > pedestrian)
     layers: dict[str, object] = {}
-    taken = Polygon()
-    layers["plaza"] = plazas.intersection(world)
-    taken = layers["plaza"]
+    layers["grass"] = islands_u.intersection(world)
+    taken = layers["grass"]
+    layers["plaza"] = plazas.intersection(world).difference(taken)
+    taken = taken.union(layers["plaza"])
     layers["sidewalk"] = sidewalk.intersection(world).difference(taken)
     taken = taken.union(layers["sidewalk"])
     order = ["sett", "cobble", "asphalt", "gravel", "dirt"]
@@ -253,7 +355,7 @@ def process_streets(ctx: Ctx):
 
     # ---- curbs: sidewalk edges that touch a carriageway -------------------------
     road_surf = unary_union([layers[s] for s in ("asphalt", "sett", "cobble") if s in layers])
-    curb_lines = lines_of(layers["sidewalk"].boundary.intersection(road_surf.buffer(0.15)))
+    curb_lines = lines_of(layers["sidewalk"].union(layers["grass"]).boundary.intersection(road_surf.buffer(0.15)))
     curbs, curb_off = [], [0]
     for ln in curb_lines:
         if ln.length < 0.5:

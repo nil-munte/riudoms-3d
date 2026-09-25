@@ -34,7 +34,7 @@ Quan t'acostes a un emblemàtic, apareix un rètol amb una dada històrica verif
 ## Build estàtica
 
 ```bash
-npm run build     # genera dist/ (el web + public/data, ~23 MB)
+npm run build     # genera dist/ (el web + public/data, ~33 MB)
 npm run preview   # serveix dist/ a http://localhost:4173
 ```
 
@@ -69,14 +69,15 @@ A Linux o macOS és `.venv/bin/python`.
 | `download_opendata.py` | DUN 2025 (WFS, cultiu per parcel·la) i Equipaments de Catalunya |
 | `process_lidar.py` | LiDAR → DSM de 0,5 m, MDT d'1 m, NDVI (banda NIR) i detecció de capçades d'arbre |
 | `process.py` | Orquestrador: origen local a la plaça de l'Església, tessel·les de 250 m i els passos `p_*.py` |
-| `p_terrain.py` | Model de terreny (MDT LiDAR de 2 m fos amb el MET-5) i ortofoto per tessel·la |
-| `p_buildings.py` | Extrusió de les parts del Cadastre amb la teulada ajustada al LiDAR (plana / una aigua / dues aigües), color de teulada de l'ortofoto, color de façana de la foto del Cadastre, i classificació de cada paret (carrer / pati / mitgera) |
-| `p_streets.py` | Espai públic real = buit entre illes del Cadastre → calçada, voreres, places, vorades, passos de vianants, marques vials |
+| `p_terrain.py` | Model de terreny (MDT LiDAR d'1 m al nucli i de 2 m a la resta, fos amb el MET-5) i ortofoto per tessel·la |
+| `p_buildings.py` | Extrusió de les parts del Cadastre amb la teulada ajustada al LiDAR (plana / una aigua / dues aigües), alçada real de planta, ràfecs i cornises, volums de coberta (casetes, dipòsits, xemeneies) mesurats al LiDAR, color de teulada de l'ortofoto, color de façana de la foto del Cadastre, i classificació de cada paret (carrer / pati / mitgera) |
+| `p_streets.py` | Espai públic real = buit entre illes del Cadastre → calçada (amplada mesurada a l'ortofoto), voreres, places, illetes de rotonda, vorades, passos de vianants, marques vials |
 | `p_nature.py` | Arbres (posició del LiDAR + espècie de la DUN), llits de riera, basses, piscines, camps per al minimapa |
 | `p_props.py` | Bancs, fonts, papereres i parades (OSM) + fanals estimats + bicis |
-| `p_landmarks.py` | Rètols, teletransports i paràmetres dels models propis (església, ermita, fonts, porxos...) |
+| `p_landmarks.py` | Rètols, teletransports, paràmetres dels models propis (església, ermita, fonts, porxos...) i decoracions documentades de façana (Abadia, Casa de la Vila) |
+| `p_relief.py` | Desnivells del MDT LiDAR d'1 m: escales entre nivells de vianants, murs amb barana i *marges* de pedra seca als camps |
 
-Sortida a `public/data/`: `terrain.bin`, `streets.bin` i `nature.bin` fan servir un format binari petit (capçalera JSON + arrays tipats, vegeu `scripts/binfmt.py`). També hi ha `buildings.json`, `roads.json`, `fields.json`, `props.json`, `landmarks.json`, `meta.json` (fonts i estadístiques) i `ortho/t*.jpg`.
+Sortida a `public/data/`: `terrain.bin`, `streets.bin` i `nature.bin` fan servir un format binari petit (capçalera JSON + arrays tipats, vegeu `scripts/binfmt.py`). També hi ha `buildings.json`, `roads.json`, `fields.json`, `props.json`, `landmarks.json`, `relief.json`, `meta.json` (fonts i estadístiques) i `ortho/t*.jpg`.
 
 La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font de cada fet. No es torna a descarregar automàticament: el web de l'IPAC i RACO bloquegen l'accés automatitzat. Els scripts que s'hi van fer servir són a `data/raw/heritage/sources/`.
 
@@ -96,10 +97,10 @@ La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font 
 ### Rendiment
 
 - Malles fusionades per blocs de 500 m (edificis, carrers, aigua) i instancing (arbres, balcons, mobiliari).
-- Terreny en tessel·les de 250 m amb 4 nivells de detall, generats a demanda.
+- Terreny en tessel·les de 250 m amb 4 nivells de detall generats a demanda; a prop de la càmera, quadrants de 125 m a 1 m de resolució.
 - Arbres amb 3 LOD, recalculats per distància i descartats per tessel·la contra el frustum.
 - Resolució adaptativa: baixa el pixel ratio quan un fotograma passa de 22 ms.
-- Mesurat en una AMD Radeon 740M integrada: ~14 ms per fotograma a peu de carrer, amb ombres.
+- Mesurat en una AMD Radeon 740M integrada: ~13 ms per fotograma a peu de carrer, amb ombres (finestra petita).
 
 ## Dades i llicències
 

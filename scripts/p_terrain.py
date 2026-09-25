@@ -37,15 +37,31 @@ def build_terrain_model(ctx: Ctx) -> TerrainModel:
         edge = np.minimum.reduce([X - xs[0], xs[-1] - X, ys[0] - Y, Y - ys[-1]])
         wgt = np.clip(edge / BLEND, 0, 1).astype(np.float32)
         fine.data = (fine.data * wgt + C * (1 - wgt)).astype(np.float32)
-        ctx.source("terrain_lidar", name="ICGC LiDAR territorial (3a cobertura), punts de terreny (classe 2) → MDT 2 m",
+        ctx.source("terrain_lidar", name="ICGC LiDAR territorial (3a cobertura), punts de terreny (classe 2) → MDT 1 m (nucli) i 2 m",
                    url="https://datacloud.icgc.cat/datacloud/lidar-territorial/", license="CC BY 4.0 ICGC")
+        # 1 m DTM over the built-up area (+40 m), blended into the 2 m grid over its last 12 m
+        bx0, by0, bx1, by1 = ctx.blocks_utm.buffer(40).bounds
+        X0, Y1 = float(d["x0"]), float(d["y1"])
+        c0, c1 = max(int(bx0 - X0), 0), min(int(bx1 - X0), w)
+        r0, r1 = max(int(Y1 - by1), 0), min(int(Y1 - by0), h)
+        sub = dtm1[r0:r1, c0:c1].astype(np.float32)
+        g1 = Grid(sub, X0 + c0, Y1 - r0, 1.0)
+        sh, sw = sub.shape
+        xs1 = g1.x0 + (np.arange(sw) + 0.5)
+        ys1 = g1.y1 - (np.arange(sh) + 0.5)
+        X1g, Y1g = np.meshgrid(xs1, ys1)
+        F2 = fine.sample(X1g, Y1g).astype(np.float32)
+        edge = np.minimum.reduce([X1g - xs1[0], xs1[-1] - X1g, ys1[0] - Y1g, Y1g - ys1[-1]])
+        wg = np.clip(edge / 12.0, 0, 1).astype(np.float32)
+        g1.data = (sub * wg + F2 * (1 - wg)).astype(np.float32)
+        return TerrainModel(coarse, fine, g1)
     return TerrainModel(coarse, fine)
 
 
 def export_terrain(ctx: Ctx) -> None:
     tm = ctx.terrain
     arrays, meta = {}, {"grids": []}
-    for name, g in (("coarse", tm.coarse), ("fine", tm.fine)):
+    for name, g in (("coarse", tm.coarse), ("fine", tm.fine), ("fine1", tm.fine1)):
         if g is None:
             continue
         # crop the coarse grid to the world bbox (+1 cell)

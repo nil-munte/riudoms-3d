@@ -146,6 +146,35 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
   - `__step(dt, n)` avança fotogrames a mà.
   - `__game` exposa els objectes del joc.
 
+## Refinament · relleu, edificis, emblemàtics i carrers
+
+- **Relleu**: MDT LiDAR d'**1 m** sobre tot el nucli (2,3 × 2 km), fos amb el de 2 m i el MET-5.
+  A prop de la càmera el terreny es dibuixa en quadrants de 125 m a 1 m de resolució.
+- **Desnivells** (`p_relief.py`): detector de salts al MDT d'1 m (caiguda en 3 m menys la pendent regional).
+  - Surten 263 trams d'escala, 1.832 murs urbans (amb barana si fan més de 0,6 m) i 11.846 *marges* de pedra seca als camps.
+  - Les escales són caminables; els murs i marges bloquegen el pas.
+  - Exemple: la plaça Gran queda enlairada respecte de la plaça Petita, amb escales i mur, tal com diu la recerca.
+- **Edificis**:
+  - Alçada de planta real (alçada LiDAR / plantes del Cadastre; mediana 2,89 m), amb les finestres alineades a cada planta.
+  - Línies d'imposta a les façanes antigues.
+  - Ràfecs que continuen el pla de la teulada i ràfecs curts als testers.
+  - Cornises a les façanes de carrer de terrat.
+  - 1.888 volums de coberta mesurats al LiDAR: casetes d'escala i dipòsits als terrats, xemeneies a les teulades.
+  - El color de façana de les fotos del Cadastre s'extreu de la part assolellada i sense vegetació.
+- **Emblemàtics**:
+  - **Abadia**: porta adovellada amb graons, placa «ABADIA · Casa de la Parròquia» i carreus a la cantonada.
+  - **Casa de la Vila**: porta adovellada, balcó de balustres, esgrafiats i escut.
+  - **Font de la plaça** (1976-77): posició, forma oval (8 × 16 m) i orientació mesurades a l'ortofoto.
+  - **Plaça de l'Om**: fanal ornamental gran.
+  - **Plaça de la Palmera**: parterre elevat de gespa.
+  - **Dama Oferent**: figura femenina amb l'ofrena.
+  - **Església**: vitrall de la rosassa i cúpula de la capella del Santíssim.
+- **Carrers**:
+  - Amplada de la calçada **mesurada a l'ortofoto de 25 cm** en 109 dels 206 trams urbans, amb perfils de lluminositat cada 5 m i la mediana per tram.
+  - Illetes de gespa a les rotondes.
+  - Arbres urbans amb tronc net més alt.
+- **Descartat**: plaques solars detectades a l'ortofoto. No tenen un color prou distintiu (quadrícula de cel·les fosques i línies clares), i per no inventar-les no es posen.
+
 ## Què és dada real i què és estimat
 
 ### Dada real (i font)
@@ -180,13 +209,31 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
 | Porxos: 10 + 6 arcades | IPAC |
 | Logotip vermell del Casal Riudomenc | Foto de Commons |
 | Posició del sol | Calculada per a la latitud de Riudoms, la data i l'hora locals |
+| Relleu del nucli a 1 m | MDT derivat dels punts de terreny del LiDAR de l'ICGC |
+| Posició i alçades de 263 escales, 1.832 murs urbans i 11.846 marges | Salts detectats al MDT LiDAR d'1 m |
+| Alçada de planta de cada part amb LiDAR | Alçada del ràfec (LiDAR) / plantes (Cadastre) |
+| Ràfecs i cornises: posició i pendent | Arestes de les parts del Cadastre i pla de teulada ajustat al LiDAR |
+| 1.888 volums de coberta (casetes, dipòsits, xemeneies) | Residu del DSM LiDAR sobre la teulada ajustada |
+| Amplada de la calçada en 109 trams urbans | Perfils de lluminositat de l'ortofoto de 25 cm |
+| Font de la plaça de l'Església (1976-77): posició, mida 8 × 16 m i orientació | Ortofoto de l'ICGC de 25 cm |
+| Illetes de rotonda | OSM `junction=roundabout` |
+| Abadia: porta adovellada amb graons, placa i carreus | Foto de Commons (P1130377) + recerca |
+| Casa de la Vila: porta adovellada, balcó de balustres, esgrafiats i escuts | Foto de Commons + IPAC |
+| Fanal ornamental al centre de la plaça de l'Om | Recerca (jogili / riudoms.cat) |
+| Parterre de gespa elevat amb vora de pedra i palmera a la plaça de la Palmera | Foto de Commons |
 
 ### Estimat (cal revisar)
 
 | Element | Com s'ha estimat |
 |---|---|
 | **Fanals** (843 dels 844) | L'OSM en té 1. S'han posat fanals de braç a les façanes dels carrers estrets (com els de les fotos del Cadastre) i de peu a voreres i places, cada ~19 m |
-| Amplada de la calçada dins del carrer (i, per tant, de les voreres) | Per tipus de via: residencial 5,2 m, sentit únic 3,6 m, terciària 6,4 m... Només quan l'OSM no té `width` / `lanes` |
+| Amplada de la calçada dins del carrer (i, per tant, de les voreres) en 97 dels 206 trams urbans | Per tipus de via (residencial 5,2 m, sentit únic 3,6 m, terciària 6,4 m...). Només on la mesura a l'ortofoto no ha estat fiable (ombra, poc contrast) |
+| Escala o mur a cada desnivell urbà | Segons la superfície de banda i banda: vianants a les dues bandes → escala; calçada o salt de més de 2,5 m → mur |
+| Marges als camps | Poden incloure talussos de camins i carreteres; aspecte de pedra seca genèric |
+| Disseny dels esgrafiats i escuts de la Casa de la Vila | Motiu genèric: se sap que hi són, no el dibuix exacte |
+| Cúpula i llanterna de la capella del Santíssim | Posició (darrere el campanar) i mida estimades de les fotos del flanc |
+| Figura de la Dama Oferent | Forma genèrica de dona amb ofrena (alçada total del LiDAR) |
+| Fanal de la plaça de l'Om, parterre de la Palmera | Disseny i mida aproximats |
 | Espècie de 34.156 arbres fora de camps declarats | Per context: parcs → plàtan/fulla ampla; vora de riera → om; urbà → fulla ampla; alt i estret → xiprer; camp → garrofer o pi |
 | **60.584 arbres fora de l'àrea LiDAR** | Plantació en marc regular dins les parcel·les DUN del cultiu declarat (olivera 7×7 m, avellaner 5×4,5 m...). **Posicions inventades**, cultiu real |
 | Façanes sense foto (2.099 parts) | Paleta per estil i època (blancs trencats, ocres, pedra, maó) |
@@ -194,7 +241,7 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
 | Teulades fora de l'àrea LiDAR | A dues aigües (30%) si l'ortofoto dona color de teula; si no, plana |
 | Església | Mides del retaule, porta i rosassa estimades amb les fotos: rosassa de 4 m (l'IPAC i la Viquipèdia en diuen 9, però no quadra amb les fotos). Detall dels contraforts i gablets de les capelles |
 | Posició del mosaic de l'escut | Davant de la porta de l'església, segons les fotos. Disseny aproximat |
-| Font de la plaça (1976-77) | Posició davant de l'Abadia, deduïda d'una foto des del campanar. Model genèric (bassa + arbustos) |
+| Font de la plaça (1976-77) | Model genèric (bassa oval, sortidors i arbustos); la posició i la mida ja són de l'ortofoto |
 | Quines façanes tenen els porxos | Les més properes al punt dels porxos, fins a sumar 16 arcades |
 | Escultures de Gaudí i de la plegadora | Figures genèriques de bronze a la posició de l'OSM / Wikidata |
 | Esglaons de la plataforma de l'església | Nombre i mida segons el desnivell del LiDAR |
@@ -204,6 +251,6 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
 ### No localitzat
 
 - **Urbanització Molí d'en Marc** i **barriada Lluís Massó**: no apareixen a l'OSM ni a Nominatim. No s'han pogut situar.
-- **Escales cap al carrer de Sant Bonifaci**: no documentades, i l'OSM no té cap `highway=steps` a l'àrea. El desnivell sí que surt al relleu LiDAR.
+- **Escales cap al carrer de Sant Bonifaci**: no documentades, i l'OSM no té cap `highway=steps` a l'àrea. El desnivell sí que surt al relleu LiDAR, i les escales es generen automàticament allà on hi ha zona de vianants a les dues bandes. Cal revisar-ne la posició exacta.
 - **Escola Cavaller Arnau**: posició en conflicte entre l'OSM i Equipaments. Es fa servir la de l'OSM.
 - **Cisterna Vella**: és subterrània i no se'n coneixen les mides. Només té rètol.

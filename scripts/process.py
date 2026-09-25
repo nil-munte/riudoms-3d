@@ -23,12 +23,13 @@ def step(msg):
 
 def main(only: set[str] | None = None) -> None:
     """Run the whole pipeline, or only the named steps (terrain, ortho,
-    buildings, streets, nature, props, landmarks) with --only a,b,c."""
+    buildings, streets, nature, props, landmarks, relief) with --only a,b,c."""
     run = (lambda name: only is None or name in only)
     import p_buildings
     import p_facades
     import p_landmarks
     import p_nature
+    import p_relief
     import p_props
     import p_streets
     import p_terrain
@@ -94,9 +95,14 @@ def main(only: set[str] | None = None) -> None:
     if run("props"):
         step("props")
         p_props.process_props(ctx, sdata)
-    if run("landmarks"):
+    if run("landmarks") or run("relief"):
         step("landmarks export")
         p_landmarks.export(ctx, landmarks)
+    if run("relief"):
+        step("relief (level changes)")
+        if sdata is None:
+            sdata = p_streets.process_streets(ctx)
+        p_relief.process_relief(ctx, sdata)
 
     # keep statistics of the steps that were not re-run
     stats = {}

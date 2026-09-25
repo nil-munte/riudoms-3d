@@ -9,6 +9,14 @@ import { detailTex } from './textures';
 const SEGS = [64, 32, 16, 8];
 const DIST = [260, 700, 1500];
 
+interface Quad {
+  x0: number; y0: number; cx: number; cy: number;
+  mesh: THREE.Mesh;
+  level: number; // 0 = 1 m, 1 = 2 m, 2 = 4 m
+  geoms: (THREE.BufferGeometry | null)[];
+  lastUsed: number[];
+}
+
 interface Tile {
   i: number;
   x0: number;
@@ -19,7 +27,11 @@ interface Tile {
   geoms: (THREE.BufferGeometry | null)[];
   mesh: THREE.Mesh;
   lastUsed: number[];
+  quads: Quad[] | null; // detail quadrants used when the tile is at level 0
 }
+
+const QSEGS = [125, 62, 32];
+const QDIST = [80, 160];
 
 /** Adds a world-space detail texture that fades out with distance. */
 export function addDetail(mat: THREE.Material, strength = 0.55, scale = 0.45) {
@@ -60,7 +72,7 @@ export class Terrain {
         addDetail(mat);
         const tile: Tile = {
           i: t, x0: tx0, y0: ty0, cx: tx0 + S / 2, cy: ty0 + S / 2, level: -1,
-          geoms: [null, null, null, null], mesh: new THREE.Mesh(undefined, mat), lastUsed: [0, 0, 0, 0],
+          geoms: [null, null, null, null], mesh: new THREE.Mesh(undefined, mat), lastUsed: [0, 0, 0, 0], quads: null,
         };
         tile.mesh.position.set(tile.cx, 0, -tile.cy);
         tile.mesh.receiveShadow = true;
@@ -75,9 +87,13 @@ export class Terrain {
   }
 
   private buildGeom(tile: Tile, level: number): THREE.BufferGeometry {
-    const N = SEGS[level];
+    return this.buildGrid(tile, tile.x0, tile.y0, this.meta.tile, SEGS[level]);
+  }
+
+  /** Regular grid of N x N cells covering [gx0, gx0 + size] (positions relative to the tile centre). */
+  private buildGrid(tile: Tile, gx0: number, gy0: number, size: number, N: number): THREE.BufferGeometry {
     const S = this.meta.tile;
-    const step = S / N;
+    const step = size / N;
     const nv = (N + 1) * (N + 1);
     const nSkirt = 4 * N;
     const pos = new Float32Array((nv + nSkirt) * 3);
@@ -86,17 +102,17 @@ export class Terrain {
     const n = { x: 0, y: 1, z: 0 };
     let k = 0;
     for (let r = 0; r <= N; r++) {
-      const y = tile.y0 + r * step;
+      const y = gy0 + r * step;
       for (let c = 0; c <= N; c++) {
-        const x = tile.x0 + c * step;
+        const x = gx0 + c * step;
         const h = this.hf.heightAt(x, y);
         pos[k * 3] = x - tile.cx;
         pos[k * 3 + 1] = h;
         pos[k * 3 + 2] = -(y - tile.cy);
-        this.hf.normalAt(x, y, Math.max(step, 2), n);
+        this.hf.normalAt(x, y, Math.max(step, 1), n);
         nor[k * 3] = n.x; nor[k * 3 + 1] = n.y; nor[k * 3 + 2] = n.z;
-        uv[k * 2] = c / N;
-        uv[k * 2 + 1] = r / N;
+        uv[k * 2] = (x - tile.x0) / S;
+        uv[k * 2 + 1] = (y - tile.y0) / S;
         k++;
       }
     }
@@ -171,6 +187,24 @@ export class Terrain {
     return m;
   }
 
+  private makeQuads(t: Tile): Quad[] {
+    const S = this.meta.tile, h = S / 2;
+    const out: Quad[] = [];
+    for (const [qi, qj] of [[0, 0], [1, 0], [0, 1], [1, 1]]) {
+      const x0 = t.x0 + qi * h, y0 = t.y0 + qj * h;
+      const mesh = new THREE.Mesh(undefined, t.mesh.material);
+      mesh.position.copy(t.mesh.position);
+      mesh.receiveShadow = true;
+      mesh.matrixAutoUpdate = false;
+      mesh.updateMatrix();
+      mesh.name = 'terrain';
+      mesh.visible = false;
+      this.group.add(mesh);
+      out.push({ x0, y0, cx: x0 + h / 2, cy: y0 + h / 2, mesh, level: -1, geoms: [null, null, null], lastUsed: [0, 0, 0] });
+    }
+    return out;
+  }
+
   /** Choose levels of detail around the camera (local coords). */
   update(camX: number, camY: number, force = false) {
     this.frame++;
@@ -193,6 +227,27 @@ export class Terrain {
       if (t.level !== lvl) {
         t.mesh.geometry = t.geoms[lvl]!;
         t.level = lvl;
+      }
+      // near tiles are drawn as four 125 m quadrants with their own resolution (1 m / 2 m / 4 m)
+      const useQuads = lvl === 0;
+      t.mesh.visible = !useQuads;
+      if (useQuads && !t.quads) t.quads = this.makeQuads(t);
+      if (t.quads) for (const q of t.quads) {
+        q.mesh.visible = useQuads;
+        if (!useQuads) continue;
+        const qd = Math.hypot(Math.max(Math.abs(camX - q.cx) - S / 4, 0), Math.max(Math.abs(camY - q.cy) - S / 4, 0));
+        let ql = qd < QDIST[0] ? 0 : qd < QDIST[1] ? 1 : 2;
+        if (ql === 0 && this.hf.resolutionAt(q.cx, q.cy) > 1) ql = 1;
+        while (!q.geoms[ql] && built >= 3 && !force && ql < 2) ql++;
+        if (!q.geoms[ql]) {
+          q.geoms[ql] = this.buildGrid(t, q.x0, q.y0, S / 2, QSEGS[ql]);
+          built++;
+        }
+        q.lastUsed[ql] = now;
+        if (q.level !== ql) { q.mesh.geometry = q.geoms[ql]!; q.level = ql; }
+        for (let l = 0; l < 2; l++) {
+          if (l !== ql && q.geoms[l] && now - q.lastUsed[l] > 15000) { q.geoms[l]!.dispose(); q.geoms[l] = null; }
+        }
       }
       // free fine geometry not used for 20 s
       for (let l = 0; l < 2; l++) {

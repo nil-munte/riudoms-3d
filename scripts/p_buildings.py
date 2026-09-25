@@ -181,6 +181,43 @@ def fit_roof(lid: Lidar, poly: Polygon, ground: float):
     return res
 
 
+def roof_structures(lid: Lidar, poly: Polygon, f, cx: float, cy: float, flat: bool):
+    """Volumes that stick out of the fitted roof (stair housings and water tanks on
+    terraces, chimneys on pitched roofs): LiDAR DSM minus roof model, grouped into
+    connected blobs. Returns [(polygon, top_abs)]."""
+    from scipy import ndimage
+
+    er = poly.buffer(-0.6)
+    if er.is_empty or er.area < 6:
+        return []
+    c = lid.cells(er)
+    if c is None:
+        return []
+    sub, mask, X, Y, nd = c
+    if min(sub.shape) < 3:
+        return []
+    model = np.vectorize(f)(X, Y) if not flat else np.full(sub.shape, f(0, 0))
+    res = np.where(mask & np.isfinite(sub) & (nd < 0.3), sub - model, 0.0)
+    thr = 1.4 if flat else 1.0
+    m = res > thr
+    lab, n = ndimage.label(m, structure=np.ones((3, 3)))
+    out = []
+    for k in range(1, min(n, 12) + 1):
+        cells = lab == k
+        cnt = int(cells.sum())
+        if cnt < (6 if flat else 2) or cnt > 0.6 * mask.sum():
+            continue
+        xs, ys = X[cells], Y[cells]
+        from shapely.geometry import MultiPoint
+
+        hull = MultiPoint(list(zip(xs, ys))).buffer(0.26, cap_style="square").minimum_rotated_rectangle
+        if hull.area < (1.2 if flat else 0.25):
+            continue
+        top = float(np.percentile(sub[cells], 85))
+        out.append((hull, top))
+    return out
+
+
 def roof_func(roof, cx, cy):
     t = roof["type"]
     if t == "flat":
@@ -305,10 +342,14 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
     osm_tree = STRtree([f.geom for f in osm_b]) if osm_b else None
 
     out_parts = []
+    ctx.bfacades = {}  # building ref -> street facade edges, for the landmark decorations
     bl_index: dict[str, int] = {}
     bl_list = []
     counts = {"lidar": 0, "cadastre": 0, "estimated": 0, "flat": 0, "gable": 0, "shed": 0,
               "facade_photo": 0, "facade_palette": 0}
+    import json as _json
+
+    _json.dump({}, open(WORK / "bfacades.json", "w"))
     level_cmp = []
     for pi, (p, g) in enumerate(zip(keep, geoms)):
         b = ctx.buildings[p.building]
@@ -373,6 +414,11 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
         counts[roof["type"]] += 1
         f = roof_func(roof, cx, cy)
         min_eave = ground + 2.3
+        # real storey height: eave height shared between the Cadastre floors (ground floor 15 % taller)
+        ext_xy = list(g.exterior.coords)
+        eave_rel = (roof["z"] if roof["type"] == "flat" else min(f(x, y) for x, y in ext_xy)) - ground
+        fh = (eave_rel - 0.3) / (floors + 0.15) if hsrc == "lidar" else FLOOR_H
+        fh = float(min(max(fh, 2.6), 4.3))
 
         # ---- rings & edges ---------------------------------------------
         rings_out, walls, eflags = [], [], []
@@ -409,11 +455,62 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
                 eflags.append(fl)
                 za = max(f(*a), min_eave)
                 zb = max(f(*bb), min_eave)
+                if fl == E_STREET and ri == 0:
+                    ctx.bfacades.setdefault(b.id, []).append({
+                        "a": [round(a[0] - ctx.ox, 2), round(a[1] - ctx.oy, 2)],
+                        "b": [round(bb[0] - ctx.ox, 2), round(bb[1] - ctx.oy, 2)],
+                        "n": [round(nx_, 4), round(ny_, 4)], "len": round(L, 2),
+                        "ground": round(float(ctx.terrain.height(mx + nx_ * 1.0, my + ny_ * 1.0)), 2),
+                        "top": round(min(za, zb), 2), "fh": 0.0, "floors": floors})
                 if roof["type"] == "flat" and fl != E_SHARED:
                     par = PARAPET if st not in (S_INDUSTRIAL, S_RURAL) else 0.4
                     za += par
                     zb += par
                 walls += [round((za - base) * 100), round((zb - base) * 100)]
+
+        for fe in ctx.bfacades.get(b.id, []):
+            if fe["fh"] == 0.0:
+                fe["fh"] = round(fh, 2)
+        # ---- eaves (pitched roofs) and cornices (flat roofs) ------------------
+        eaves, cornices = [], []
+        ring0 = insert_ridge_vertices(list(g.exterior.coords)[:-1], roof, cx, cy)
+        n0 = len(ring0)
+        for i in range(n0):
+            a, bb = ring0[i], ring0[(i + 1) % n0]
+            if eflags[i] == E_SHARED:
+                continue
+            dx, dy = bb[0] - a[0], bb[1] - a[1]
+            L = math.hypot(dx, dy)
+            if L < 0.8:
+                continue
+            nx_, ny_ = dy / L, -dx / L
+            if roof["type"] != "flat":
+                mx, my = (a[0] + bb[0]) / 2, (a[1] + bb[1]) / 2
+                eave = f(mx + nx_ * 0.3, my + ny_ * 0.3) < f(mx, my) - 0.03
+                o = 0.42 if eave else 0.18  # ràfec on eave edges, short verge on gable ends
+                pa = (a[0] + nx_ * o, a[1] + ny_ * o)
+                pb = (bb[0] + nx_ * o, bb[1] + ny_ * o)
+                za, zb = max(f(*a), min_eave), max(f(*bb), min_eave)
+                zpa = f(*pa) if eave else za
+                zpb = f(*pb) if eave else zb
+                q = [a[0], a[1], za, bb[0], bb[1], zb, pb[0], pb[1], zpb, pa[0], pa[1], zpa]
+                eaves.append([round((q[k] - (ctx.ox if k % 3 == 0 else ctx.oy if k % 3 == 1 else base)) * 100)
+                              for k in range(12)])
+            elif eflags[i] == E_STREET and st not in (S_INDUSTRIAL, S_RURAL):
+                z = roof["z"]
+                cornices.append([round((a[0] - ctx.ox) * 100), round((a[1] - ctx.oy) * 100),
+                                 round((bb[0] - ctx.ox) * 100), round((bb[1] - ctx.oy) * 100),
+                                 round((z - base) * 100)])
+        # rooftop structures measured by LiDAR
+        struct = []
+        if hsrc == "lidar" and lid is not None:
+            for hull, top in roof_structures(lid, g, f, cx, cy, roof["type"] == "flat"):
+                bottom = min(f(hull.centroid.x, hull.centroid.y), top - 0.5)
+                cs = list(hull.exterior.coords)[:4]
+                struct.append({"r": [round(v * 100) for x, y in cs for v in (x - ctx.ox, y - ctx.oy)],
+                               "z0": round((bottom - base) * 100), "z1": round((top - base) * 100),
+                               "k": 0 if roof["type"] == "flat" else 1})
+            counts["roof_structures"] = counts.get("roof_structures", 0) + len(struct)
 
         # ---- roof surfaces -----------------------------------------------
         roof_polys = []
@@ -476,12 +573,17 @@ def process_buildings(ctx: Ctx, blocks_utm, osm_feats, facade_cols: dict, landma
             "hs": hsrc[0],
             "lm": lm,
             "cm": custom,
+            "fh": round(fh, 2),
+            "ev": eaves,
+            "cn": cornices,
+            "rs": struct,
         })
 
     if level_cmp:
         arr = np.array(level_cmp)
         per_floor = arr[:, 1] / np.maximum(arr[:, 0], 1)
         ctx.stats["lidar_height_per_floor_median_m"] = round(float(np.median(per_floor)), 2)
+    _json.dump(ctx.bfacades, open(WORK / "bfacades.json", "w"))
     ctx.stats["buildings"] = counts
     ctx.stats["building_parts_exported"] = len(out_parts)
     ctx.stats["buildings_exported"] = len(bl_list)

@@ -35,9 +35,9 @@ const SPECS: Spec[] = [
     { x: 0, y: 0.7, z: 0, sx: 0.9, sy: 0.35, sz: 0.9, c: 0x6f9140 }, { x: -0.25, y: 0.86, z: 0.2, sx: 0.5, sy: 0.2, sz: 0.5, c: 0x7a9d48 }] },
   /* pine */ { trunk: { h: 0.78, r: 0.05, lean: 0.1 }, blobs: [
     { x: 0.1, y: 0.86, z: 0, sx: 1.0, sy: 0.16, sz: 0.95, c: 0x3e5a22 }, { x: -0.3, y: 0.8, z: 0.2, sx: 0.55, sy: 0.12, sz: 0.55, c: 0x46642a }] },
-  /* broadleaf */ { trunk: { h: 0.42, r: 0.06 }, blobs: [
-    { x: 0, y: 0.66, z: 0, sx: 1.0, sy: 0.36, sz: 1.0, c: 0x4f6e2a }, { x: 0.25, y: 0.82, z: -0.2, sx: 0.65, sy: 0.25, sz: 0.65, c: 0x5c7d33 },
-    { x: -0.3, y: 0.76, z: 0.25, sx: 0.6, sy: 0.25, sz: 0.6, c: 0x486526 }] },
+  /* broadleaf (urban plane trees / elms: pruned, tall clear trunk) */ { trunk: { h: 0.55, r: 0.05 }, blobs: [
+    { x: 0, y: 0.73, z: 0, sx: 1.0, sy: 0.29, sz: 1.0, c: 0x4f6e2a }, { x: 0.25, y: 0.86, z: -0.2, sx: 0.65, sy: 0.2, sz: 0.65, c: 0x5c7d33 },
+    { x: -0.3, y: 0.8, z: 0.25, sx: 0.6, sy: 0.2, sz: 0.6, c: 0x486526 }] },
   /* palm */ { trunk: { h: 0.86, r: 0.035 }, blobs: [], palm: true },
   /* cypress */ { trunk: { h: 0.08, r: 0.1 }, blobs: [], cone: true },
   /* elm */ { trunk: { h: 0.45, r: 0.06 }, blobs: [

@@ -24,7 +24,21 @@ def _kmeans(px: np.ndarray, k: int = 6, iters: int = 10, seed: int = 1):
             if m.any():
                 cent[i] = px[m].mean(0)
     counts = np.bincount(lab, minlength=k)
-    return cent, counts
+    return cent, counts, lab
+
+
+def _sunlit(c: np.ndarray, pix: np.ndarray) -> np.ndarray:
+    """Colour of the sunlit part of a cluster, with the bluish cast of shade removed."""
+    lum = pix @ np.array([0.299, 0.587, 0.114])
+    bright = pix[lum >= np.median(lum)] if len(pix) > 10 else pix
+    col = bright.mean(0) if len(bright) else c
+    r, g, b = col
+    if b > r and (max(col) - min(col)) / max(max(col), 1) < 0.15:  # grey-blue from shade: warm it up
+        col = np.array([r * 1.04, g, b * 0.94])
+    lum = 0.299 * col[0] + 0.587 * col[1] + 0.114 * col[2]
+    if lum < 150:  # photos are often taken in the shade: bring plaster to a daylight level
+        col = col * (150 / max(lum, 1))
+    return np.clip(col, 0, 255)
 
 
 def analyse(path) -> dict | None:
@@ -38,16 +52,18 @@ def analyse(path) -> dict | None:
     mx, mn = reg.max(1), reg.min(1)
     sat = (mx - mn) / np.maximum(mx, 1)
     sky = ((b > r + 12) & (lum > 140)) | ((lum > 215) & (sat < 0.08))
-    keep = ~sky & (lum > 45)
+    green = (g > r * 1.04) & (g > b * 1.04) & (sat > 0.15)  # trees and plants in front of the facade
+    loud = sat > 0.62  # signs, cars, awnings
+    keep = ~sky & ~green & ~loud & (lum > 45)
     px = reg[keep]
     if len(px) < 200:
         return None
     if len(px) > 4000:
         px = px[np.random.default_rng(0).choice(len(px), 4000, replace=False)]
-    cent, counts = _kmeans(px)
+    cent, counts, lab = _kmeans(px)
     order = np.argsort(-counts)
     share = counts / counts.sum()
-    wall = cent[order[0]]
+    wall = _sunlit(cent[order[0]], px[lab == order[0]])
     hsv = [colorsys.rgb_to_hsv(*(c / 255)) for c in cent]
     wh, ws, wv = colorsys.rgb_to_hsv(*(wall / 255))
     brick = (0.03 <= wh <= 0.10) and (0.30 <= ws <= 0.70) and (0.35 <= wv <= 0.80)
@@ -67,7 +83,7 @@ def analyse(path) -> dict | None:
 
 
 def facade_colors() -> dict:
-    cache = WORK / "facade_colors.json"
+    cache = WORK / "facade_colors_v3.json"
     d = RAW / "cadastre" / "facades"
     photos = sorted(d.glob("*.jpg")) if d.exists() else []
     old = json.load(open(cache)) if cache.exists() else {}

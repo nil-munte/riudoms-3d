@@ -37,8 +37,11 @@ vec3 facadeColor(out float glow) {
   float u = vFac.x, v = vFac.y;
   float L = vInfo.x, flag = vInfo.y, floors = vInfo.z;
   float st = mod(vInfo.w, 10.0);
-  float retail = step(9.5, vInfo.w);
-  float top = vExtra.x, seed = vExtra.y, bal = vExtra.z, brick = vExtra.w;
+  float retail = mod(floor(vInfo.w / 10.0), 2.0);
+  float brick = step(19.5, vInfo.w);
+  float top = vExtra.x, seed = vExtra.y, bal = vExtra.z;
+  float fH = vExtra.w;          // real storey height of this building part
+  float gH = fH * 1.15;         // ground floor a bit taller
   vec3 wall = vFCol;
   float n1 = fh21(floor(vec2(u, v) * 6.0) + seed);
   float n2 = fh21(floor(vec2(u, v) * 1.3) + seed * 1.7);
@@ -67,10 +70,10 @@ vec3 facadeColor(out float glow) {
   // stone plinth (socol) on old / public street facades
   if (street && (st < 0.5 || st > 4.5) && v < 0.85) wall = mix(wall, vec3(0.62, 0.58, 0.52), 0.7) * (0.9 + 0.1 * n1);
 
-  float gH = ${GROUND_FLOOR_H.toFixed(1)}, fH = ${FLOOR_H.toFixed(1)};
   float fl = v < gH ? 0.0 : 1.0 + floor((v - gH) / fH);
   float lv = v < gH ? v : mod(v - gH, fH);
   float flBase = v - lv;
+  if (street && (st < 0.5 || st > 4.5) && fl > 0.5 && lv < 0.14) return mix(wall, vec3(0.9, 0.87, 0.8), 0.35) * 0.97;
   if (fl > floors - 0.5) return wall;
 
   float sp = st < 0.5 ? ${'3.1'} : st < 1.5 ? 3.4 : st < 2.5 ? 3.6 : st < 3.5 ? 6.0 : st < 4.5 ? 5.0 : 3.8;
@@ -92,7 +95,7 @@ vec3 facadeColor(out float glow) {
         }
         return wall;
       }
-      if (retail > 0.5 || (st > 4.5)) {
+      if (retail > 0.5) {
         float w2 = cw * 0.4;
         float inS = box(vec2(cu, lv), vec2(-w2, 0.25), vec2(w2, 2.9));
         if (inS > 0.5) {
@@ -136,7 +139,7 @@ vec3 facadeColor(out float glow) {
   bool attic = st < 0.5 && floors >= 3.0 && fl > floors - 1.5;
   float ww = st < 0.5 ? 0.5 : st < 1.5 ? 0.65 : st < 2.5 ? 0.75 : st < 3.5 ? 1.2 : st < 4.5 ? 0.35 : 0.7;
   float wb = balc ? 0.0 : (st > 2.5 && st < 3.5 ? 1.6 : 0.95);
-  float wt = balc ? 2.25 : (st > 2.5 && st < 3.5 ? 2.3 : 2.2);
+  float wt = balc ? min(2.25, fH - 0.45) + max(0.0, fH - 3.0) * 0.5 : (st > 2.5 && st < 3.5 ? 2.3 : min(2.2, fH - 0.5) + max(0.0, fH - 3.0) * 0.5);
   if (attic && !balc) { ww = 0.38; wb = 1.2; wt = 2.0; }
   if (st > 3.5 && st < 4.5) { wb = 1.3; wt = 2.1; }
   if (flBase + wt > top - 0.15) wt = top - 0.15 - flBase;

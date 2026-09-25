@@ -10,6 +10,8 @@ import {
   ashlarTex, casalLogoTex, clockTex, mosaicTex, pavingTex, roofTileTex, rubbleTex, tilesTex,
 } from './textures';
 import { Character } from '../player/character';
+import { buildDecor, damaStatue, lanternMat, omLamp, palmBed, type Decor } from './decor';
+import { lampUniform } from './sky';
 
 export interface Sign { id: string; name: string; x: number; y: number; r: number; text: string; src: string }
 export interface LandmarksFile {
@@ -189,6 +191,17 @@ export class Landmarks {
     if (m.porxos) this.porxos(m.porxos.edges);
     if (m.casalLogo) this.casalLogo(m.casalLogo);
     if (m.mosaic && m.church) this.mosaic(m.church);
+    for (const d of (m.decor ?? []) as Decor[]) this.group.add(buildDecor(d));
+    if (m.omLamp) {
+      const [x, y] = m.omLamp.pos;
+      this.group.add(omLamp(x, y, hf.heightAt(x, y)));
+      this.col.addCircle(x, y, 0.8);
+    }
+    if (m.palmBed) {
+      const [x, y] = m.palmBed.pos;
+      this.group.add(palmBed(x, y, hf.heightAt(x, y) - 0.05, m.palmBed.r));
+      this.col.addCircle(x, y, m.palmBed.r);
+    }
     this.mergeStatic();
   }
 
@@ -316,7 +329,7 @@ export class Landmarks {
     const rose = new THREE.Mesh(new THREE.TorusGeometry(f.rose_d / 2, 0.22, 8, 36), ash);
     rose.position.set(mx, f.rose_h, 0.08);
     FG.add(rose);
-    const glass = new THREE.Mesh(new THREE.CircleGeometry(f.rose_d / 2 - 0.1, 36), new THREE.MeshLambertMaterial({ color: 0x2c3240, emissive: 0x000000 }));
+    const glass = new THREE.Mesh(new THREE.CircleGeometry(f.rose_d / 2 - 0.1, 36), new THREE.MeshLambertMaterial({ map: roseTex() }));
     glass.position.set(mx, f.rose_h, 0.02);
     FG.add(glass);
     for (let i = 0; i < 8; i++) {
@@ -434,6 +447,26 @@ export class Landmarks {
     TG.add(vane);
     // the terrace floor
     TG.add(box(sd - 0.2, 0.2, sd - 0.2, ash, 0, ty0 - 0.2, 0));
+    // Santíssim chapel (1878) behind the tower: small tiled dome with a lantern, seen on the flank
+    // photos. Position and size ESTIMATED.
+    const SG = frameGroup(tw.x + ax * 10, tw.y + ay * 10, zp, -ax, -ay);
+    this.group.add(SG);
+    const chTop = (c.chapels[0]?.top ?? 10.3) + 0.4;
+    const sdrum = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.3, 1.6, 8), rub);
+    sdrum.position.y = chTop + 0.8;
+    sdrum.castShadow = true;
+    SG.add(sdrum);
+    const cup = new THREE.Mesh(new THREE.SphereGeometry(2.3, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), this.roof);
+    cup.scale.y = 0.8;
+    cup.position.y = chTop + 1.6;
+    cup.castShadow = true;
+    SG.add(cup);
+    const lant = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.5, 1.2, 8), ash);
+    lant.position.y = chTop + 1.6 + 1.84 + 0.6;
+    SG.add(lant);
+    const spike = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1.1, 8), this.roof);
+    spike.position.y = chTop + 1.6 + 1.84 + 1.2 + 0.55;
+    SG.add(spike);
   }
 
   private mosaic(c: any) {
@@ -502,7 +535,10 @@ export class Landmarks {
     const G = new THREE.Group();
     G.position.set(x, z, -y);
     this.group.add(G);
-    const tiles = new THREE.MeshLambertMaterial({ map: tilesTex() });
+    const tt = tilesTex().clone();
+    tt.repeat.set(10, 1.2);
+    tt.needsUpdate = true;
+    const tiles = new THREE.MeshLambertMaterial({ map: tt });
     const basin = new THREE.Mesh(new THREE.CylinderGeometry(3.5, 3.6, 0.65, 6, 1, true), tiles);
     basin.position.y = 0.32;
     basin.castShadow = basin.receiveShadow = true;
@@ -519,48 +555,63 @@ export class Landmarks {
     col.position.y = 1.2 + 1.1;
     col.castShadow = true;
     G.add(col);
-    const statue = new Character();
-    statue.updateWalk(0, 0);
-    statue.root.traverse((o) => { if ((o as THREE.Mesh).isMesh) (o as THREE.Mesh).material = this.iron; });
-    statue.root.scale.setScalar(0.95);
-    statue.root.position.y = 3.45;
-    G.add(statue.root);
+    const statue = damaStatue(this.iron);
+    statue.position.y = 3.4 - 0.3; // statue top at ~5.1 m (LiDAR)
+    G.add(statue);
     // iron railing around
     const rail = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 3, 6), this.iron);
-    rail.rotation.x = -Math.PI / 2; rail.rotation.z = Math.PI / 6; rail.position.y = 0.85;
+    rail.rotation.x = -Math.PI / 2; rail.rotation.z = Math.PI / 6 + Math.PI / 6; rail.position.y = 0.85;
     G.add(rail);
-    for (let i = 0; i < 24; i++) {
-      const a = (i / 24) * Math.PI * 2;
-      G.add(box(0.04, 0.85, 0.04, this.iron, Math.cos(a) * 4.2, 0, Math.sin(a) * 4.2));
+    // posts along the hexagon of the railing
+    const R = 4.3;
+    for (let side = 0; side < 6; side++) {
+      const a0 = (side / 6) * Math.PI * 2 + Math.PI / 6, a1 = ((side + 1) / 6) * Math.PI * 2 + Math.PI / 6;
+      for (let k = 0; k < 4; k++) {
+        const t = k / 4;
+        const px = Math.cos(a0) * R * (1 - t) + Math.cos(a1) * R * t, pz = Math.sin(a0) * R * (1 - t) + Math.sin(a1) * R * t;
+        G.add(box(0.04, 0.85, 0.04, this.iron, px, 0, -pz));
+      }
     }
     this.col.addCircle(x, y, 4.3);
   }
 
   private plazaFountain(d: any) {
+    // oval basin surrounded by shrubs (size and orientation from the orthophoto)
     const [x, y] = d.pos;
+    const rx = d.rx ?? 3.9, ry = d.ry ?? 7.9;
     const z = hfAt(this.hf, x, y);
     const G = new THREE.Group();
     G.position.set(x, z, -y);
+    G.rotation.y = -((d.bearing ?? 0) * Math.PI) / 180;
     this.group.add(G);
     const stone = new THREE.MeshLambertMaterial({ color: 0xd8cdb8 });
-    const basin = new THREE.Mesh(new THREE.CylinderGeometry(2.6, 2.7, 0.55, 28, 1, true), stone);
+    const basin = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.55, 40, 1, true), stone);
+    basin.scale.set(rx - 1.2, 1, ry - 1.2);
     basin.position.y = 0.27;
     G.add(basin);
-    const w = new THREE.Mesh(new THREE.CircleGeometry(2.55, 28), this.water);
-    w.rotation.x = -Math.PI / 2; w.position.y = 0.42;
+    const w = new THREE.Mesh(new THREE.CircleGeometry(1, 40), this.water);
+    w.rotation.x = -Math.PI / 2; w.scale.set(rx - 1.25, ry - 1.25, 1); w.position.y = 0.42;
     G.add(w);
-    const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.3, 0.9, 10), stone);
-    jet.position.y = 0.45;
-    G.add(jet);
-    const spray = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.4, 12, 1, true), new THREE.MeshLambertMaterial({ color: 0xd6ecf5, transparent: true, opacity: 0.35 }));
-    spray.position.y = 1.4; spray.rotation.x = Math.PI;
-    G.add(spray);
-    // surrounded by shrubs (ring of low hedge)
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(3.7, 0.55, 5, 24), this.hedge);
-    ring.rotation.x = -Math.PI / 2; ring.position.y = 0.4; ring.scale.z = 1.3;
+    for (const dz of [-(ry - 3.2), 0, ry - 3.2]) {
+      const jet = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.28, 0.8, 10), stone);
+      jet.position.set(0, 0.4, dz);
+      G.add(jet);
+      const spray = new THREE.Mesh(new THREE.ConeGeometry(0.55, 1.2, 12, 1, true), new THREE.MeshLambertMaterial({ color: 0xd6ecf5, transparent: true, opacity: 0.35 }));
+      spray.position.set(0, 1.3, dz); spray.rotation.x = Math.PI;
+      G.add(spray);
+    }
+    // shrubs all around the basin
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(1, 0.13, 5, 40), this.hedge);
+    ring.rotation.x = -Math.PI / 2; ring.position.y = 0.45;
+    ring.scale.set(rx - 0.5, ry - 0.5, 4.5);
     ring.castShadow = true;
     G.add(ring);
-    this.col.addCircle(x, y, 4.2);
+    // collision: circles along the long axis (bearing clockwise from north)
+    const br = ((d.bearing ?? 0) * Math.PI) / 180;
+    for (let k = -2; k <= 2; k++) {
+      const lz = (k / 2) * (ry - rx);
+      this.col.addCircle(x + Math.sin(br) * lz, y + Math.cos(br) * lz, rx);
+    }
   }
 
   private monumentGaudi(d: any) {
@@ -643,6 +694,10 @@ export class Landmarks {
     this.group.add(G);
   }
 
+  update() {
+    lanternMat.emissiveIntensity = lampUniform.value ? 2.2 : 0;
+  }
+
   /** Signs in reach of the player (nearest first). */
   signAt(x: number, y: number): Sign | null {
     let best: Sign | null = null, bd = Infinity;
@@ -655,3 +710,23 @@ export class Landmarks {
 }
 
 function hfAt(hf: HeightField, x: number, y: number) { return hf.heightAt(x, y); }
+
+/** Stained glass of the rose window (colours ESTIMATED; the glass shows Saint James / Clavijo). */
+function roseTex() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const g = c.getContext('2d')!;
+  g.fillStyle = '#1c2230'; g.fillRect(0, 0, 256, 256);
+  const cols = ['#2f5d9a', '#9a2f3a', '#c9a23a', '#3d7a4f', '#6a3f8a'];
+  for (let i = 0; i < 16; i++) {
+    const a0 = (i / 16) * Math.PI * 2, a1 = ((i + 1) / 16) * Math.PI * 2;
+    g.fillStyle = cols[i % cols.length];
+    g.beginPath(); g.moveTo(128, 128); g.arc(128, 128, 118, a0 + 0.03, a1 - 0.03); g.closePath(); g.fill();
+  }
+  g.fillStyle = '#c9a23a'; g.beginPath(); g.arc(128, 128, 30, 0, Math.PI * 2); g.fill();
+  g.strokeStyle = '#111'; g.lineWidth = 3;
+  for (let r = 40; r < 128; r += 26) { g.beginPath(); g.arc(128, 128, r, 0, Math.PI * 2); g.stroke(); }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}

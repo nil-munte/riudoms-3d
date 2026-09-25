@@ -18,6 +18,7 @@ import { Bike } from './bike/bike';
 import { ThirdPersonCamera } from './camera/thirdPerson';
 import { Minimap, type FieldsFile, type RoadsFile } from './minimap/minimap';
 import { Hud } from './ui/hud';
+import { Relief, type ReliefFile } from './world/relief';
 
 const DATA = './data/';
 const $ = (id: string) => document.getElementById(id)!;
@@ -57,7 +58,7 @@ async function main() {
   progress(0.02, 'Carregant metadades…');
   const meta = await fetchJSON<Meta>(`${DATA}meta.json`);
   progress(0.04, 'Carregant el relleu (ICGC)…');
-  const [terrainBin, bdata, sbin, nbin, props, lmData, roads, fields] = await Promise.all([
+  const [terrainBin, bdata, sbin, nbin, props, lmData, roads, fields, relief] = await Promise.all([
     fetchBin(`${DATA}terrain.bin`),
     fetchJSON<BuildingsFile>(`${DATA}buildings.json`),
     fetchBin(`${DATA}streets.bin`),
@@ -66,6 +67,7 @@ async function main() {
     fetchJSON<LandmarksFile>(`${DATA}landmarks.json`),
     fetchJSON<RoadsFile>(`${DATA}roads.json`),
     fetchJSON<FieldsFile>(`${DATA}fields.json`),
+    fetchJSON<ReliefFile>(`${DATA}relief.json`),
   ]);
   const hf = new HeightField(terrainBin);
   progress(0.12, 'Carregant l’ortofoto (ICGC)…');
@@ -85,7 +87,14 @@ async function main() {
   progress(0.7, 'Pavimentant els carrers…'); await tick();
   const streets = new Streets(sbin, meta, hf);
   scene.add(streets.group);
-  const surface = (x: number, y: number) => hf.heightAt(x, y) + streets.walkOffset(x, y);
+  // level changes from the LiDAR DTM: walls, marges, stairs (stairs are walkable platforms)
+  const reliefObj = new Relief(relief, meta, hf, collision);
+  scene.add(reliefObj.group);
+  const surface = (x: number, y: number) => {
+    const g = hf.heightAt(x, y) + streets.walkOffset(x, y);
+    const p = collision.platformHeight(x, y);
+    return p !== null && p > g - 0.3 ? Math.max(g, p) : g;
+  };
   progress(0.76, 'Plantant els arbres (LiDAR + DUN)…'); await tick();
   const veg = new Vegetation(nbin, meta, hf, collision);
   scene.add(veg.group);
@@ -164,7 +173,7 @@ async function main() {
 
   const timer = new THREE.Timer();
   let placeT = 0;
-  (window as any).__game = { player, cam, scene, renderer, sky, buildings, terrain, hf, collision, streets, veg, landmarks, propsObj, minimap, hud, bikes };
+  (window as any).__game = { player, cam, scene, renderer, sky, buildings, terrain, hf, collision, streets, veg, landmarks, propsObj, minimap, hud, bikes, reliefObj };
   // adaptive resolution: keep the frame time under ~22 ms on modest GPUs
   const maxRatio = Math.min(window.devicePixelRatio, mobile ? 1.25 : 1.75);
   let ratio = maxRatio, acc = 0, frames = 0;
@@ -192,6 +201,8 @@ async function main() {
     streets.update(c.x, -c.z);
     veg.update(cam.camera);
     propsObj.update(player.x, player.y);
+    reliefObj.update(player.x, player.y);
+    landmarks.update();
     for (const b of bikes) b.root.visible = b.ridden || Math.hypot(b.x - player.x, b.y - player.y) < 160;
     minimap.draw(player.x, player.y, cam.yaw, player.heading);
     placeT -= dt;
