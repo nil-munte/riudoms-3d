@@ -56,7 +56,7 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
 
 | Element | Lat, lon | Fets verificats clau |
 |---|---|---|
-| Església de Sant Jaume | 41.139104, 1.051104 | Primera pedra el 20/12/1588; consagrada el 25/7/1617; campanar 1689–1877; BCIN des del 17/9/2019. Nau de 41,97 × 13,27 m i 20,8 m d'alçada, 6 capelles per banda; rosassa de 9 m. Façana orientada al SSE (≈153°). Campanar quadrat a l'angle SW de la façana, amb terrat i balustrada a ≈33 m (LiDAR). |
+| Església de Sant Jaume | 41.139104, 1.051104 | Primera pedra el 20/12/1588; consagrada el 25/7/1617; campanar 1689–1877; BCIN des del 17/9/2019. Nau de 41,97 × 13,27 m i 20,8 m d'alçada, 6 capelles per banda; rosassa de 9 m segons l'IPAC i la Viquipèdia (les fotos en suggereixen ~4 m de diàmetre). Façana orientada al SSE (≈153°). Campanar quadrat a l'angle SW de la façana, amb terrat i balustrada a ≈33 m (LiDAR). |
 | Plaça de l'Església (+ Plaça Petita) | 41.13885, 1.05153 | ≈4.100 m²; lloc de l'antic castell d'Arnau de Palomar; porxos de 10 + 6 arcades; mosaic de l'escut al paviment |
 | Font de la Dama Oferent (Plaça Petita) | 41.138612, 1.051820 | Plaça Petita inaugurada el 1889 amb aquesta font; estàtua de ≈5 m sobre el terra (LiDAR) |
 | Porxos | 41.138866, 1.051917 | Refets a finals del s. XIX amb pedra del convent de Sant Joan |
@@ -119,3 +119,91 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
   L'únic format que accepta és ArcGrid.
 - El LiDAR i el MET-5 difereixen en una mediana de −0,26 m. El MDT LiDAR es fon amb el MET-5 als 60 m de la vora.
 - Convergència de quadrícula a Riudoms: ≈1,3°. El «nord» del món és el nord UTM, no el geogràfic.
+
+---
+
+## Fase 2 · Construcció del món: notes tècniques
+
+- **Coordenades**: EPSG:25831 desplaçat a l'origen (336472.5 E, 4556002.4 N), el centroide de l'espai públic
+  de la plaça de l'Església. Al món: x = est, y = nord. A Three.js: (x, alçada, −y).
+- **Tessel·les**: 14 × 13 de 250 m (3,5 × 3,25 km). El terreny té 4 LOD (64/32/16/8 segments) i
+  una textura d'ortofoto per tessel·la: 512 px al nucli (25 cm d'origen), 256 px a fora.
+- **Alçada del terreny**: la mateixa funció a Python (`ctx.TerrainModel.height`) i a TS (`world/heightfield.ts`):
+  MDT LiDAR de 2 m dins del full LiDAR, MET-5 a fora, amb transició de 60 m a la vora.
+- **Edificis**: 5.544 parts d'edifici del Cadastre.
+  - Alçades: 4.362 amb LiDAR i 1.182 amb plantes del Cadastre × 3 m.
+  - Teulades: 2.973 planes, 2.065 a dues aigües, 506 a una aigua.
+  - Cada paret es classifica com a façana al carrer, pati o mitgera. Les finestres, portes i balcons
+    (shader + instàncies) només surten on n'hi pot haver.
+- **Carrers**: l'espai públic és el buit entre les illes (manzanes) del Cadastre. Els carrers tenen l'amplada real de façana a façana.
+- **Emblemàtics amb model propi** (`world/landmarks.ts`):
+  - Església de Sant Jaume: volum de les classes de LiDAR sobre la planta del Cadastre, i ornament procedural (retaule, rosassa, frontó del rellotge, campanar amb terrat i balustrada, contraforts).
+  - Ermita de Sant Antoni: frontó, òcul, espadanya i escales.
+  - Fonts: Dama Oferent i font de la plaça (1976-77).
+  - Monument a Gaudí, escultures, porxos, logotip del Casal Riudomenc i mosaic de l'escut.
+- **Scripts de depuració a la consola del navegador**:
+  - `__freeze = true` atura el bucle.
+  - `__step(dt, n)` avança fotogrames a mà.
+  - `__game` exposa els objectes del joc.
+
+## Què és dada real i què és estimat
+
+### Dada real (i font)
+
+| Element | Font |
+|---|---|
+| Planta de tots els edificis i de cada part | Cadastre INSPIRE Buildings / BuildingParts (43131) |
+| Alçada de 4.362 parts i forma de la teulada (plana / una aigua / dues aigües, orientació i carener) | ICGC LiDAR territorial (DSM de 0,5 m) |
+| Alçada de les altres 1.182 parts | Cadastre: plantes sobre rasant × 3 m + 0,5 m de planta baixa |
+| Any de construcció i ús de cada edifici (estil de façana) | Cadastre INSPIRE Buildings |
+| Color de les teulades | Ortofoto vigent de l'ICGC (25 cm) |
+| Color de la façana i de les persianes (3.445 parts) | Fotos de façana del Cadastre |
+| Relleu | MDT de 2 m derivat dels punts de terreny del LiDAR de l'ICGC; MET-5 de l'ICGC a fora |
+| Textura del terreny (camps, patis, parcs) | Ortofoto de l'ICGC |
+| Traçat, nom, tipus i superfície dels carrers | OSM. Llambordes al carrer Major, de l'Arenal i de Sant Isidre i al Raval: `surface=sett` a l'OSM |
+| Amplada total de cada carrer (de façana a façana) | Cadastre: buit entre illes |
+| Passos de vianants | OSM (95) |
+| Posició, alçada i capçada de 77.930 arbres | LiDAR de l'ICGC |
+| Espècie dels arbres dins de camps declarats (43.774) | DUN 2025 (cultiu declarat de la parcel·la) |
+| Palmera de la plaça de la Palmera | Foto de Commons; posició = arbre LiDAR més alt del parc |
+| Bancs (30), fonts d'aigua (15), papereres (9), parades de bus (2), bústies (2), parcs infantils (4), 1 fanal | OSM |
+| Piscines (222) | Cadastre OtherConstruction |
+| Cursos d'aigua i basses | OSM |
+| Camps del minimapa | DUN 2025 |
+| Història dels rètols (26) | `data/raw/heritage/landmarks.json`, cada frase amb la seva font |
+| Massa de l'església: nau (ràfec 20,4 m, carener 22,2 m), capelles (10,3 m), campanar (32,6 m sobre la plataforma) | LiDAR + planta del Cadastre |
+| Església: orientació de la façana (SSE), campanar a l'angle SW, 6 capelles per banda, obertures del campanar (2 a l'est, 1 a les altres cares), terrat amb balustrada, cúpula i penell | Recerca de patrimoni: campaners.com, IPAC, Figuerola (*Lo Floc* 244) |
+| Alçada de la coronació de la façana (22,3 m) i del frontó del rellotge (25,8 m) | LiDAR (mesura de la recerca) |
+| Ermita de Sant Antoni: planta, alçada del frontó (12,5 m) i de l'espadanya (15 m) | Cadastre + LiDAR |
+| Font de la Dama Oferent: bassa hexagonal, alçada total (5,1 m) | IPAC + LiDAR |
+| Monument a Gaudí: 10 m, obelisc amb la creu de quatre braços | riudoms.cat + fotos |
+| Porxos: 10 + 6 arcades | IPAC |
+| Logotip vermell del Casal Riudomenc | Foto de Commons |
+| Posició del sol | Calculada per a la latitud de Riudoms, la data i l'hora locals |
+
+### Estimat (cal revisar)
+
+| Element | Com s'ha estimat |
+|---|---|
+| **Fanals** (843 dels 844) | L'OSM en té 1. S'han posat fanals de braç a les façanes dels carrers estrets (com els de les fotos del Cadastre) i de peu a voreres i places, cada ~19 m |
+| Amplada de la calçada dins del carrer (i, per tant, de les voreres) | Per tipus de via: residencial 5,2 m, sentit únic 3,6 m, terciària 6,4 m... Només quan l'OSM no té `width` / `lanes` |
+| Espècie de 34.156 arbres fora de camps declarats | Per context: parcs → plàtan/fulla ampla; vora de riera → om; urbà → fulla ampla; alt i estret → xiprer; camp → garrofer o pi |
+| **60.584 arbres fora de l'àrea LiDAR** | Plantació en marc regular dins les parcel·les DUN del cultiu declarat (olivera 7×7 m, avellaner 5×4,5 m...). **Posicions inventades**, cultiu real |
+| Façanes sense foto (2.099 parts) | Paleta per estil i època (blancs trencats, ocres, pedra, maó) |
+| Finestres, portes, persianes i balcons | Procedurals, segons l'estil, l'any i el tipus de paret. No són les obertures reals de cada façana |
+| Teulades fora de l'àrea LiDAR | A dues aigües (30%) si l'ortofoto dona color de teula; si no, plana |
+| Església | Mides del retaule, porta i rosassa estimades amb les fotos: rosassa de 4 m (l'IPAC i la Viquipèdia en diuen 9, però no quadra amb les fotos). Detall dels contraforts i gablets de les capelles |
+| Posició del mosaic de l'escut | Davant de la porta de l'església, segons les fotos. Disseny aproximat |
+| Font de la plaça (1976-77) | Posició davant de l'Abadia, deduïda d'una foto des del campanar. Model genèric (bassa + arbustos) |
+| Quines façanes tenen els porxos | Les més properes al punt dels porxos, fins a sumar 16 arcades |
+| Escultures de Gaudí i de la plegadora | Figures genèriques de bronze a la posició de l'OSM / Wikidata |
+| Esglaons de la plataforma de l'església | Nombre i mida segons el desnivell del LiDAR |
+| Bicicletes | Col·locades a les places principals i als aparcaments de bicis de l'OSM |
+| Llits de riera | Amplada per tipus (riera 7 m, torrent 3 m) i aspecte de grava seca |
+
+### No localitzat
+
+- **Urbanització Molí d'en Marc** i **barriada Lluís Massó**: no apareixen a l'OSM ni a Nominatim. No s'han pogut situar.
+- **Escales cap al carrer de Sant Bonifaci**: no documentades, i l'OSM no té cap `highway=steps` a l'àrea. El desnivell sí que surt al relleu LiDAR.
+- **Escola Cavaller Arnau**: posició en conflicte entre l'OSM i Equipaments. Es fa servir la de l'OSM.
+- **Cisterna Vella**: és subterrània i no se'n coneixen les mides. Només té rètol.

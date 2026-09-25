@@ -1,0 +1,25 @@
+{
+  "name": "riudoms-virtual",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Recreació 3D navegable de Riudoms (Baix Camp) a partir de dades obertes reals",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "data": "node scripts/run-pipeline.mjs",
+    "data:process": "node scripts/run-pipeline.mjs --process-only"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.186.1",
+    "three-mesh-bvh": "^0.9.15"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}

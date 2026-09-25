@@ -9,3 +9,4 @@ data/raw/icgc/lidar/*.part
 data/raw/cadastre/gml/
 data/raw/cadastre/facades/
 *.log
+.claude/

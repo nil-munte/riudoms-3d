@@ -1,0 +1,45 @@
+// Shapes of the JSON files produced by scripts/process.py
+
+export interface Meta {
+  generated: string;
+  origin_utm: [number, number];
+  reference_point_wgs84: [number, number];
+  tile: number;
+  tiles: { x0: number; y0: number; nx: number; ny: number; ortho_px: number[] };
+  sources: Record<string, any>;
+  stats: Record<string, any>;
+}
+
+export interface RoofRing { r: number[]; z: number[] }
+
+export interface BuildingPart {
+  b: number; // index into buildings
+  t: number; // tile
+  z0: number; // base height (m)
+  rings: number[][]; // [x,y,...] in cm, first = exterior (CCW), then holes
+  w: number[]; // per edge [zStart, zEnd] cm above z0
+  e: number[]; // per edge flag 0 yard, 1 street, 2 party wall
+  roof: { k: number; p: RoofRing[][] }; // k 0 flat, 1 gable, 2 shed
+  s: number; // style
+  f: number; // floors
+  fc: string; // facade colour
+  sc: string; // shutter colour
+  br: number; // exposed brick
+  rc: string; // roof colour (orthophoto)
+  hs: string; // height source l/c/e
+  lm: string | null; // landmark id
+  cm: number; // 1 = replaced by the custom landmark model
+}
+
+export interface BuildingInfo {
+  ref: string;
+  use: string | null;
+  year: number | null;
+  name: string | null;
+  lm: string | null;
+}
+
+export interface BuildingsFile { parts: BuildingPart[]; buildings: BuildingInfo[] }
+
+export const S_OLD = 0, S_MID = 1, S_NEW = 2, S_INDUSTRIAL = 3, S_RURAL = 4, S_PUBLIC = 5;
+export const E_YARD = 0, E_STREET = 1, E_SHARED = 2;

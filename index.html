@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#1d2a33" />
+    <title>Riudoms 3D</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b8582f'/%3E%3Cpath d='M32 8l6 14v34H26V22z' fill='%23f3e3c4'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <div id="loading">
+      <div class="load-box">
+        <h1>Riudoms <span>3D</span></h1>
+        <p class="sub">Baix Camp · recreació a partir de dades obertes</p>
+        <div class="bar"><div id="load-bar"></div></div>
+        <p id="load-msg">Carregant…</p>
+      </div>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div id="minimap-wrap">
+        <canvas id="minimap" width="220" height="220"></canvas>
+        <div id="compass-n">N</div>
+      </div>
+      <div id="place-name"></div>
+      <div id="prompt" class="hidden"></div>
+      <div id="sign" class="hidden">
+        <div class="sign-title"></div>
+        <div class="sign-text"></div>
+        <div class="sign-src"></div>
+      </div>
+      <div id="clock"></div>
+      <button id="btn-menu" class="round" aria-label="Menú">☰</button>
+      <div id="hint">Clica per controlar la càmera · Esc per al menú</div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <button id="t-run" class="tbtn">Córrer</button>
+      <button id="t-e" class="tbtn">E</button>
+    </div>
+
+    <div id="menu" class="hidden">
+      <div class="menu-box">
+        <h2>Pausa</h2>
+        <div class="menu-cols">
+          <section>
+            <h3>Controls</h3>
+            <table class="keys">
+              <tr><td><kbd>W A S D</kbd> / <kbd>fletxes</kbd></td><td>Caminar</td></tr>
+              <tr><td><kbd>Shift</kbd></td><td>Córrer</td></tr>
+              <tr><td><kbd>E</kbd></td><td>Pujar / baixar de la bicicleta</td></tr>
+              <tr><td>Ratolí</td><td>Girar la càmera (clica per capturar-lo)</td></tr>
+              <tr><td>Roda</td><td>Zoom</td></tr>
+              <tr><td><kbd>M</kbd></td><td>Minimapa gran / petit</td></tr>
+              <tr><td><kbd>T</kbd></td><td>Avançar l'hora</td></tr>
+              <tr><td><kbd>Esc</kbd></td><td>Aquest menú</td></tr>
+            </table>
+            <h3>Hora del dia</h3>
+            <input type="range" id="time" min="0" max="24" step="0.1" value="11" />
+            <label class="chk"><input type="checkbox" id="time-run" checked /> El temps avança</label>
+            <h3>Qualitat</h3>
+            <label class="chk"><input type="checkbox" id="q-shadows" checked /> Ombres</label>
+            <label class="chk"><input type="checkbox" id="q-trees" checked /> Arbres llunyans</label>
+          </section>
+          <section>
+            <h3>Teletransport</h3>
+            <div id="teleports"></div>
+          </section>
+        </div>
+        <div class="menu-foot">
+          <button id="btn-resume" class="primary">Continuar</button>
+          <button id="btn-credits">Fonts i crèdits</button>
+        </div>
+        <div id="credits" class="hidden"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
