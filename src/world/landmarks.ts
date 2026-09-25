@@ -585,6 +585,17 @@ export class Landmarks {
     G.rotation.y = -((d.bearing ?? 0) * Math.PI) / 180;
     this.group.add(G);
     const stone = new THREE.MeshLambertMaterial({ color: 0xd8cdb8 });
+    // paving around the fountain (the OSM square has a hole here, larger than the fountain)
+    const pv = pavingTex().clone();
+    pv.repeat.set((rx + 2.5) / 1.2, (ry + 2.5) / 1.2);
+    pv.needsUpdate = true;
+    const apron = new THREE.Mesh(new THREE.CircleGeometry(1, 48), new THREE.MeshLambertMaterial({
+      map: pv, color: 0xfff7e6, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -4 }));
+    apron.rotation.x = -Math.PI / 2;
+    apron.scale.set(rx + 2.5, ry + 2.5, 1);
+    apron.position.y = 0.09;
+    apron.receiveShadow = true;
+    G.add(apron);
     const basin = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.55, 40, 1, true), stone);
     basin.scale.set(rx - 1.2, 1, ry - 1.2);
     basin.position.y = 0.27;

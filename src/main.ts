@@ -125,10 +125,23 @@ async function main() {
 
   const input = new Input(canvas);
   const player = new Player(scene, collision, surface, bikes);
-  // start in front of the church, looking at its facade
+  /** Nearest spot to (x, y) that is not inside a building, fountain or other obstacle. */
+  const freeSpot = (x: number, y: number): [number, number] => {
+    for (const r of [0, 2, 3.5, 5, 7, 9, 12, 16, 20]) for (let k = 0; k < 16; k++) {
+      const a = (k / 16) * Math.PI * 2;
+      const px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
+      if (!collision.resolve(px, py, 0.6).hit) return [px, py];
+    }
+    return [x, y];
+  };
+  // start in the square in front of the church, looking at its facade
   const ch = lmData.models.church?.frame;
-  if (ch) player.teleport(ch.x - ch.ax * 16, ch.y - ch.ay * 16, Math.atan2(ch.ax, ch.ay));
-  else player.teleport(0, 0, 0);
+  if (ch) {
+    // the oval fountain (1976-77) sits on the axis of the door: start on its east side, where the square is open
+    const cx = -ch.ay, cy = ch.ax; // across the church, positive to the left seen from the square
+    const [sx, sy] = freeSpot(ch.x - ch.ax * 17 - cx * 10, ch.y - ch.ay * 17 - cy * 10);
+    player.teleport(sx, sy, Math.atan2(ch.x - sx, ch.y - sy));
+  } else player.teleport(0, 0, 0);
   const cam = new ThirdPersonCamera(window.innerWidth / window.innerHeight);
   cam.yaw = player.heading;
   cam.pitch = 0.12;
@@ -140,14 +153,7 @@ async function main() {
 
   const hud = new Hud({
     teleport: (x, y) => {
-      // find a free spot near the destination (not inside a building)
-      let best: [number, number] = [x, y];
-      outer: for (const r of [0, 3, 6, 9, 12, 16, 20]) for (let k = 0; k < 12; k++) {
-        const a = (k / 12) * Math.PI * 2;
-        const px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
-        const res = collision.resolve(px, py, 0.5);
-        if (!res.hit) { best = [px, py]; break outer; }
-      }
+      const best = freeSpot(x, y);
       player.teleport(best[0], best[1]);
       terrain.update(best[0], best[1], true);
       veg.update(cam.camera, true);
