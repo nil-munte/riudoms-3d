@@ -32,6 +32,49 @@ function texFor(s: string) {
 interface WalkTile { x0: number; y0: number; data: Uint8Array }
 const WR = 0.5; // walk raster resolution (m)
 
+/** Adaptive subdivision of a triangulated surface (x, y pairs) so that, once
+ *  draped at `h`, no triangle passes more than `tol` below the ground. Edge
+ *  midpoints are shared between neighbouring triangles. */
+function refineDrape(v: Float32Array, idx: Uint32Array, h: (x: number, y: number) => number, tol: number) {
+  const xs: number[] = Array.from({ length: v.length / 2 }, (_, k) => v[k * 2]);
+  const ys: number[] = Array.from({ length: v.length / 2 }, (_, k) => v[k * 2 + 1]);
+  const zs: number[] = xs.map((x, k) => h(x, ys[k]));
+  const mids = new Map<number, number>();
+  const mid = (a: number, b: number) => {
+    const key = a < b ? a * 4194304 + b : b * 4194304 + a;
+    let m = mids.get(key);
+    if (m === undefined) {
+      m = xs.length;
+      xs.push((xs[a] + xs[b]) / 2); ys.push((ys[a] + ys[b]) / 2); zs.push(h(xs[m], ys[m]));
+      mids.set(key, m);
+    }
+    return m;
+  };
+  const out: number[] = [];
+  const need = (a: number, b: number, c: number) => {
+    const e = Math.max(Math.hypot(xs[a] - xs[b], ys[a] - ys[b]), Math.hypot(xs[b] - xs[c], ys[b] - ys[c]), Math.hypot(xs[c] - xs[a], ys[c] - ys[a]));
+    if (e < 0.9) return false;
+    // ground above the flat triangle at the centroid or the edge midpoints?
+    const pts: [number, number, number][] = [
+      [(xs[a] + xs[b] + xs[c]) / 3, (ys[a] + ys[b] + ys[c]) / 3, (zs[a] + zs[b] + zs[c]) / 3],
+      [(xs[a] + xs[b]) / 2, (ys[a] + ys[b]) / 2, (zs[a] + zs[b]) / 2],
+      [(xs[b] + xs[c]) / 2, (ys[b] + ys[c]) / 2, (zs[b] + zs[c]) / 2],
+      [(xs[c] + xs[a]) / 2, (ys[c] + ys[a]) / 2, (zs[c] + zs[a]) / 2],
+    ];
+    return pts.some(([x, y, z]) => h(x, y) - z > tol);
+  };
+  const split = (a: number, b: number, c: number, depth: number) => {
+    if (depth >= 6 || !need(a, b, c)) { out.push(a, b, c); return; }
+    const ab = mid(a, b), bc = mid(b, c), ca = mid(c, a);
+    split(a, ab, ca, depth + 1); split(ab, b, bc, depth + 1); split(ca, bc, c, depth + 1); split(ab, bc, ca, depth + 1);
+  };
+  for (let k = 0; k < idx.length; k += 3) split(idx[k], idx[k + 1], idx[k + 2], 0);
+  if (xs.length === v.length / 2) return { v, idx };
+  const nv = new Float32Array(xs.length * 2);
+  for (let k = 0; k < xs.length; k++) { nv[k * 2] = xs[k]; nv[k * 2 + 1] = ys[k]; }
+  return { v: nv, idx: Uint32Array.from(out) };
+}
+
 export class Streets {
   group = new THREE.Group();
   private walk = new Map<number, WalkTile>();
@@ -59,11 +102,14 @@ export class Streets {
       const tx = meta.tiles.x0 + bi * S + S / 2;
       const ty = meta.tiles.y0 + bj * S + S / 2;
       const key = (bi + bj * bnx) + ':' + s;
-      const v = V.subarray(c.v0 * 2, (c.v0 + c.vn) * 2);
-      const idx = I.subarray(c.i0, c.i0 + c.in);
-      const n = c.vn;
-      const pos = new Float32Array(n * 3), uv = new Float32Array(n * 2), nor = new Float32Array(n * 3);
+      const v0 = V.subarray(c.v0 * 2, (c.v0 + c.vn) * 2);
+      const idx0 = I.subarray(c.i0, c.i0 + c.in);
       const off = OFFSET[s] ?? 0.05, sc = SCALE[s] ?? 2;
+      // the surface is draped on the terrain at its vertices only: split the triangles
+      // that cross a sharp level change, or the terrain would poke through the paving
+      const { v, idx } = refineDrape(v0, idx0, (x, y) => hf.heightAt(x, y), off * 0.8);
+      const n = v.length / 2;
+      const pos = new Float32Array(n * 3), uv = new Float32Array(n * 2), nor = new Float32Array(n * 3);
       const nn = { x: 0, y: 1, z: 0 };
       for (let k = 0; k < n; k++) {
         const x = v[k * 2], y = v[k * 2 + 1];
@@ -88,7 +134,7 @@ export class Streets {
       if (s === 'sidewalk' || s === 'plaza' || s === 'paving') {
         let l = this.triByTile.get(c.t);
         if (!l) this.triByTile.set(c.t, (l = []));
-        l.push({ v, i: idx, off });
+        l.push({ v: v0, i: idx0, off });
       }
     }
     for (const a of acc.values()) {

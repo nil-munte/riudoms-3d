@@ -10,3 +10,5 @@ data/raw/cadastre/gml/
 data/raw/cadastre/facades/
 *.log
 .claude/
+demo-out/
+demo/*.mp4

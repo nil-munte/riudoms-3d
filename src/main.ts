@@ -146,7 +146,7 @@ async function main() {
   cam.yaw = player.heading;
   cam.pitch = 0.12;
   cam.dist = 7;
-  cam.setObstacles(buildings.meshes);
+  cam.setObstacles([...buildings.meshes, ...reliefObj.obstacles]);
   terrain.update(player.x, player.y, true);
   const minimap = new Minimap($('minimap') as HTMLCanvasElement, meta, bdata, roads, fields,
     lmData.signs.filter((s) => s.r >= 12).map((s) => ({ x: s.x, y: s.y, name: s.name })));

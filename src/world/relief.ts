@@ -64,6 +64,8 @@ export class Relief {
   group = new THREE.Group();
   private blocks: { m: THREE.Object3D; x: number; y: number }[] = [];
   counts = { stairs: 0, wall: 0, marge: 0 };
+  /** Walls and marges: the third-person camera is kept in front of them. */
+  obstacles: THREE.Mesh[] = [];
 
   constructor(data: ReliefFile, meta: Meta, private hf: HeightField, col: Collision) {
     const mats = {
@@ -117,6 +119,7 @@ export class Relief {
       const m = a.mesh(mats[kind]);
       const [bi, bj] = key.split(',').map(Number);
       this.group.add(m);
+      if (kind === 'wall' || kind === 'marge') this.obstacles.push(m);
       this.blocks.push({ m, x: (bi + 0.5) * B, y: (bj + 0.5) * B });
     }
   }

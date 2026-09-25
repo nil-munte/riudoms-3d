@@ -173,6 +173,11 @@ Coordenades WGS84. La font de cada coordenada és a `landmarks.json` (`coord_sou
   - Amplada de la calçada **mesurada a l'ortofoto de 25 cm** en 109 dels 206 trams urbans, amb perfils de lluminositat cada 5 m i la mediana per tram.
   - Illetes de gespa a les rotondes.
   - Arbres urbans amb tronc net més alt.
+  - El paviment es subdivideix on travessa un desnivell brusc (`refineDrape` a `streets.ts`), perquè el terreny no traspassi les places.
+    Passa de 181.000 a ~355.000 triangles.
+- **Càmera**: també es posa davant dels murs i marges del relleu, no només dels edificis.
+- **Vídeo de demostració** (`tools/demo/`): el guió fa servir la física i les col·lisions del joc. Els recorreguts es calculen amb A\*
+  sobre la graella de col·lisions. El so és sintètic, generat a partir dels esdeveniments del guió.
 - **Descartat**: plaques solars detectades a l'ortofoto. No tenen un color prou distintiu (quadrícula de cel·les fosques i línies clares), i per no inventar-les no es posen.
 
 ## Què és dada real i què és estimat
