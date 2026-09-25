@@ -1,0 +1,150 @@
+{{Infotaula geografia política
+|zoom = 8
+|etiqueta_celebracio1 = Festes Majors
+|data_celebracio1 = Sant Sebastià (20 de gener)<br />Sant Jaume (25 de juliol)
+|etiqueta_celebracio2 = Fira
+|data_celebracio2 = Sant Llorenç (10 d'agost)
+}}
+[[Fitxer:Riudoms esglesia.jpg|miniatura|[[Sant Jaume de Riudoms|Església de Sant Jaume de Riudoms]]]]
+[[Fitxer:Ermita de Sant Antoni de Riudoms.JPG|miniatura|[[Sant Antoni de Pàdua de Riudoms|Ermita de Sant Antoni de Riudoms]]]]
+[[Fitxer:La Soleiada2.JPG|miniatura|La Soleiada, edifici noucentista]]
+[[Fitxer:Cal Gallisa.jpg|miniatura|[[Cal Gallissà]], casa pairal dels [[Germans Nebot]]]]
+[[Fitxer:Casa de la Vila de Riudoms 02.JPG|miniatura|[[Casa de la Vila (Riudoms)|Casa de la Vila de Riudoms]]]]
+[[Fitxer:Capella Santíssim Riudoms 4.jpg|miniatura|Capella del Santíssim, a l'església de Riudoms, on s'hi guarden les restes del [[Beat Bonaventura Gran]]]]
+[[Fitxer:Mas calderera.jpg|miniatura|[[Mas de la Calderera]] on es creu que nasqué l'arquitecte [[Antoni Gaudí i Cornet|Antoni Gaudí]]]]
+[[Fitxer:Convent de Sant Joan2.JPG|miniatura|Restes de l'antic [[Convent de Sant Joan dels Franciscans|convent de Sant Joan]]]]
+'''Riudoms''' és una [[vila]] i [[municipi]] del [[Camp de Tarragona]] i de la [[comarca]] del [[Baix Camp]].
+
+== Geografia ==
+* '''[[Llista de topònims de Riudoms]]''' (orografia: muntanyes, serres, collades, indrets...; hidrografia: rius, fonts...; edificis: cases, masies, esglésies, etc.).
+
+La vila de Riudoms està situada a la comarca catalana del [[Baix Camp]], a uns cinc quilòmetres de [[Reus]], la capital comarcal. El terme municipal té una extensió de 32,38 km² i està situat a la zona plana del [[Camp de Tarragona]]. L'envolten els termes de [[Reus]] per l'est, [[l'Aleixar]] i [[Maspujols]] pel nord, [[les Borges del Camp]] pel nord-oest, [[Botarell]] i [[Montbrió del Camp|Montbrió]] per l'oest, [[Vinyols i els Arcs|Vinyols]] pel sud-oest i el sud, [[Cambrils]] pel sud i [[Vila-seca de Solcina|Vila-seca]], ja del [[Tarragonès]], pel sud-est. El poble és situat a una altura de 126 metres, encara que l'alçada del seu terme municipal varia entre els 50 i 210 metres.
+
+Passen pel terme moltes [[riera|rieres]] i rierons. Una de les principals és la [[riera de Maspujols]], també coneguda com a riera de Riudoms, que passa molt a prop del poble i en ocasió d'algun aiguat ha arribat a inundar els carrers més pròxims. Diu una dita tradicional: «A Riudoms la gran cisterna, el campanar al descobert, l'estacada foradada i la riera passa al dret».<ref>{{Ref-llibre|cognom=Perea Simón|nom=Eugeni|títol=Onomàstica de Riudoms|url=https://books.google.cat/books?id=Mne7kT3dh_QC&lpg=PP1&hl=ca&pg=PA51#v=onepage&q&f=false|data=2006|editorial=Institut d'Estudis Catalans|lloc=Barcelona|isbn=84-7283-855-2}}</ref> La [[riera d'Alforja]] separa el terme de Riudoms del de Montbrió.
+
+== Història ==
+=== Prehistòria ===
+A partir de troballes arqueològiques, sobretot a la Timba dels Barenys, se sap que al [[Neolític]] ja hi havia assentaments humans a l'actual terme de Riudoms, segurament atrets per la presència de l'aigua al voltant de la [[riera de Maspujols]]. Altres troballes confirmen que la presència humana continuà durant l'[[edat del bronze]]. A la Timba del Castellot, s'hi han trobat restes d'un poblat ibèric que van des del {{segle|IV|-}} fins al {{segle| IV}} dC.
+
+=== Edat antiga ===
+Durant l'època de dominació romana sembla que hi hagué nombroses vil·les romanes, sobretot en llocs pròxims a la riera de Maspujols. Es conserven dins del poble les restes d'una d'aquestes vil·les, la coneguda com a [[vil·la romana de la Mola]].
+
+=== Edat mitjana ===
+És a l'edat mitjana quan es funda el poble de Riudoms. Es considera la data de la fundació el dia [[25 de gener]] de [[1151]], en què el príncep normand [[Robert d'Aguiló]] feu donació de la terra de Riudoms al cavaller [[Arnau de Palomar]] amb la condició de construir-hi un castell, que sembla que es construí on actualment hi ha l'[[Sant Jaume de Riudoms|Església de Sant Jaume]]. Diu la llegenda que una rierada s'emportà un poblet anomenat Llaberia i els seus habitants es refugiaren en aquell castell que s'estava construint, i van formar el primer nucli d'habitants de Riudoms. Segons [[Emili Morera i Llauradó|Emili Morera]], les restes romanes trobades en aquest indret, a uns dos quilòmetres del nucli actual, haurien induït l'erudit setcentista [[Gregori Maians i Siscar|Gregori Maians]] a identificar el lloc com a [[Oleastrum]].<ref name=:0>{{Ref-llibre|cognom = Anguera|nom = Pere|títol=Història dels pobles del Baix Camp|data = 1989|editorial = Reus Diari|lloc = Reus|pàgines = 265-272}}</ref>
+
+Sigui com sigui, ja al {{segle|XIII}} apareixen documents que es refereixen a Riudoms com una vila i que el [[12 d'abril]] de [[1225]] el rei [[Jaume I]] i l'[[arquebisbe de Tarragona]] li concediren un mercat setmanal que fou ampliat en temps de [[Jaume el Just]]. També hi ha notícies de la construcció d'una església dedicada a Sant Jaume Apòstol, molt possiblement al costat de l'actual.<ref name="Sapiens">{{ref-publicació|cognom= Vastenavond| nom = Barbara | article = La porta del Renaixement | publicació = [[Sàpiens]] | lloc = Barcelona | exemplar = núm. 84 |data = octubre 2009 | pàgines = 65 |issn = 1695-2014}}</ref>
+
+L'any [[1319]] segons la [[crònica de Pere el Cerimoniós]] hi hagué a Riudoms, tradicionalment al lloc conegut com «els Hostalets», una reunió de nobles de la cort per convèncer l'[[Jaume d'Aragó i d'Anjou|infant Jaume]], hereu de [[Jaume el Just|Jaume II]], que es va negar en el darrer moment a contreure matrimoni amb [[Elionor de Castella i Portugal|Elionor de Castella]]. El rei va convocar allà els personatges més notables de la Cort per induir l'infant a canviar d'actitud abans de l'obertura de les Corts. Però les súpliques van ser inútils i l'hereu va renunciar al matrimoni i a la corona i prengué l'habit de l'[[Orde de Montesa]]. Durant la guerra que va enfrontar [[Pere el Cerimoniós]] amb [[Pere I de Castella]], el 1361, els riudomencs van ser obligats per l'[[arquebisbe de Tarragona]] [[Sancho López de Ayerbe]] a anar a ajudar en la defensa del [[port de Cambrils]]. Poc després, a la mort de l'arquebisbe [[Pere de Clasquerí]], van esclatar al Camp forts conflictes pel control dels drets senyorials de la seu vacant, entre el canonge cambrer, que tenia el suport del rei, per una banda, i el [[Pabordia|paborde]], a qui feia costat la resta del capítol catedralici. El rei, quan les dignitats catedralícies es van negar a reconèixer-li el dret que exigia al Camp, va fer ocupar la comarca per la seva gent armada que tenia les vegueries de Montblanc i de Vilafranca, a les ordres de Bernat de Vilademany, que ocupà i saquejà Riudoms, el camp i la vila «pitjor que si fos gent forastera» segons diu un testimoni coetani, per la gran quantitat de «mals i danys» que van fer. El castell de Riudoms estava aleshores perfectament conservat. Cap al final del segle [[Pere el Cerimoniós]] feu construir muralles i torres de defensa, de les que no se n'ha conservat cap. D'aquella època són freqüents les disputes amb els pobles dels voltants per l'ús de l'aigua i de les terres de pastura.
+
+Durant la [[guerra civil catalana]] del {{segle|XV}}, Riudoms hi participà donant suport a la [[Diputació del General de Catalunya|Generalitat]].
+
+=== Edat moderna ===
+El 1444 van tenir plets pels límits dels termes amb Reus, i el 1522 es rectificaren els límits dels dos municipis.<ref name=:0/> El [[1524]], l'emperador [[Carles V del Sacre Imperi Romanogermànic|Carles V]] va passar una nit al poble en la seva visita al [[Camp de Tarragona]]. L'any [[1582]], a més de fer-se diverses obres a les muralles, s'autoritzà la construcció del convent franciscà de Sant Joan, fora de les muralles.
+
+El [[1588]] s'acorda de construir una nova església i la seva traça és projectada pels mestres constructors de l'església parroquial d'[[Ulldemolins]], sota la direcció de Joan Sans. Les obres d'aquesta església foren dirigides durant trenta-quatre anys (1593-1626) pel mestre de cases Joan Mas, de [[Vilanova d'Escornalbou]], i foren inaugurades el [[1617]], encara que no estava acabada del tot. Algunes obres s'acabaren en períodes posteriors, quedant inacabat el campanar, que es continuà entre el 1665 i el 1667, però que no es coronà fins a l'any 1878.
+
+L'any [[1599]] es dona a Riudoms el dret de celebrar una fira el [[10 d'agost]] de cada any, dia de Sant Llorenç, i a repetir-la el segon diumenge del mes d'octubre.
+
+La [[Guerra dels Segadors]] afectà també Riudoms. Ja l'any [[1629]] s'instal·là a la vila un destacament de soldats castellans. El [[1639]], Riudoms participà en una campanya per recuperar el castell de [[Salses]] amb una companyia d'homes. L'any següent, el [[1640]], arriba l'exèrcit castellà del marquès de Los Vélez, que entrà a Riudoms sense trobar resistència i s'hi allotjà mentre preparava l'assalt de [[Reus]] i [[Tarragona]]. Sembla que durant aquells anys la població de Riudoms patí abusos per totes les parts en conflicte, ja fossin catalanes, castellanes o franceses i segurament per això finalment es van rendir sense oposar resistència, igual que molts altres pobles dels voltants, com [[Montbrió del Camp]], [[Mont-roig del Camp]], [[la Selva del Camp]] o [[Reus]]. [[Pau Claris]] declarà aquests pobles enemics de la següent manera: ''«En rahó de no haver guardat a la província fidelitat y que voluntàriament y sens passar per ninguna hostilitat de l'exèrcit contrari se li eran entregades, fossen cridats per enemichs de la pàtria y apressos tots sos béns y fos manat y fet a saber a totas y qualsevol personas de qualsevol grau y condició»''
+
+El [[1690]] es projecta aixecar l'ermita de Sant Antoni, a la part alta del poble, fora de les muralles, pel fet que havia estat declarat copatró de Riudoms el 1673 pels favors rebuts durant les últimes epidèmies. Va ser acabada el [[1702]]. A l'interior hi ha un retaule barroc ([[1730]]) construït per [[Lluís Bonifaç i Sastre]] que va ser cremat, encara que no totalment, en la [[Guerra Civil espanyola]].
+
+Amb la [[Guerra de Successió Espanyola|Guerra de Successió]], Riudoms es pronuncià a favor de l'[[Carles VI del Sacre Imperi Romanogermànic|Arxiduc Carles d'Àustria]], a conseqüència de l'acció dels [[germans Nebot]], militars de la vila. En perdre la guerra, els seus béns foren confiscats. Els Germans Nebot van ser declarats Fills Il·lustres de Riudoms el 2006 i s'ha establert que davant del que fou la seva casa senyorial (avui coneguda com a Cal Gallissà) s'hi facin les ofrenes de la [[Diada Nacional de Catalunya]].<ref>{{ref-web|url=http://www.ruta1714.cat/escenaris/riudoms/|consulta=5 juliol 2014|títol=Ruta 1714 (Riudoms)|obra=Web|editor=Generalitat de Catalunya|arxiuurl=https://web.archive.org/web/20140714231449/http://www.ruta1714.cat/escenaris/riudoms/|arxiudata=14 de juliol 2014}} CCBYSA</ref>
+
+El [[1721]], per lluitar contra els bandolers i controlar els perdedors de la guerra, s'instal·là al poble un destacament dels [[Mossos d'Esquadra]] sota el comandament del caporal Francesc Martí, partidari dels Borbons. Se sap que durant el {{segle|XVIII}} tingué molta importància a Riudoms la producció d'aiguardent i que els conreus més importants eren el sembrat, la vinya, l'olivera i els garrofers.
+
+=== Edat contemporània ===
+L'inici de l'[[edat contemporània]] amb la [[Revolució Francesa]] el [[1789]] també afectà a la vila de Riudoms. El [[1795]] Riudoms aportà vint-i-un homes i dos oficials a la guerra que mantenien [[Espanya]] i [[França]]. La [[Guerra del Francès]] també tingué repercussions al poble. Les forces ocupants franceses imposaren costosos impostos a la població tot i les males collites. Durant aquella guerra hi havia a Riudoms un [[Hospital de sang|hospital militar de sang]].
+
+L'any [[1844]] amb la [[desamortització de Mendizábal]], el convent de Sant Joan és venut al negociant Bernat Torrell per 98.010 rals. Aquest convent ja havia estat parcialment destruït el [[1822]] i cremat en part el [[1835]]. Sembla que les pedres del monestir serviren per construir els porxos de la plaça de l'església.
+
+La [[Primera Guerra Carlina]] provocà la divisió del poble entre carlins i liberals, que provocà hostilitats i pèrdua de vides. El [[22 de juny]] de [[1836]], els carlins entraren al poble, cremant i saquejant algunes cases, i encara el [[18 de maig]] de [[1840]] tornaren i segrestaren el notari del poble Josep Roger Vallverdú, que finalment alliberaren sense fer-li mal. Se sap d'almenys deu carlins riudomencs que foren afusellats durant aquella guerra.
+
+El [[1868]] amb la revolució coneguda com [[La Gloriosa]], el [[4 d'octubre]] el poble celebrà l'exili de la reina i el canvi polític col·locant a la façana de l'ajuntament els retrats del [[General Prim]] i el general [[Espartero]], es tocà l'[[Himne de Riego]] i se celebraren balls. Es constituí la Junta Revolucionària i es proclamà alcalde Rafael de Nabot i de Figueras. Tot i això, els resultats electorals sempre foren favorables als monàrquics i es considerava Riudoms com un feu carlista.
+
+La [[Tercera Guerra Carlina]] també tingué les seves conseqüències a Riudoms, ja que el [[8 de maig]] de [[1872]] se sublevaren els carlins de Riudoms. Durant aquesta guerra, grups de carlins entraren al poble per cobrar-hi contribucions. El [[26 de juliol]] de [[1873]], els carlins liderats per [[Isidre Pàmies i Borràs]], ''Cercós'', es feren forts als voltants de l'ermita de Sant Antoni. Aquests carlins dominaren el poble, cremaren els portals i enderrocaren part de la muralla. Finalment van ser vençuts pels liberals.
+
+Durant la [[Restauració borbònica]] se succeeixen els alcaldes conservadors, liberals i carlins, d'unes poques famílies. Els liberals es reunien a cal Gallisà, mentre els carlins tenien el Centro Riudomense i l'Ateneu tradicionalista de ca l'Eloi a partir de [[1914]]. Els republicans es trobaven al Cafè dels Republicans als porxos de la Plaça petita.
+
+Cap a la fi del {{segle|XIX}} arribà la [[fil·loxera]] que matà la [[vinya]], un dels cultius principals de l'època. Això donà un gran impuls al conreu de l'[[avellaner]]. A l'inici del {{segle|XX}} arriben nous serveis al poble, com l'electricitat i el telèfon i la progressiva ampliació de l'aigua corrent i les clavegueres. El [[1926]] se sap que el riudomenc Anton Caparó Sabaté va participar en el [[Complot de Prats de Motlló|complot de Prats de Molló]], organitzat per [[Francesc Macià]] i [[Ventura Gassol]].
+
+Les [[eleccions municipals espanyoles de 1931|eleccions municipals]] del [[12 d'abril]] de [[1931]] que causaren la proclamació de la [[Segona República espanyola]], no se celebraren a Riudoms, ja que només es presentà una candidatura. El 15 d'abril seguint ordres del Govern Civil es proclamà alcalde Sebastià Hortoneda Casas, encara que deu dies més tard es canvià el consistori per un de més conservador, i Rodolf Cavallé Tomàs en fou l'alcalde fins que morí dos anys després. El [[1933]] visità la vila el president de la [[Generalitat de Catalunya]], [[Francesc Macià]], que feu un discurs des del balcó del Cafè dels Republicans.
+
+A les eleccions municipals del 14 de gener de 1934 venceren les dretes amb 1.017 vots mentre que els partits d'esquerra n'obtingueren 748. Jaume Domènech Bages fou proclamat alcalde. Durant els [[fets del sis d'octubre]] un grup de riudomencs prengué el control de l'ajuntament. Després, un cop fracassada la revolta, foren catorze els riudomencs que es tancaren a un vaixell-presó situat al port de [[Tarragona]]. Al cap d'unes setmanes foren indultats. La [[Guerra Civil espanyola]] tingué un gran cost humà a Riudoms, ja que s'han comptabilitzat 84 víctimes.
+
+Durant els [[anys 1950]], es milloren molts serveis. L'aigua potable arriba a tota la població i es pavimenten els carrers. També s'inicià una expansió amb la construcció de la urbanització Lluís Massó.
+
+== Economia ==
+Riudoms ha estat un poble tradicionalment agrícola. Antigament predominaven els cultius de secà: sembrats, garrofers, ametllers, olivers i vinya. La construcció de mines i pous i més tard l'embassament de [[Riudecanyes]] impulsà els cultius de regadiu sobretot els fruiters i l'horta. A finals del {{segle|XIX}}, començà a proliferar el cultiu de l'avellaner, que es convertí en el cultiu hegemònic. Amb el pas del temps i la pèrdua generalitzada dels ingressos agrícoles, l'agricultura ha deixat de ser l'activitat econòmica predominant. Amb la crisi de l'avellana, també la superfície plantada d'avellaners ha disminuït i va ser substituït sobretot per olivers. Molts d'aquests terrenys actualment són cultivats per persones que hi treballen a temps parcial i que tenen una activitat principal diferent i són poques les persones que tenen l'agricultura com a principal font d'ingressos. En els últims anys s'ha ampliat l'oferta de sòl industrial, com per exemple amb el Polígon El Prat, que ha afavorit la implantació de més empreses.
+
+== Llocs d'interès ==
+* [[Sant Jaume de Riudoms|Església parroquial de Sant Jaume]]
+* [[Sant Antoni de Pàdua de Riudoms|Ermita de Sant Antoni de Pàdua]]
+* [[Hospital i capella de la Verge Maria]]
+* [[Plaça de l'Església i plaça Petita (Riudoms)|Plaça de l'Església i plaça Petita]]
+* [[Casa de la Vila (Riudoms)|Casa de la Vila]]
+* [[Cal Gallissà]]
+* [[La Soleiada]]
+* [[Vil·la romana de la Mola]]
+* [[Centre d'Estudis Riudomencs Arnau de Palomar]]
+* Casa de cultura o [[Cal Marc Massó]]
+* [[Centre Riudomenc]]
+* [[Museu de Cotxes d'Època Marc Vidal]].<ref>{{ref-llibre|cognom=d. a.| títol = Museus i Centres de Patrimoni Cultural a Catalunya | any = 2010| editorial = Departament de Cultura de la Generalitat de Catalunya| lloc = Barcelona| pàgines = p. 100 | isbn=84-393-5437-1}}</ref>
+* [[Convent de Sant Joan dels Franciscans]]
+* [[Mas de la Calderera]]
+* [[Mas Blanc (Riudoms)|Mas Blanch]]
+* [[Mas Blau (Riudoms)|Mas Blau]]
+* [[Torre del Mas de Don Felip]]
+* [[Mas del Toda]]
+* [[Molí de vent (Riudoms)|Molí de vent]] o Torre del Fargues
+
+== Festes locals ==
+[[Fitxer:Correfoc Riudoms 19-1-2019.jpg|miniatura|Correfoc durant la festa de Sant Sebastià]]
+[[Fitxer:2019 - Pas del Natzarè de Riudoms.jpg|miniatura|El Dijous i Divendres Sant s'exposen els passos o misteris que participaran a la processó del Sant Enterrament]]
+[[Fitxer:2022 - Processó del retorn del Sant Crist a l'església - Riudoms.jpg|miniatura|Processó del Divendres Sant al migdia]]
+[[Fitxer:Festa dels Barris Riudoms 2019 04.jpg|miniatura|Desfilada de carrosses per la Festa dels Barris]]
+[[Fitxer:Cavall dels Nebot 05.jpg|miniatura|El [[Cavall dels Nebot]] participa al seguici festiu de Sant Jaume]]
+[[Fitxer:Riudoms - Festes quinquennals 2016.jpg|miniatura|Carrer engalanat per les festes quinquenals del Beat Bonaventura]]
+* '''[[Sant Sebastià màrtir|Sant Sebastià]]''': És la festa major d'hivern de la vila, el [[20 de gener]]. Actualment, la festa s'ha traslladat al cap de setmana més pròxim. Se celebra una processó pel centre del poble amb la imatge del Sant. D'ençà del 1999, també se celebra la Trobada de [[Sac de gemecs|Sacaires]], on hi participen anualment músics i sacaires d'arreu del país.
+* '''[[Setmana Santa]]''': La Setmana Santa és una celebració molt arrelada a Riudoms. Els actes comencen el [[Diumenge de Rams]] amb la benedicció de les palmes i palmons. El mateix dia a la tarda es fa el [[Via Crucis]] pels carrers acompanyant la imatge de [[Jesús de Natzaret|Jesús]] portant la creu. El [[Dijous Sant]] se celebra la missa del [[Sant Sopar]]. A més, aquest dia es posen en entrades de cases, les imatges (també anomenades misteris o passos) que sortiran l'endemà a la nit en processó, que representen diversos moments de la passió de Jesús. El [[Divendres Sant]], els actes comencen ben aviat, amb un Via Crucis de l'[[Sant Jaume de Riudoms|església]] fins a l'[[Sant Antoni de Pàdua de Riudoms|ermita de Sant Antoni]]. A les 10, es trasllada la imatge del Sant Crist de l'església fins a la capella de Verge Maria, acompanyat per amics i familiars del portant del Sant Crist. A les 12, es torna a portar la imatge cap a l'església, aquesta vegada acompanyada per nens vestits amb vesta i papus amb caputxa, a més dels armats que obren la processó. Tot seguit, dins l'església es fan les Set Paraules. A les sis de la tarda es fa la representació litúrgica de la passió de Jesús. Finalment a les nou del vespre, es fa la processó del Sant Enterrament, amb la participació de tots els passos, acompanyada per persones amb ciris, vestes, papus, els armats i els membres de les diferents confraries. La nit de dissabte cap al diumenge, es fa la missa de la Vetlla [[Pasqua de Resurrecció|Pasqual]], celebrant la resurrecció de Jesús. En sortir de l'església es canten les [[caramelles]].
+* '''Festa del Cavaller Arnau''': D'ençà del 2010 se celebra la «Festa del cavaller [[Arnau de Palomar|Arnau]]», amb un mercat medieval a la plaça, actuacions, tallers i altres actes per commemorar l'aniversari del repoblament de la vila. És una festa dedicada a tot el poble, però sobretot als més petits, ja que l'organitza l'AMPA de l'Escola Cavaller Arnau juntament amb l'Ajuntament de Riudoms. Se celebra el primer cap de setmana de maig.
+* '''Festa de les Santes Relíquies''': Se celebra el segon diumenge de maig i el seu origen es troba en una sequera que va patir el poble, fet pel qual el [[Beat Bonaventura Gran]] va fer portar de Roma el 1679 les relíquies de Sant Bonifaci, Sant Vicenç i Sant Julià. Aquestes relíquies desaparegueren durant la Guerra Civil espanyola, i foren substituïdes per unes altres gràcies a la mediació del monjo de Montserrat riudomenc Leandre Mestre Molons.
+* '''Festa dels Barris''': Se celebra el primer cap de setmana de juliol. El dissabte a la tarda es fan jocs per la canalla i a la nit es fa un sopar i ball a cada barri del poble. L'endemà al matí es va a ''enramar''. Les persones de cada barri es disfressen i preparen una carrossa i es fa una rua, tot tirant confeti. A la nit, es fa un ball, on s'elegeix per sorteig entre els representants dels diferents barris l'hereu i la pubilla del poble durant l'any vinent.
+* '''[[Sant Jaume el Major apòstol|Sant Jaume]]''': És la festa major d'estiu, el 25 de juliol, tot i que s'ha traslladat al cap de setmana més pròxim. Es fan diversos actes, com ara el [[ball de diables]] i les barraques el dissabte al vespre i la bicicletada popular el diumenge al matí. El dia diumenge, després de la missa del vespre es fa una processó on es treu la imatge del sant pels carrers del poble. D'ençà del 2017 participa a la processó un seguici festiu amb el [[Cavall dels Nebot]] i s'han recuperat tres balls que havien format part del seguici durant el {{segle|XIX}}, que són el [[Ball de Cercolets]], el [[Ball de gitanes|Ball de Gitanes]] i el [[Ball dels Valencians|Ball de Valencians]].<ref>{{Ref-publicació|article=Riudoms presenta el Cavall dels Nebot, el més gran de Catalunya!|publicació=ReusDiari.cat|url=http://delcamp.cat/reusdiari/noticia/51623|arxiudata=2025-10-06|consulta=2017-07-12|arxiuurl=https://web.archive.org/web/20251006071830/http://delcamp.cat/reusdiari/noticia/51623}}</ref>
+* '''Fira de Sant Llorenç o [[Fira de l'Avellana]]''': El seu origen es troba el [[1599]], quan es començà a celebrar una fira agrària i ramadera el dia [[10 d'agost]], dia de [[Sant Llorenç (màrtir)|Sant Llorenç]]. A partir del [[1981]], també se l'anomena Fira de l'Avellana i està dedicada a aquest fruit sec i altres productes locals. Actualment té lloc durant el segon cap de setmana d'agost, tot i que els actes previs comencen més aviat.
+* '''Festa del [[Beat Bonaventura Gran]]'''. Se celebra el dissabte més pròxim al dia 24 de novembre en honor d'aquest frare franciscà fill del poble, beatificat per l'Església Catòlica. Es fa una missa al matí, i a la nit una processó on es treu pel poble l'urna que conté les despulles del beat. El diumenge abans, es fa una processó amb fanalets acompanyant una relíquia del Beat. Cada cinc anys, es fa festa extraordinària, les Quinquennals, on es guarneixen els carrers del poble.
+
+== Demografia ==
+{{DemogCat| 1497=156| 1515=193| 1553=224| 1717=983| 1787=2.472| 1857=3.478| 1877=3.410| 1887=3.449| 1900=3.560| 1910=3.520| 1920=3.378| 1930=3.450| 1940=3.638| 1950=3.472| 1960=3.651| 1970=4.350| 1981=4.850| 1990=4.804| 1992=4.828| 1994=4.901| 1996=5.006| 1998=5.068| 2000=5.201| 2002=5.356| 2004=5.573| 2006=5.925| 2008=6.385| 2010=6.473| 2012=6.530|2014 = 6.546}}
+
+== Premsa local ==
+* Des de [[1969]] es publica mensualment ''L'om'', per l'Associació Cultural Amics de l'Om, que ha rebut el Premi Gaziel de Periodisme (1987), el Premi Ventura Gassol (1994), el Premi Andreu Bofarull (1985) i el premi Gaudí de Periodisme (2002).
+* ''Lo Floc'', revista del Centre d'Estudis Riudomencs Arnau de Palomar, consultables tots els seus números a Internet.<ref>{{ref-web|títol=Lo Floc|url=https://www.raco.cat/index.php/LoFloc|editor=Revistes Catalanes amb Accés Obert (RACO)}}</ref>
+* ''Butlletí d'Informació Municipal de Riudoms''.
+
+== Fills il·lustres ==
+* [[Miquel Baptista Gran Peris]], més conegut com a [[Beat Bonaventura Gran]]. Religiós, [[beat]]ificat per l'[[Església Catòlica]].
+* [[Joan Guinjoan Gispert]], [[compositor]] de [[música contemporània]].
+* [[Germans Nebot]], [[militar]]s que participaren en la [[Guerra de Successió Espanyola|Guerra de Successió]]. En destaca [[Rafael de Nebot i Font]], que va participar amb el general [[Joan Baptista Basset i Ramos]] en la campanya que sumà [[Xàtiva]], [[Oliva (Safor)|Oliva]], [[Gandia]] i [[València]] a la causa austriacista. L'any [[1713]] formà part de la [[Junta de Braços]].<ref>{{GEC|0045662|Rafael Nebot i Font}}</ref>
+* [[Josep Maria Sentís i Simeón]], militar i polític.
+* [[Antoni Gaudí i Cornet]], arquitecte.
+
+== Vegeu també ==
+* [[Eleccions Municipals a Riudoms]]
+
+== Bibliografia ==
+* {{Ref-llibre|cognom=Corts|nom=Joan-Ramon|cognom2=Toda|nom2=Josep M.|títol=Riudoms. 850 anys d'història, llengua i cultura|data=01 11 2000|editorial=Edicions Cossetània|lloc=Valls|pàgines=92|isbn=84-89890-81-1}}
+* {{Ref-llibre|cognom=Perea Simón|nom=Eugeni|títol=Onomàstica de Riudoms|url=https://books.google.cat/books?id=Mne7kT3dh_QC&pg=PA51&lpg=PA51&dq=a+riudoms+la+gran+cisterna&source=bl&ots=zZbDrMispa&sig=wZwgLWXRFItMSM8M0jTsekdKNaY&hl=ca&sa=X&ved=0ahUKEwjpvuaj8L_RAhXMvxQKHf9EDiwQ6AEIJjAC#v=onepage&q=a%20riudoms%20la%20gran%20cisterna&f=false|data=2006|editorial=Institut d'Estudis Catalans|lloc=Barcelona|isbn=84-7283-855-2}}
+
+== Referències ==
+{{referències}}
+
+== Enllaços externs ==
+{{Projectes germans|Viquidites=Riudoms}}
+* [http://www.riudoms.cat Pàgina web de l'Ajuntament]
+* [http://www.femsafareig.cat/ FemSafareig.cat], diari digital de Riudoms
+
+{{Municipis del Baix Camp}}
+{{Autoritat}}
+
+[[Categoria:Riudoms| ]]

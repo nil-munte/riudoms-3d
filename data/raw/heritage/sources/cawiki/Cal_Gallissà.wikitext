@@ -1,0 +1,35 @@
+{{Infotaula edifici
+| nom = Cal Gallissà
+| imatge = Cal Gallisa.jpg
+| lat_dec = 41.138431
+| long_dec = 1.053353
+| localitzacio = Raval de Sant Francesc, 29
+| construit = {{segle|XVI}}, XX
+| estil = [[Historicisme arquitectònic|Historicisme]], obra popular
+}}
+'''Cal Gallissà''' és una casa del municipi de [[Riudoms]] (Baix Camp) protegida com a [[bé cultural d'interès local]].
+
+== Descripció ==
+Edifici refet amb materials antics reaprofitats de la casa que hi havia anteriorment al mateix lloc. La reconstrucció va ser duta a terme per l'arquitecte [[Francesc Adell Ferré]]. L'element més destacable són les finestres de tipus gòtic, del {{segle|XVI}} o del {{segle|XVII}}. Originàriament, la finestra de la cantonada estava ubicada damunt de la porta principal. El mirador de la planta noble es va formar amb les dues portes que donaven accés al pati, i a un cafè que hi havia hagut a la planta baixa. A les llindes hi ha decoracions amb escuts que porten ferradures de cavall.<ref name="patmapa"/>
+
+== Història ==
+Fou la casa pairal dels [[Germans Nebot]], militars austriacistes durant la [[Guerra de Successió Espanyola|Guerra de Successió]].
+
+A finals del {{segle|XIX}} es convertí en un cafè, al qual s'hi entrava per la Raval de Sant Francesc, i més tard s'hi posà un cinema, que restaren oberts fins als anys 60 del {{segle|XX}}.<ref>{{Ref-web|títol=Una breu història dels cinemes riudomencs|url=http://reusdigital.cat/noticies/cultura/una-breu-historia-dels-cinemes-riudomencs|data=2018-05-23|cognom=Días Bages|editor=Reus Digital|nom=Adrià}}</ref>
+
+L'edifici fou reconstruït als anys 50, aprofitant elements arquitectònics de l'antiga casa.
+
+Durant la [[Diada Nacional de Catalunya|Diada de l'11 de setembre]], es duen a terme actes d'homenatge a les portes de la Casa.
+
+== Referències ==
+{{referències|refs=
+<ref name="patmapa">{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9673 | títol=Cal Gallissà | obra=Inventari del Patrimoni Arquitectònic de Catalunya | consulta=28 agost 2014 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/cal-gallisa | títol=Cal Gallissà | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]

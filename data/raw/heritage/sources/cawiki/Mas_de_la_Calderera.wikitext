@@ -1,0 +1,49 @@
+{{Infotaula edifici
+| nom = Mas de la Calderera
+| imatge = Mas calderera.jpg
+| localitzacio = A l'oest de la Riera de Maspujols, a la zona de la Clota
+| construit = XIX-XX
+| estil = obra popular
+}}
+El '''Mas de la Calderera''' és una casa de camp situada al terme municipal de [[Riudoms]], coneguda pel fet d'haver estat el possible lloc de naixement de l'[[arquitecte]] [[modernista]] [[Antoni Gaudí i Cornet]] segons alguns dels seus biògrafs i segons la tradició oral del poble de Riudoms, encara que aquest honor està disputat amb la ciutat de [[Reus]]. El 1993 fou declarat [[Bé Cultural d'Interès Local]].
+
+[[Fitxer:Placa Gaudí Mas Calderera 1952.jpg|miniatura|Placa que es col·locà a la façana del mas amb motiu del centenari del naixement de l'arquietecte Antoni Gaudí i Cornet]]
+
+[[Fitxer:Placa Gaudí Mas Calderera 2002.jpg|miniatura|Placa que es col·locà a la façana del mas amb motiu dels 150 anys del naixement de l'arquitecte]]
+
+== Descripció ==
+Es tracta d'un conjunt d'edificis entre els quals destaca la construcció principal, que compleix funcions d'habitatge. La façana presenta una decoració característica de l'arquitectura noucentista: esgrafiats en forma de greques, de garlandes i motius vegetals; l'estucat i arrebossat de la façana simulant carreus, o el coronament de fàbrica de formes sinuoses i corbes.<ref>{{Ref-web|url=https://invarquit.cultura.gencat.cat/card/40707|títol=El Mas de la Calderera|editor=Generalitat de Catalunya}}</ref>
+
+== Història ==
+[[Fitxer:Engracia Llorens Pellice.jpg|miniatura|Fotografia de la llevadora que assistí al part de l'arquitecte i serví de testimoni de què havia nascut allí]]
+
+La finca, d'uns dos jornals d'extensió, està situada a la partida de la Clota, just davant de la riera de [[Maspujols]], a no gaire més d'un quilòmetre del poble de Riudoms. El mas es creu que fou construït a l'Edat Moderna, però durant els anys 20 del segle XX fou reconstruït, encara que respectant la planta original. En un cens de masies de 1859 es menciona que hi havia a la finca una "casa de labor", d'una planta i que no era usat com a residència.
+
+El primer propietari de la família Gaudí fou el rebesavi de l'arquitecte, Josep Gaudí Coll.
+
+El nom del mas, l'agafà de l'àvia de l'arquitecte, popularment coneguda com ''la calderera'' per ser l'esposa d'un calderer i d'aquí vingué el nom que popularment es donà al mas, que la família anomenava ''el Maset''. Després aquesta finca passà a ser propietat del pare de l'arquitecte i després del mateix [[Antoni Gaudí i Cornet|Antoni Gaudí]] fins que l'any [[1924]], poc abans de morir, en feu donació a la parròquia de Riudoms per tal que amb el seu patrimoni es constituís una fundació pietosa en memòria del seu pare.
+
+El 1928, la parròquia se'l vengué i passà a mans privades fins a l'actualitat, tot i que hi ha hagut alguns intents per part de l'Ajuntament de Riudoms per comprar el mas.<ref name=:0>{{Ref-publicació|cognom=Torres Domènech|nom=Joan|article=Història dels Gaudí|publicació=Riudoms, homenatge a Gaudí|any=2002|mes=juliol|editorial=L'Om, revista de Riudoms. Parròquia de Sant Jaume Apòstol de Riudoms|pàgines=56-64}}</ref>
+
+== Naixement d'Antoni Gaudí ==
+{{Falten referències|data=2025}}
+El fet del naixement de l'arquitecte tingué lloc el [[25 de juny]] de [[1852]] cap a dos quarts de deu del matí. La família Gaudí tenia gallines i conills al mas, a més d'alguns cultius i sembla que la mare de l'arquitecte tot i estar embarassada s'hi desplaçava cada dia a peu per tal de tenir cura dels animals. Una altra versió, diu que hi havia anat amb tota la família per tal de passar-hi el dia de Sant Joan. En estant allí, el dia 24, li vingueren els dolors del part i feu cridar la llevadora de Riudoms, Engràcia Llorens Pàmies. El part fou complicat i durà fins l'endemà al matí, quedant la mare esgotada i el nen nasqué en un delicat estat de salut que feia témer per la seva vida.
+
+A favor de què nasqués realment allí hi ha el fet que l'arquitecte en nombroses ocasions afirmà ser de Riudoms i que mai perdé el contacte amb el poble. També la tradició oral del poble deixà constància d'aquest fet sobretot en les netes de la llevadora, que asseguraren en més d'una ocasió que la seva àvia els explicà el complicat part en el que nasqué l'arquitecte. També algun pagès veí de la finca sembla que fou dels primers a anar a felicitar els pares després del naixement i que quan l'arquitecte ja era famós, en deixà constància d'aquest fet als seus fills.
+
+Amb tot, el cert és que l'arquitecte freqüentà el mas durant la seva infantesa i sembla que l'observació de la natura que feu allí l'influí de forma determinant en la seva futura obra.<ref name=:0/>
+
+== Commemoracions ==
+L'any [[1952]], l'Ajuntament de Riudoms col·locà una placa a la façana del mas per commemorar el centenari del seu naixement. El fet curiós, és que l'acte fou prohibit pel governador civil, sembla que per influències de la veïna ciutat de Reus, que també s'atribueix ser la seva ciutat natal, però tot i això l'alcalde prosseguí amb el que tenia previst i col·locà la placa.
+
+El [[25 de juny]] del [[2002]] coincidint amb el 150 aniversari del seu naixement i la celebració de l'any Gaudí a escala internacional també s'hi col·locà una altra placa i s'hi celebraren actes festius, com la preestrena d'alguns fragments de l'òpera Gaudí del compositor riudomenc [[Joan Guinjoan Gispert]].
+
+== Referències ==
+{{commonscat}}
+{{Referències}}
+
+{{Autoritat}}
+
+{{ORDENA:Mas De La Calderera}}
+[[Categoria:Masies de Riudoms|Calderera]]
+[[Categoria:Antoni Gaudí]]

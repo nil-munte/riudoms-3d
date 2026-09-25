@@ -1,0 +1,305 @@
+{{mapa llista coordenades}}
+'''Llista de monuments de Riudoms''' inclosos en l'[[Inventari del Patrimoni Arquitectònic Català]] per al municipi de [[Riudoms]] (Baix Camp). Inclou els inscrits en el Registre de [[Béns Culturals d'Interès Nacional]] (BCIN) amb la classificació de monuments històrics, els [[Béns Culturals d'Interès Local]] (BCIL) de caràcter immoble i la resta de béns arquitectònics integrants del patrimoni cultural català.
+
+{{capçalera IPA|regió1=ES-CT|regió2=ES-T}}
+{{filera IPA
+ | nom = [[Sant Jaume de Riudoms|Església de Sant Jaume]]
+ | nomcoor = Església parroquial de Sant Jaume (Riudoms)
+ | estil = Renaixement, gòtic tardà
+ | època = XVI-XVII
+ | municipi = Riudoms
+ | lloc = Pl. de l'Església, 2
+ | lat = 41.139104 | lon = 1.051104
+ | idurl = 9668
+ | idurl2 = dita/riudoms/esglesia-parroquial-de-sant-jaume
+ | prot = BCIN
+ | idprot = 4402-MH-EN
+ | id = IPA-9668
+ | wikidata = Q27928469
+ | imatge = Riudoms esglesia.jpg
+ | commonscat = Sant Jaume de Riudoms
+}}
+{{filera IPA
+ | nom = [[Centre històric de Riudoms]]
+ | nomcoor = Centre històric de Riudoms
+ | estil = 
+ | època = 
+ | municipi = Riudoms
+ | lloc = 
+ | lat = 41.138694 | lon = 1.051649
+ | idurl = 9667
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9667
+ | wikidata = Q58461640
+ | imatge = Plaça a Riudoms - panoramio.jpg
+ | commonscat = Plaça de l'Església i plaça Petita (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Hospital i capella de la Verge Maria]]
+ | nomcoor = Hospital i capella de la Verge Maria (Riudoms)
+ | estil = Obra popular
+ | època = XVI
+ | municipi = Riudoms
+ | lloc = C. Major, 57
+ | lat = 41.137612 | lon = 1.050755
+ | idurl = 9669
+ | idurl2 = dita/riudoms/capella-de-la-verge-maria
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9669
+ | wikidata = Q58461702
+ | imatge = Capella Verge Maria.JPG
+ | commonscat = Hospital i capella de la Verge Maria
+}}
+{{filera IPA
+ | nom = [[Sant Antoni de Pàdua de Riudoms|Ermita de Sant Antoni de Pàdua]]
+ | nomcoor = Ermita de Sant Antoni de Pàdua (Riudoms)
+ | estil = Barroc
+ | època = XVII-XVIII
+ | municipi = Riudoms
+ | lloc = Pl. de Sant Antoni
+ | lat = 41.142176 | lon = 1.048312
+ | idurl = 9670
+ | idurl2 = dita/riudoms/ermita-de-sant-antoni
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9670
+ | wikidata = Q58461785
+ | imatge = Ermita de Sant Antoni de Riudoms.JPG
+ | commonscat = Ermita de Sant Antoni de Riudoms 
+}}
+{{filera IPA
+ | nom = [[Centre Riudomenc]], el Centre
+ | nomcoor = Centre Riudomenc (Riudoms)
+ | estil = Obra popular
+ | època = XVIII, XX
+ | municipi = Riudoms
+ | lloc = C. de les Galanes
+ | lat = 41.138238| lon = 1.050167
+ | idurl = 9671
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9671
+ | wikidata = Q58461643
+ | imatge = Centre Riudomenc2.JPG
+ | commonscat = Centre Riudomenc
+}}
+{{filera IPA
+ | nom = [[Plaça de l'Església i plaça Petita (Riudoms)|Plaça de l'Església i plaça Petita]]
+ | nomcoor = Plaça de l'Església i plaça Petita (Riudoms)
+ | estil = Obra popular
+ | època = Medieval, XX
+ | municipi = Riudoms
+ | lloc = Pl. de l'Església - pl. Petita
+ | lat = 41.138694 | lon = 1.051649
+ | idurl = 9672
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9672
+ | wikidata = Q58928929
+ | imatge = Riudoms.jpg
+ | commonscat = Plaça de l'Església i plaça Petita (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Cal Gallissà]]
+ | nomcoor = Casa de Gallissà (Riudoms)
+ | estil = Historicisme, obra popular
+ | època = XVI, XX
+ | municipi = Riudoms
+ | lloc = Raval de Sant Francesc, 29
+ | lat = 41.138431 | lon = 1.053353
+ | idurl = 9673
+ | idurl2 = dita/riudoms/cal-gallisa
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9673
+ | wikidata = Q18003706
+ | imatge = Cal Gallisa.jpg
+ | commonscat = Cal Gallissà
+}}
+{{filera IPA
+ | nom = [[Mas Blau (Riudoms)|El Mas Blau]]
+ | nomcoor = El Mas Blau (Riudoms)
+ | estil = Obra popular
+ | època = XIX
+ | municipi = Riudoms
+ | lloc = Partida del Mas de Gomandí
+ | lat = 41.168059 | lon = 1.047673
+ | idurl = 9675
+ | idurl2 = dita/riudoms/mas-blau
+ | prot = 
+ | idprot = 
+ | id = IPA-9675
+ | wikidata = Q21480047
+ | imatge = Mas Blau (Riudoms) 01.jpg
+ | commonscat = Mas Blau (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Torre del Mas de Don Felip]]
+ | nomcoor = Torre del Mas de Don Felip (Riudoms)
+ | estil = Obra popular
+ | època = XVI
+ | municipi = Riudoms
+ | lloc = Camí de la Font del Ros, partida del Brugar
+ | lat = 41.100357 | lon = 1.077393
+ | idurl = 9676
+ | idurl2 = dita/riudoms/torre-del-mas-de-don-felip
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9676
+ | wikidata = Q19257652
+ | imatge = Mas de Don Felip 2.jpg
+ | commonscat = Mas de Don Felip
+}}
+{{filera IPA
+ | nom = [[Convent de Sant Joan dels Franciscans]]
+ | nomcoor = Convent de Sant Joan dels Franciscans (Riudoms)
+ | estil = Barroc, obra popular
+ | època = XVI-XVII
+ | municipi = Riudoms
+ | lloc = Av. de Reus, 26
+ | lat = 41.138362 | lon = 1.057976
+ | idurl = 9677
+ | idurl2 = dita/riudoms/convent-de-sant-joan-dels-franciscans
+ | prot = 
+ | idprot = 
+ | id = IPA-9677
+ | wikidata = Q18003933
+ | imatge = Convent de Sant Joan2.JPG
+ | commonscat = Convent de Sant Joan de Riudoms
+}}
+{{filera IPA
+ | nom = Museu Històric Municipal o [[Cal Marc Massó]]
+ | nomcoor = Museu Històric Municipal (Riudoms)
+ | estil = Obra popular
+ | època = XVIII
+ | municipi = Riudoms
+ | lloc = C. del Beat Bonaventura, 73
+ | lat = 41.137457 | lon = 1.050845
+ | idurl = 9678
+ | idurl2 = dita/riudoms/museu-historic-municipal
+ | prot = 
+ | idprot = 
+ | id = IPA-9678
+ | wikidata = Q21530083
+ | imatge = Cal Marc Massó.JPG
+ | commonscat = Cal Marc Massó
+}}
+{{filera IPA
+ | nom = [[Casa de la Vila (Riudoms)|Casa de la Vila]]
+ | nomcoor = Casa de la Vila (Riudoms)
+ | estil = Modernisme, obra popular
+ | època = XX
+ | municipi = Riudoms
+ | lloc = Pl. de l'Om - c. Major, 52
+ | lat = 41.137701 | lon = 1.050835
+ | idurl = 9679
+ | idurl2 = dita/riudoms/casa-de-la-vila-de-riudoms
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9679
+ | wikidata = Q23780542
+ | imatge = Casa de la Vila de Riudoms 02.JPG
+ | commonscat = Casa de la Vila (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Mas del Toda]]
+ | nomcoor = Mas del Toda (Riudoms)
+ | estil = Obra popular
+ | època = 
+ | municipi = Riudoms
+ | lloc = Partida de les Planes del Roquís
+ | lat = 41.157488 | lon = 1.053453
+ | idurl = 9680
+ | idurl2 = dita/riudoms/mas-del-toda
+ | prot = 
+ | idprot = 
+ | id = IPA-9680
+ | wikidata = Q18004469
+ | imatge = Mas del Toda.JPG
+ | commonscat = Mas del Toda
+}}
+{{filera IPA
+ | nom = [[La Soleiada]]
+ | nomcoor = La Soleiada (Riudoms)
+ | estil = Noucentisme
+ | època = XX Inici
+ | municipi = Riudoms
+ | lloc = Av. Josep M. Sentís, 22
+ | lat = 41.142290 | lon = 1.048738
+ | idurl = 9681
+ | idurl2 = dita/riudoms/la-soleiada
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9681
+ | wikidata = Q18004181
+ | imatge = La Soleiada2.JPG
+ | commonscat = La Soleiada
+}}
+{{filera IPA
+ | nom = [[Molí de vent (Riudoms)|Molí de vent]]
+ | nomcoor = Molí de vent (Riudoms)
+ | estil = Obra popular
+ | època = XVII-XVIII
+ | municipi = Riudoms
+ | lloc = Partida del Molí de Vent
+ | lat = 41.158259 | lon = 1.045465
+ | idurl = 9682
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-9682
+ | wikidata = Q58928302
+ | imatge = Molí de vent Riudoms.JPG
+ | commonscat = Molí de vent (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Mas Blanc (Riudoms)|Mas Blanc]]
+ | nomcoor = Mas Blanc (Riudoms)
+ | estil = Obra popular
+ | època = 
+ | municipi = Riudoms
+ | lloc = Carretera TV-3142, quilòmetre 2,1
+ | lat = 41.113247 | lon = 1.077433
+ | idurl = 40706
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-40706
+ | wikidata = Q58906793
+ | imatge = Mas Blanc (Riudoms) 01.jpg
+ | commonscat = Mas Blanc (Riudoms)
+}}
+{{filera IPA
+ | nom = [[Mas de la Calderera]]
+ | nomcoor = Mas de la Calderera (Riudoms)
+ | estil = Noucentista
+ | època = 
+ | municipi = Riudoms
+ | lloc = A l'oest de la Riera de Maspujols, a la zona de la Clota
+ | lat = 41.154381 | lon = 1.050460
+ | idurl = 40707
+ | idurl2 = 
+ | prot = BCIL
+ | idprot = 1993
+ | id = IPA-40707
+ | wikidata = Q18004421
+ | imatge = Mas calderera.jpg
+ | commonscat = Mas de la Calderera
+}}
+|}
+
+== Enllaços externs ==
+{{commonscat||monuments de Riudoms}}
+* [https://invarquit.cultura.gencat.cat/simple-search Cercador de l'Inventari del Patrimoni Arquitectònic]
+* [http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/inici Mapa de recursos culturals], Diputació de Tarragona.
+
+{{llistes monuments Baix Camp}}
+
+{{ORDENA:Llista Monuments Riudoms}}
+[[Categoria:Riudoms]]
+[[Categoria:Llistes de monuments del Baix Camp|Riudoms]]

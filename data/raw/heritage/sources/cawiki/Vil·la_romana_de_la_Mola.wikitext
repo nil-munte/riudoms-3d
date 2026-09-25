@@ -1,0 +1,28 @@
+{{Infotaula indret}}
+La '''vil·la romana de la Mola''' és un [[jaciment arqueològic]] del municipi de [[Riudoms]]. S'havia conegut també com a vil·la romana de l'hort del Pelat.<ref name=:0>{{Ref-publicació|cognom=Arola|nom=Roc|article=La vil·la romana de l’Hort del Pelat (Riudoms, Baix Camp)|publicació=Butlletí Arqueològic 24|url=https://www.raco.cat/index.php/ButlletiArq/article/download/315176/405303|data=2004|pàgines=75-95|cognom2=Bea|nom2=David}}</ref> Les restes van aparèixer el 1999 quan s'urbanitzava aquella zona, aleshores als encontorns de la vila,<ref>{{Ref-web|títol=Apareixen restes d'una vil·la romana a Riudoms|url=http://www.vilaweb.cat/noticia/1111488/19990902/apareixen-restes-villa-romana-riudoms.html|editor=Vilaweb|data=2-9-1999}}</ref> a la coneguda com a partida de la Mola. L'existència de restes arqueològiques en aquesta zona ja era coneguda, atès que el riudomenc Valerià Romero ja hi havia trobat restes de l'època romana en superfície.<ref name=:0/> La vil·la es datà del {{segle|I}} i es considera que fou abandonada a l'inici del {{segle|VI}}.<ref name=:1>{{Ref-llibre|cognom=Cabrelles Albareda|nom=Iban|títol=Memòria: excavació arqueològica a la Mola, Riudoms, Baix Camp (2005)|url=https://cultura.gencat.cat/web/.content/dgpc/documents/memories_2009/qmem7015.pdf|data=2007|editorial=Direcció General del Patrimoni Cultural. Generalitat de Catalunya|lloc=Tarragona}}</ref>
+
+La vil·la es dividia en tres àmbits: rústic, industrial i termal. Pel que fa a l'àmbit rústic, aquesta part era destinada a l'emmagatzematge de productes agrícoles. La part industrial, amb dipòsits, piscines i un forn per alimentar un [[hipocaust]], tot i que sembla clar que aquest era el seu ús, no es pogué determinar quin procés industrial s'hi desenvolupava. La part termal constava de [[frigidari]], un [[tepidari]], un [[caldari]] i unes estructures a fora que consisteixen en un pou i una basseta. Es considera que també hi havia d'haver una part domèstica o residencial que no ha estat localitzada.<ref name=:0/>
+
+La vil·la fou excavada en diferents actuacions arqueològiques entre els anys 1999 i 2005.<ref name=:1/> Els voltants de la vil·la foren enjardinats i aquesta es pot veure passant per sobre d'unes passarel·les de fusta.
+
+<gallery>
+Vil·la romana de la Mola 01.jpg
+Vil·la romana de la Mola 20.jpg
+Vil·la romana de la Mola 13.jpg
+Vil·la romana de la Mola 10.jpg
+Vil·la romana de la Mola 17.jpg
+</gallery>
+
+== Referències ==
+{{referències}}
+
+== Enllaços externs ==
+{{commonscat}}
+* [https://riudomsturisme.cat/vila-romana-de-la-mola/ Vil·la romana de la Mola a Riudoms Turisme]
+* [http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/vil-la-romana-de-la-mola Vil·la romana de la Mola a la pàgina de la Diputació de Tarragona]
+
+{{Autoritat}}
+
+{{ORDENA:Villa Romana De La Mola}}
+[[Categoria:Edificis de Riudoms]]
+[[Categoria:Vil·les romanes de Catalunya]]

@@ -1,0 +1,28 @@
+{{Infotaula edifici
+| nom = Centre Riudomenc
+| imatge = Centre Riudomenc2.JPG
+| lat_dec = 41.138238
+| long_dec = 1.050167
+| coord_par = region:ES-CT_type:landmark
+| localitzacio = C. de les Galanes
+| construit = {{segle|XVIII}}, XX
+| estil = Obra popular
+| designacio1 = BCIL
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9671 9671]
+}}
+El '''Centre Riudomenc''' és un [[edifici]] de [[Riudoms]] (Baix Camp) protegit com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+Casa quadrangular amb una torre al mig. A l'Arc de la porta, d'[[arc de mig punt]] amb grans [[dovella|dovelles]], hi ha una inscripció de cap el mil set-cents.<ref name=ipac/>
+
+== Història ==
+Edifici del 1709, reformat en successives èpoques. Es va utilitzar com restaurant i sala de ball.<ref name=ipac/>
+
+== Referències ==
+{{commonscat}}
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9671 | títol=Centre Riudomenc | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]

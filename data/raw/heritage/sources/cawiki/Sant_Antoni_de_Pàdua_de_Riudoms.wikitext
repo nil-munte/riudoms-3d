@@ -1,0 +1,33 @@
+{{Infotaula edifici
+| nom = Sant Antoni de Pàdua de Riudoms
+| imatge = Ermita de Sant Antoni de Riudoms.JPG
+| lat_dec = 41.142176
+| long_dec = 1.048312
+| coord_par = region:ES-CT_type:landmark
+| localitzacio = Pl. de Sant Antoni
+| construit = S. XVII-XVIII
+| estil = Barroc
+| designacio1 = BCIL
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9670 9670]
+}}
+'''Sant Antoni de Pàdua de Riudoms''' és una [[ermita]] [[Arquitectura barroca|barroca]] de [[Riudoms]] ([[Baix Camp]]) protegida com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+Ermita d'una sola [[nau (arquitectura)|nau]], amb [[capella (arquitectura)|capelles]] laterals. Coberta amb [[volta de canó]] amb [[lluneta|llunetes]] a la nau, i amb volta de canó a les capelles. Volta bufada a la capçalera, plana. A la [[sagristia]] hi ha una porta [[Barroc arquitectònic|barroca]]. Campanar d'[[espadanya]] d'un sol ull centrat a la façana.<ref name=ipac/>
+
+== Història ==
+Segons consta a la portada, s'acabà de construir l'any 1702.<ref name=ipac/> Hi ha també un retaule barroc que fou cremat en part durant la [[Guerra Civil espanyola]] i reconstruït posteriorment.
+
+== Referències ==
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9670 | títol=Sant Antoni de Pàdua de Riudoms | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{Commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/ermita-de-sant-antoni | títol=Sant Antoni de Pàdua de Riudoms | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]
+[[Categoria:Esglésies barroques del Baix Camp]]

@@ -1,0 +1,527 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-25T07:50:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 222050209,
+  "center": {
+    "lat": 41.1377830,
+    "lon": 1.0532815
+  },
+  "tags": {
+    "highway": "pedestrian",
+    "name": "Carrer de l'Arenal",
+    "name:ca": "Carrer de l'Arenal"
+  }
+},
+{
+  "type": "way",
+  "id": 222050212,
+  "center": {
+    "lat": 41.1380121,
+    "lon": 1.0503219
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer de les Galanes",
+    "name:ca": "Carrer de les Galanes"
+  }
+},
+{
+  "type": "way",
+  "id": 222050217,
+  "center": {
+    "lat": 41.1386547,
+    "lon": 1.0541538
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "maxspeed": "30",
+    "name": "Raval de Sant Francesc",
+    "name:ca": "Raval de Sant Francesc",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 222050245,
+  "center": {
+    "lat": 41.1375842,
+    "lon": 1.0508732
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça de l'Om",
+    "name:ca": "Plaça de l'Om"
+  }
+},
+{
+  "type": "way",
+  "id": 222050251,
+  "center": {
+    "lat": 41.1376363,
+    "lon": 1.0511943
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça de l'Om",
+    "name:ca": "Plaça de l'Om"
+  }
+},
+{
+  "type": "way",
+  "id": 222050303,
+  "center": {
+    "lat": 41.1394759,
+    "lon": 1.0511919
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça d'Arnau de Palomar",
+    "name:ca": "Plaça d'Arnau de Palomar"
+  }
+},
+{
+  "type": "way",
+  "id": 222050312,
+  "center": {
+    "lat": 41.1384160,
+    "lon": 1.0507581
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer de Sant Bonifaci",
+    "name:ca": "Carrer de Sant Bonifaci",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222050324,
+  "center": {
+    "lat": 41.1387707,
+    "lon": 1.0515946
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça de l'Església",
+    "name:ca": "Plaça de l'Església",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222050338,
+  "center": {
+    "lat": 41.1391613,
+    "lon": 1.0512648
+  },
+  "tags": {
+    "highway": "residential",
+    "maxspeed": "30",
+    "name": "Plaça de l'Església",
+    "name:ca": "Plaça de l'Església",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 222053637,
+  "center": {
+    "lat": 41.1389103,
+    "lon": 1.0554929
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça de l'Arbre",
+    "name:ca": "Plaça de l'Arbre",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222053639,
+  "center": {
+    "lat": 41.1394219,
+    "lon": 1.0510850
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça d'Arnau de Palomar",
+    "name:ca": "Plaça d'Arnau de Palomar",
+    "ref": "TV-3101"
+  }
+},
+{
+  "type": "way",
+  "id": 277215254,
+  "center": {
+    "lat": 41.1379279,
+    "lon": 1.0516053
+  },
+  "tags": {
+    "highway": "living_street",
+    "maxspeed": "20",
+    "name": "Carrer Major",
+    "name:ca": "Carrer Major",
+    "oneway": "yes",
+    "surface": "sett"
+  }
+},
+{
+  "type": "way",
+  "id": 277215260,
+  "center": {
+    "lat": 41.1393485,
+    "lon": 1.0512830
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça d'Arnau de Palomar",
+    "name:ca": "Plaça d'Arnau de Palomar"
+  }
+},
+{
+  "type": "way",
+  "id": 277215261,
+  "center": {
+    "lat": 41.1385944,
+    "lon": 1.0499455
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Plaça de la Mare Cèlia",
+    "name:ca": "Plaça de la Mare Cèlia"
+  }
+},
+{
+  "type": "way",
+  "id": 277215262,
+  "center": {
+    "lat": 41.1374687,
+    "lon": 1.0500671
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Plaça del Portal de Ponent",
+    "name:ca": "Plaça del Portal de Ponent"
+  }
+},
+{
+  "type": "way",
+  "id": 277215265,
+  "center": {
+    "lat": 41.1387270,
+    "lon": 1.0517351
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "maxspeed": "30",
+    "name": "Plaça de l'Església",
+    "name:ca": "Plaça de l'Església",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 277215272,
+  "center": {
+    "lat": 41.1388496,
+    "lon": 1.0515302
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "footway",
+    "name": "Plaça de l'Església",
+    "name:ca": "Plaça de l'Església",
+    "wikidata": "Q58928929",
+    "wikipedia": "ca:Plaça de l'Església i plaça Petita (Riudoms)"
+  }
+},
+{
+  "type": "way",
+  "id": 277220967,
+  "center": {
+    "lat": 41.1420485,
+    "lon": 1.0481083
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Parc de Sant Antoni",
+    "name:ca": "Parc de Sant Antoni"
+  }
+},
+{
+  "type": "way",
+  "id": 277220968,
+  "center": {
+    "lat": 41.1388249,
+    "lon": 1.0536703
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "Plaça del Pou",
+    "name:ca": "Plaça del Pou"
+  }
+},
+{
+  "type": "way",
+  "id": 390519395,
+  "center": {
+    "lat": 41.1385246,
+    "lon": 1.0524491
+  },
+  "tags": {
+    "highway": "living_street",
+    "maxspeed": "20",
+    "name": "Carrer de l'Arenal",
+    "name:ca": "Carrer de l'Arenal",
+    "oneway": "yes",
+    "surface": "sett"
+  }
+},
+{
+  "type": "way",
+  "id": 391741484,
+  "center": {
+    "lat": 41.1367898,
+    "lon": 1.0497804
+  },
+  "tags": {
+    "intermittent": "yes",
+    "layer": "-1",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "tunnel": "culvert",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 460224318,
+  "center": {
+    "lat": 41.1376231,
+    "lon": 1.0510295
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "footway",
+    "name": "Plaça de l'Om",
+    "name:ca": "Plaça de l'Om"
+  }
+},
+{
+  "type": "way",
+  "id": 460224319,
+  "center": {
+    "lat": 41.1385383,
+    "lon": 1.0499803
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "footway",
+    "name": "Plaça Mare Cèlia",
+    "name:ca": "Plaça Mare Cèlia"
+  }
+},
+{
+  "type": "way",
+  "id": 574393280,
+  "center": {
+    "lat": 41.1353297,
+    "lon": 1.0514122
+  },
+  "tags": {
+    "intermittent": "yes",
+    "layer": "-1",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "tunnel": "culvert",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 574393284,
+  "center": {
+    "lat": 41.1350366,
+    "lon": 1.0528291
+  },
+  "tags": {
+    "intermittent": "yes",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 574393288,
+  "center": {
+    "lat": 41.1342903,
+    "lon": 1.0547174
+  },
+  "tags": {
+    "intermittent": "yes",
+    "layer": "-1",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "tunnel": "culvert",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 964964978,
+  "center": {
+    "lat": 41.1384252,
+    "lon": 1.0532046
+  },
+  "tags": {
+    "highway": "living_street",
+    "maxspeed": "20",
+    "name": "Raval de Sant Francesc",
+    "name:ca": "Raval de Sant Francesc",
+    "surface": "sett"
+  }
+},
+{
+  "type": "way",
+  "id": 1058984126,
+  "center": {
+    "lat": 41.1422266,
+    "lon": 1.0483498
+  },
+  "tags": {
+    "denomination": "catholic",
+    "historic": "wayside_shrine",
+    "name": "Ermita de Sant Antoni",
+    "name:ca": "Ermita de Sant Antoni",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 1179700366,
+  "center": {
+    "lat": 41.1408699,
+    "lon": 1.0505182
+  },
+  "tags": {
+    "addr:city": "Riudoms",
+    "addr:postcode": "43330",
+    "leisure": "park",
+    "name": "Parc de la palmera",
+    "opening_hours": "24/7"
+  }
+},
+{
+  "type": "way",
+  "id": 1180184575,
+  "center": {
+    "lat": 41.1410886,
+    "lon": 1.0517895
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "Escola Cavaller Arnau"
+  }
+},
+{
+  "type": "way",
+  "id": 1302466523,
+  "center": {
+    "lat": 41.1413834,
+    "lon": 1.0508211
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "3",
+    "name": "beat bonaventura"
+  }
+},
+{
+  "type": "way",
+  "id": 1383984270,
+  "center": {
+    "lat": 41.1383515,
+    "lon": 1.0485593
+  },
+  "tags": {
+    "intermittent": "yes",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 1383984271,
+  "center": {
+    "lat": 41.1355991,
+    "lon": 1.0507929
+  },
+  "tags": {
+    "intermittent": "yes",
+    "name": "Barranc del Portal",
+    "name:ca": "Barranc del Portal",
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 1385395363,
+  "center": {
+    "lat": 41.1414534,
+    "lon": 1.0507516
+  },
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "Escola Beat Bonaventura Gran"
+  }
+},
+{
+  "type": "relation",
+  "id": 19111488,
+  "center": {
+    "lat": 41.1389225,
+    "lon": 1.0554808
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Plaça de l'Arbre",
+    "name:ca": "Plaça de l'Arbre",
+    "type": "multipolygon",
+    "wikidata": "Q107965873"
+  }
+},
+{
+  "type": "relation",
+  "id": 19113757,
+  "center": {
+    "lat": 41.1416529,
+    "lon": 1.0518376
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Plaça dels Gegants",
+    "name:ca": "Plaça dels Gegants",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

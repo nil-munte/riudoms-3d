@@ -1,0 +1,31 @@
+{{Infotaula edifici
+| nom = Mas del Toda
+| imatge = Mas del Toda.JPG
+| mapa_nom = Espanya Catalunya
+| lat_dec = 41.157488
+| long_dec = 1.053453
+| localitzacio = Partida de les Planes del Roquís. [[Riudoms]] (Baix Camp)
+| estil = [[arquitectura popular|Obra popular]]
+| designacio1 = IPA
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9680 9680]
+}}
+El '''Mas del Toda''' és una [[masia]] de [[Riudoms]] (Baix Camp) inclosa a l'[[Inventari del Patrimoni Arquitectònic de Catalunya]].
+
+== Descripció ==
+Mas situat a l'esquerra de la [[riera de Maspujols]], sota la carretera d'Alcolea, a la partida de les planes del Roquís, en un pinar. Es tracta de tres edificis, el primer amb una mena de torre alta, moderna, feta de [[paredat]] amb reforços de [[Maó (construcció)|maons]] i [[arrebossat (construcció)|arrebossada]]. L'edifici principal, construït de paredat, és de planta rectangular, quasi quadrada; façana arrebossada, que té una filada de finestres decorades amb rajoles d'[[Escaquer|escacs]] blancs i blaus. Al costat té un edifici més modern, habitat pels [[masover]]s. Al mas s'hi accedeix, des de la riera, per un camí empedrat, flanquejat per [[Plàtan (arbre)|plàtans]].<ref name="patmapa"/>
+
+== Història ==
+La família Toda, així com el seu mas, és una de les més conegudes del terme. En la segona meitat del {{segle|XVIII}}, en Josep Toda era un dels pocs propietaris amb títol del municipi, alhora que el quart major contribuent, amb 1.186,83 sous el 1763, repartits en 904,83 en terres, 58 en immobles, i 224 en rendes. Josep Toda, cap d'una de les famílies més rellevants al llarg del segle, era qui rebia més rendes dels posseïdors de títol. En les terres que envolten el mas s'han fet importants descobriments arqueològics, especialment d'època ibèrica i romana, dels quals destaca un gran fragment d'una escultura de marbre de [[Bacus (mitologia)|Bacchus]], deu del vi, fet que demostra una explotació agrícola des de l'antiguitat en aquest sector del terme.<ref name="patmapa"/>
+
+== Referències ==
+{{referències|refs=
+<ref name="patmapa">{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9680 | títol=Mas del Toda | obra=Inventari del Patrimoni Arquitectònic de Catalunya | consulta=28 agost 2014 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/mas-del-toda | títol=Mas del Toda | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Masies de Riudoms|Toda]]

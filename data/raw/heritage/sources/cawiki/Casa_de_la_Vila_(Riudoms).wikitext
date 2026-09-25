@@ -1,0 +1,23 @@
+{{Infotaula edifici}}
+La '''Casa de la Vila''' és una casa consistorial amb elements modernistes de [[Riudoms]] (Baix Camp) protegida com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+Espaiós edifici bastit aprofitant una construcció anterior. Planta rectangular. Façana decorada amb [[esgrafiat]]s. Porta gran, amb àmplia entrada que dona accés a les oficines a peu pla i, mitjançant una luxosa escala amb barana [[balustrada]], al pis noble. Recentment ha estat renovada, amb obres que han deixat nets els antics calabossos municipals. A la façana hi ha dos escuts esgrafiats: el de l'estat, i el del poble. Entremig, un balcó amb balustres.<ref name=ipac/>
+
+== Història ==
+Fou remodelada el 1915 per l'arquitecte [[Pere Caselles i Tarrats]] amb la construcció de l'escalinata central de marbre<ref>{{Ref-web|títol=El Reus de Pere Caselles|url=http://www.nwrevistadereus.cat/cultura/El-Reus-de-Pere-Caselles/1638/|llengua=ca|editor=NW La Revista de Reus|data=02/08/2019|nom=Arnau|cognom=Martínez|consulta=2022-10-10|arxiuurl=https://web.archive.org/web/20221010100044/http://www.nwrevistadereus.cat/cultura/El-Reus-de-Pere-Caselles/1638/|arxiudata=2022-10-10}}</ref> i reformes que li retornaren l'aspecte senyorial, s'ensorrà la teulada el 26 d'octubre de 1917, havent de fer noves obres que finalitzaren el 1925.<ref>[[Eugeni Perea Simón|Perea Simón, Eugeni]]. «[https://raco.cat/index.php/LoFloc/article/view/314129 Riudoms a l'època de la mancomunitat de Catalunya, 1914-1925 (i II)]». ''Lo Floc'', 2014, Núm. 208, p. 6-13.</ref> Es troba al carrer major, enfront de la plaça de l'Om i quasi davant de l'antic [[Hospital i capella de la Verge Maria|Hospital i la capella de la Verge Maria]].<ref name=ipac/>
+
+== Referències ==
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9679 | títol=Casa de la Vila | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/casa-de-la-vila-de-riudoms | títol=Casa de la Vila | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Cases consistorials del Baix Camp]]
+[[Categoria:Edificis modernistes del Baix Camp]]
+[[Categoria:Edificis de Riudoms]]

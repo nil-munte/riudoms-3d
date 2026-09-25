@@ -1,0 +1,331 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-25T07:55:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 200972088,
+  "center": {
+    "lat": 41.1459723,
+    "lon": 1.0663591
+  },
+  "tags": {
+    "highway": "track",
+    "name": "Camí dels Molins Nous"
+  }
+},
+{
+  "type": "way",
+  "id": 222050210,
+  "center": {
+    "lat": 41.1377560,
+    "lon": 1.0517169
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer del Beat Bonaventura Gran",
+    "name:ca": "Carrer del Beat Bonaventura Gran",
+    "name:etymology:wikidata": "Q2060572",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222050273,
+  "center": {
+    "lat": 41.1399167,
+    "lon": 1.0529721
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer dels Molins Nous",
+    "name:ca": "Carrer dels Molins Nous"
+  }
+},
+{
+  "type": "way",
+  "id": 222050295,
+  "center": {
+    "lat": 41.1387887,
+    "lon": 1.0506109
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer de Sant Jaume",
+    "name:ca": "Carrer de Sant Jaume",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222050340,
+  "center": {
+    "lat": 41.1386931,
+    "lon": 1.0527803
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer de la Muralla de la Font Nova",
+    "name:ca": "Carrer de la Muralla de la Font Nova",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 222053642,
+  "center": {
+    "lat": 41.1381349,
+    "lon": 1.0499723
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de la Muralla Vella",
+    "name:ca": "Carrer de la Muralla Vella"
+  }
+},
+{
+  "type": "way",
+  "id": 222999404,
+  "center": {
+    "lat": 41.1382345,
+    "lon": 1.0542069
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Pau Casals",
+    "name:ca": "Avinguda de Pau Casals",
+    "name:etymology:wikidata": "Q208537",
+    "ref": "T-310a"
+  }
+},
+{
+  "type": "way",
+  "id": 222999405,
+  "center": {
+    "lat": 41.1379699,
+    "lon": 1.0603038
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Reus",
+    "name:ca": "Avinguda de Reus",
+    "ref": "T-310z"
+  }
+},
+{
+  "type": "way",
+  "id": 263129665,
+  "center": {
+    "lat": 41.1415153,
+    "lon": 1.0558593
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "maxspeed": "30",
+    "name": "Carrer dels Molins Nous",
+    "name:ca": "Carrer dels Molins Nous",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 277215253,
+  "center": {
+    "lat": 41.1368406,
+    "lon": 1.0503452
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Pau Casals",
+    "name:ca": "Avinguda de Pau Casals",
+    "name:etymology:wikidata": "Q208537",
+    "ref": "T-310z"
+  }
+},
+{
+  "type": "way",
+  "id": 277215255,
+  "center": {
+    "lat": 41.1381350,
+    "lon": 1.0510425
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer Nou",
+    "name:ca": "Carrer Nou",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 277215262,
+  "center": {
+    "lat": 41.1374687,
+    "lon": 1.0500671
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Plaça del Portal de Ponent",
+    "name:ca": "Plaça del Portal de Ponent"
+  }
+},
+{
+  "type": "way",
+  "id": 277215263,
+  "center": {
+    "lat": 41.1383725,
+    "lon": 1.0568823
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Reus",
+    "name:ca": "Avinguda de Reus",
+    "ref": "T-310a"
+  }
+},
+{
+  "type": "way",
+  "id": 277215269,
+  "center": {
+    "lat": 41.1369808,
+    "lon": 1.0505899
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Pau Casals",
+    "name:ca": "Avinguda de Pau Casals",
+    "name:etymology:wikidata": "Q208537",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 277220958,
+  "center": {
+    "lat": 41.1417463,
+    "lon": 1.0488510
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de Sant Antoni",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 277220959,
+  "center": {
+    "lat": 41.1401421,
+    "lon": 1.0492530
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de Sant Antoni"
+  }
+},
+{
+  "type": "way",
+  "id": 277220964,
+  "center": {
+    "lat": 41.1427218,
+    "lon": 1.0502323
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer dels Avellaners",
+    "name:ca": "Carrer dels Avellaners"
+  }
+},
+{
+  "type": "way",
+  "id": 277220969,
+  "center": {
+    "lat": 41.1418484,
+    "lon": 1.0489668
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de Sant Antoni",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 277220970,
+  "center": {
+    "lat": 41.1416584,
+    "lon": 1.0489214
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de Sant Antoni",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 390519393,
+  "center": {
+    "lat": 41.1379299,
+    "lon": 1.0533683
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Avinguda de Pau Casals",
+    "name:ca": "Avinguda de Pau Casals",
+    "name:etymology:wikidata": "Q208537",
+    "ref": "T-310z"
+  }
+},
+{
+  "type": "way",
+  "id": 403303346,
+  "center": {
+    "lat": 41.1372008,
+    "lon": 1.0503699
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Carrer de la Muralla Vella",
+    "name:ca": "Carrer de la Muralla Vella"
+  }
+},
+{
+  "type": "way",
+  "id": 1385305831,
+  "center": {
+    "lat": 41.1373832,
+    "lon": 1.0518735
+  },
+  "tags": {
+    "highway": "tertiary",
+    "maxheight": "3",
+    "name": "Avinguda de Pau Casals",
+    "name:ca": "Avinguda de Pau Casals",
+    "name:etymology:wikidata": "Q208537",
+    "ref": "T-310z"
+  }
+},
+{
+  "type": "way",
+  "id": 1385314409,
+  "center": {
+    "lat": 41.1394503,
+    "lon": 1.0517258
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Carrer de la Muralla de la Font Nova",
+    "name:ca": "Carrer de la Muralla de la Font Nova"
+  }
+}
+
+  ]
+}

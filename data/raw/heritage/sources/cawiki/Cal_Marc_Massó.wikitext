@@ -1,0 +1,31 @@
+{{Infotaula edifici
+| nom = Cal Marc Massó
+| imatge = Cal Marc Massó.JPG
+| mapa_nom = Espanya Catalunya
+| lat_dec = 41.137457
+| long_dec = 1.050845
+| localitzacio = C. del Beat Bonaventura, 73. [[Riudoms]] (Baix Camp)
+| construit = {{segle|XVIII}}
+| estil = Obra popular
+}}
+'''Cal Marc Massó''' és un edifici del municipi de [[Riudoms]] (Baix Camp) que forma part de l'[[Inventari del Patrimoni Arquitectònic de Catalunya]].
+
+== Descripció ==
+És una casa de planta rectangular amb baixos, primer pis i golfes. Obra de paredat, de façana amb porta àmplia, d'arc escarser, els batents de la qual estan clavetejats de cabotes; tres balcons alineats al primer pis i obertures a les golfes. A la dreta de la porta, amb finestra-balcó baixa, i a sota d'aquesta un finestró dels baixos amb reixat. L'atri dona pas al pis noble mitjançant una escala de granit protegida amb baranes amples de fusta. Coberta amb teulada i ràfesortint sobre la façana. La casa compta amb un clos annex.<ref name=ipac/>
+
+== Història ==
+Habitatge del {{segle|XVIII}} que ha conservat el nom de la família que s'hi establí en origen. L'Ajuntament de Riudoms decidí en ple municipal, el 19 de febrer de 1982, l'adquisició de la casa per a seu del Museu Històric Municipal, i del Centre d'Estudis, aquest últim ha adquirit per la seva part uns baixos i solar adjacents.<ref name=ipac/>
+Un cop rehabilitat, fou utilitzat com a biblioteca i arxiu municipal. Actualment la biblioteca ha estat traslladada a un edifici de nova construcció i s'utilitza com a dependències municipals i arxiu.
+
+== Referències ==
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9678 | títol=Cal Marc Massó | obra=Inventari del Patrimoni Arquitectònic | consulta=19 novembre 2015 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{Commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/museu-historic-municipal | títol=Cal Marc Massó | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]

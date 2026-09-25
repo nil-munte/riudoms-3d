@@ -1,0 +1,21 @@
+{{Infotaula edifici}}
+El '''Molí de vent''' o '''Torre del Fargues''' o '''del Fargas''' és una [[torre]] de [[Riudoms]] ([[Baix Camp]]) protegida com a [[Bé Cultural d'Interès Local]].<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9682 | títol=Molí de vent | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+
+== Descripció ==
+Estructura arquitectònica de planta circular, alçada amb [[paredat]], a mode de torre. A l'interior es conserven tres filades de forats per les bigues. La porta que dona accés a l'interior es troba elevada amb un esglaó, i està reforçada amb rajoles i una barra de ferro a mode de [[llinda]], que no és original. No hi queden restes de la coberta.<ref name=ipac/>
+
+== Història ==
+En un document del primer terç del {{segle|XVIII}} (1720-1729), ja surt esmentat, com partida de terra, de la mateixa manera que un altre de 1885 relacionat una "partida nombrada Molí de Vent". El molí està situat a dalt d'un suau pujol, en terres més aviat de secà, donada la seva alçària.<ref name=ipac/>
+
+== Referències ==
+{{referències}}
+
+== Enllaços externs ==
+{{commonscat}}
+* [https://www.catalunyamedieval.es/torre-del-fargas-riudoms-baix-camp La Torre del Fargas a la pàgina web Catalunya Medieval]
+
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Molins del Baix Camp]]
+[[Categoria:Torres del Baix Camp]]

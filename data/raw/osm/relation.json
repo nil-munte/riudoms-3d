@@ -1,0 +1,40 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-24T21:35:25Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "relation",
+  "id": 340858,
+  "bounds": {
+    "minlat": 41.0967227,
+    "minlon": 1.0214605,
+    "maxlat": 41.1765838,
+    "maxlon": 1.1013616
+  },
+  "tags": {
+    "admin_level": "8",
+    "border_type": "municipi",
+    "boundary": "administrative",
+    "idee:name": "Riudoms",
+    "ine:municipio": "43129",
+    "name": "Riudoms",
+    "name:ca": "Riudoms",
+    "population": "6927",
+    "population:date": "2025",
+    "postal_code": "43330",
+    "ref:idescat": "431299",
+    "ref:ine": "43129000000",
+    "source": "BDLL25, EGRN, Instituto Geográfico Nacional",
+    "type": "boundary",
+    "wikidata": "Q679015",
+    "wikipedia": "ca:Riudoms"
+  }
+}
+
+  ]
+}

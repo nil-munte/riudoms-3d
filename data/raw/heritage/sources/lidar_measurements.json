@@ -1,0 +1,89 @@
+{
+ "source": "ICGC LiDAR tiles 336556.laz / 336555.laz already in data/raw/icgc/lidar (read-only); point extracts regenerable with data/raw/heritage/sources/lidar_extract.py (outputs lidar_*.npy, deleted to save space)",
+ "height_datum": "orthometric metres as stored in the LAZ files",
+ "church_local_frame": "origin UTM31N (336435.6, 4556026.9) = church node; 'along' axis bearing 152.7° (towards the facade/SSE), 'across' positive towards WSW",
+ "church": {
+  "ground_church_platform_in_front_of_facade": 124.37,
+  "ground_plaça_gran": "123.4 -> 123.0",
+  "ground_plaça_petita": "121.5-121.8",
+  "ground_streets_SE": 120.8,
+  "nave_roof_ridge_rel": 22.5,
+  "nave_eaves_rel": 21.0,
+  "side_chapel_roofs_rel": 10.5,
+  "buttress_tops_rel": 17.5,
+  "facade_lateral_crown_rel": 22.3,
+  "facade_clock_gable_top_rel": 25.8,
+  "facade_outer_parts_rel": 19.5,
+  "tower_top_max_rel": 32.96,
+  "tower_terrace_returns_rel": "31-33",
+  "tower_extent_at_top_m": "8.6 (along) x 8.2 (across)",
+  "tower_centre_latlon": [
+   41.139037,
+   1.051014
+  ],
+  "facade_centre_latlon": [
+   41.13906,
+   1.05118
+  ],
+  "apse_end_latlon": [
+   41.139448,
+   1.050879
+  ]
+ },
+ "monument_gaudi": {
+  "max_z": 129.1,
+  "ground": 123.85,
+  "note": "only ~5.3 m captured; published height 10 m"
+ },
+ "abadia": {
+  "max": 137.89,
+  "p95": 136.31,
+  "ground": 125.22
+ },
+ "casal_riudomenc": {
+  "max": 146.08,
+  "p95": 145.85
+ },
+ "ajuntament": {
+  "max": 134.97,
+  "p95": 132.62,
+  "ground": 119.44
+ },
+ "capella_verge_maria": {
+  "max": 131.31,
+  "p95": 129.58
+ },
+ "casa_beat": {
+  "max": 129.12,
+  "p95": 128.32,
+  "ground": 118.09
+ },
+ "cal_marc_masso": {
+  "max": 130.21,
+  "p95": 129.96,
+  "ground": 118.39
+ },
+ "porxos_point": {
+  "max": 140.09,
+  "p95": 135.54,
+  "ground": 121.34
+ },
+ "font_dama_oferent": {
+  "max": 126.59,
+  "ground": 121.48
+ },
+ "ermita_sant_antoni": {
+  "building_max": 147.35,
+  "building_p95": 146.65,
+  "highest_point": 149.17,
+  "ground_within_30m": {
+   "min": 132.63,
+   "median": 134.07,
+   "max": 135.59
+  }
+ },
+ "casa_pairal_epicentre_point": {
+  "max": 125.52,
+  "ground": 112.62
+ }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+data/work/
+# large raw files that the download scripts recreate
+data/raw/icgc/lidar/*.laz
+data/raw/icgc/lidar/*.part
+data/raw/cadastre/gml/
+data/raw/cadastre/facades/
+*.log

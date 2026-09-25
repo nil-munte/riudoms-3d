@@ -1,0 +1,18 @@
+{{Infotaula edifici
+| construit = Medieval, XX
+}}
+La '''Plaça de l'Església i plaça Petita''' és una [[plaça]] de [[Riudoms]] (el [[Baix Camp]]) protegida com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+Dues places, la petita juxtaposada pel cantó sud a la gran. En conjunt formen un ampli espai obert de 4.100 metres quadrats. La plaça gran, al pla de l'[[Sant Jaume de Riudoms|església de Sant Jaume]], ha estat reformada amb gran encert artístic i urbanístic. A la plaça petita, que es troba en un nivell inferior, hi ha una font de planta hexagonal decorada amb un figura metàl·lica. Els [[porxo]]s estan distribuïts en dos trams de deu i sis arcades respectivament.<ref name=ipac/>
+
+[[Fitxer:Plaça de l'església vista des del campanar 01.jpg|miniatura|esquerra|Plaça de l'Església i plaça Petita vista des del campanar]]
+
+== Referències ==
+{{commonscat}}
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9672 | títol=Plaça de l'Església i plaça Petita | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Places del Baix Camp]]

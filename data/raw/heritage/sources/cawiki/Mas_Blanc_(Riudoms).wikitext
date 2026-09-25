@@ -1,0 +1,15 @@
+{{Infotaula edifici}}
+El '''Mas Blanc''' és una [[masia]] de [[Riudoms]] (Baix Camp) protegida com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+El Mas Blanc (o Mas Blanch) se situa a la carretera TV-3142, coneguda com de la Sénia. Es tracta d'un conjunt de construccions entre les quals destaca el buc principal destinat a funcions d'habitatge. Aquesta construcció és de planta quadrangular, amb coberta a doble vessant amb el carener en perpendicular a la façana. Té diverses dependències annexes que han creat una planta en forma de L. La façana és completament [[arrebossat (construcció)|arrebossada]] i emblanquinada, i destaca el [[ràfec]], ressortint en tot el perímetre construït i format per una filera de teules i [[cornisa]] [[motllura]]da. Sobre el carener, coronant la façana, una [[espadanya]] d'un ull.<ref name=ipac/>
+
+== Referències ==
+{{commonscat}}
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/40706 | títol=Mas Blanc | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Masies de Riudoms|Blanc]]

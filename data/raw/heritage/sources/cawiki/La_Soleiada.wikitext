@@ -1,0 +1,33 @@
+{{Infotaula edifici
+| nom = La Soleiada
+| imatge = La Soleiada2.JPG
+| mapa_nom = Espanya Catalunya
+| lat_dec = 41.142290
+| long_dec = 1.048738
+| localitzacio = Av. Josep M. Sentís, 22. [[Riudoms]] (Baix Camp)
+| construit = Inici del {{segle|XX}}
+| estil = [[Noucentisme]]
+| designacio1 = BCIL
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9681 9681]
+}}
+'''La Soleiada''' és una casa de [[Riudoms]] (Baix Camp) declarada [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+És una casa senyorial situada abans als afores, a l'alçada de l'[[ermita de Sant Antoni (Riudoms)|ermita de Sant Antoni]], i l'altra banda de la [[TV-3101|carretera de les Borges]], a l'hort de Xavier tocant al seu pinar. El nom li ve de l'indret, molt assolellat. Actualment es troba envoltada per una [[urbanització]], que li treu singularitat. És una casa d'estil colonial de dues plantes, amb moltes finestres i miradors, i una porxada sostinguda per tres columnes de [[pedra artificial]] que dona accés al jardí. A un extrem de l'edifici s'encimbella una torre, amb l'àtic ple de finestres, dues per un costat, amb vidres de colors, [[teulada (construcció)|teulada]] a dues vessants, rajoles blaves i vermelles, que li donen un aspecte característic. Al mur principal de la torre hi ha un excel·lent mosaic de Sant Antoni i un [[rellotge de sol]].<ref name="patmapa"/>
+
+== Història ==
+El xalet, o residència, fou construït per un [[indià]] que va retornar al poble. En els darrers anys ha estat alterat el seu entorn i ha estat posada a la venda. L'eixample del poble en aquesta direcció ha creat una mena d'urbanització que afecta el seu entorn per la banda del poble. Durant un temps s'havia pensat a destinar aquesta mansió com a museu municipal, per a salvar-la de l'enderrocament.<ref name="patmapa"/>
+
+== Referències ==
+{{referències|refs=
+<ref name="patmapa">{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9681 | títol=La Soleiada | obra=Inventari del Patrimoni Arquitectònic de Catalunya | consulta=28 agost 2014 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/la-soleiada | títol=La Soleiada | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]
+[[Categoria:Edificis noucentistes del Baix Camp]]

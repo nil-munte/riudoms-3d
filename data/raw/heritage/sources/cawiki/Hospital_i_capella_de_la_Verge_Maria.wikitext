@@ -1,0 +1,41 @@
+{{Infotaula edifici
+| nom = Hospital i capella de la Verge Maria
+| imatge = Capella Verge Maria.JPG
+| lat_dec = 41.137612
+| long_dec = 1.050755
+| coord_par = region:ES-CT_type:landmark
+| localitzacio = C. Major, 57
+| construit = S. XVI
+| estil = Obra popular
+| designacio1 = BCIL
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9669 9669]
+}}
+L{{'}}'''Hospital i [[capella (arquitectura)|capella]] de la Verge Maria de Gràcia''' són uns [[edifici]]s de [[Riudoms]] ([[Baix Camp]]) protegits com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+Antic hospital al costat de la [[capella (arquitectura)|capella]] de la Verge Maria. L'Hospital és un edifici molt gran. La capella, d'estil renaixentista molt senzill, té una sola [[nau (arquitectura)|nau]] amb [[volta de canó]] amb [[lluneta|llunetes]] i capçalera plana.<ref name=ipac/>
+
+La capella és presidida per la imatge de [[la Soledat]], obra de l'escultor madrileny Federico Coullaut-Valera Mendigutia.<ref>{{Ref-llibre|cognom=Torres Domènech|nom=Joan|títol=Imatges de Riudoms en la postguerra|data=2022|editorial=Associació Cultural Amics de l'Om|lloc=Riudoms|pàgines=113|cognom2=Mas Gispert|nom2=Josep Maria|cognom3=Salvat Papió|nom3=Mateu}}</ref> La imatge fou donació de l'empresari [[Lluís Massó i Simó]]<ref>{{Ref-llibre|cognom=Corts Salvat|nom=Joan-Ramon|títol=Riudoms. 850 anys d'història, llengua i cultura.|data=2000|editorial=Cossetània edicions|lloc=Valls|pàgines=177|isbn=84-89890-81-1|cognom2=Josep Maria|nom2=Toda Serra}}</ref> i surt a la processó del Sant Enterrament del Divendres Sant.
+
+== Història ==
+Antigament, aquest hospital estava destinat a l'atenció de pobres i pelegrins. Documentat des del {{segle|XVI}}, perdurà fins a finals del {{segle|XIX}}. La [[capella (arquitectura)|capella]] estava relacionada estretament amb l'hospital, com queda reflectit documentalment des del {{segle|XVI}}. En temps més recents es va fer servir com dipòsit funerari.<ref name=ipac/>
+
+L'edifici de l'antic hospital es va restaurar i es va utilitzar com a escola de música i actualment acull l'oficina de la guàrdia municipal i altres dependències municipals.<ref>{{ref-web |url=http://www.riudoms.cat/llocs-dinteres-turistic |títol=Llocs d'interès turístic de Riudoms |editor=Ajuntament de Riudoms}}</ref>
+
+== Referències ==
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9669 | títol=Hospital i capella de la Verge Maria | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/capella-de-la-verge-maria | títol=Hospital i capella de la Verge Maria | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+<gallery>
+La Soledat (Riudoms) 01.jpg|Imatge de la Soledat, a l'interior de la capella
+</gallery>
+
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Edificis de Riudoms]]
+[[Categoria:Esglésies del Baix Camp]]

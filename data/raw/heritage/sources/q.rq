@@ -1,0 +1,15 @@
+SELECT ?item ?itemLabel ?itemDescription ?coord ?ipac ?bcin ?heritageLabel ?inception ?height ?image ?commonscat ?article ?instLabel WHERE {
+  ?item wdt:P131 ?loc .
+  VALUES ?loc { wd:Q679015 wd:Q23993056 }
+  OPTIONAL { ?item wdt:P625 ?coord }
+  OPTIONAL { ?item wdt:P1600 ?ipac }
+  OPTIONAL { ?item wdt:P1586 ?bcin }
+  OPTIONAL { ?item wdt:P1435 ?heritage }
+  OPTIONAL { ?item wdt:P571 ?inception }
+  OPTIONAL { ?item wdt:P2048 ?height }
+  OPTIONAL { ?item wdt:P18 ?image }
+  OPTIONAL { ?item wdt:P373 ?commonscat }
+  OPTIONAL { ?item wdt:P31 ?inst }
+  OPTIONAL { ?article schema:about ?item ; schema:isPartOf <https://ca.wikipedia.org/> }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ca,es,en". }
+}

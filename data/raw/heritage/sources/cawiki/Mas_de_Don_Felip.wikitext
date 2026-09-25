@@ -1,0 +1,23 @@
+{{Infotaula edifici}}
+El '''Mas de Don Felip''' és una [[masia]] amb una [[Torre de sentinella|torre de defensa]] de [[Riudoms]] ([[Baix Camp]]), catalogada com a [[bé cultural d'interès local]].<ref name=ipac>{{IPAC|9676|Torre del Mas de Don Felip}}</ref> Es troba a l'extrem sud del municipi, en contacte amb el terme de [[Cambrils]], al costat de la [[Riera de Maspujols|riera de Riudoms o de Maspujols]], molt proper a la intersecció del [[camí de la Font del Ros]] i del [[camí del Molló]].
+
+== Història ==
+El nom del mas fa referència a [[Felip de Ferran i de Çacirera]] (1658-1715),<ref>{{ref-web|url=https://gw.geneanet.org/mrodriguez56?lang=es&pz=martin&nz=rodriguez&p=felip+antoni&n=de+ferran+y+de+sacirera|títol=Felip Antoni de FERRAN y de SACIRERA|obra=geneanet|editor=Martín Rodríguez}}</ref> militar [[Austriacistes|austriacista]], casat amb Anna de Maria de Fivaller i de Torres,<ref>{{ref-web|url=https://gw.geneanet.org/mrodriguez56?lang=es&pz=martin&nz=rodriguez&p=ana+maria&n=de+fivaller+y+torres|títol=Ana María de FIVALLER y TORRES|obra=geneanet|editor=Martín Rodríguez}}</ref> de la família dels [[ducat d'Almenara Alta|senyors d'Almenara Alta]].<ref>{{Ref-llibre|cognom = Perea Simón|nom = Eugeni|títol = Onomàstica de Riudoms|data = setembre de 2006|editorial = Institut d'Estudis Catalans|lloc = Barcelona|pàgines = 178|isbn = 84-7283-855-2}}</ref> Posteriorment, va ser adquirit per un grup d'empresaris químics reusencs als hereus d'Àgata Maria de Martorell i Téllez Girón (1897-1984),<ref>{{ref-web|url=https://gw.geneanet.org/lmvillena?lang=es&n=angela+maria+martorell+y+tellez+giron&p=x|títol=Ángela-María Martorell y Téllez-Girón|obra=geneanet|editor=Luis Manuel de Villena Cabeza}}</ref> que el 2009 van promoure la construcció d'un polígon industrial al costat del mas, aturat per contenciosos legals.<ref name=:0>{{Ref-web|url = http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/torre-del-mas-de-don-felip|títol = Torre del Mas de Don Felip|obra=Mapa de recursos culturals|editor=Diputació de Tarragona|arxiuurl=https://web.archive.org/web/20151117020148/http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/torre-del-mas-de-don-felip|arxiudata=17-11-2015}}</ref>
+
+== Descripció ==
+La torre de defensa data molt probablement del {{segle|XVI}}, època de les freqüents incursions dels [[Pirateria barbaresca|pirates barbarescos]], i probablement va ser reformada diverses vegades. És de planta quadrada (uns 4,90 × 4,70 m), i uns 13 m d'alçada. Té planta baixa i tres pisos, amb terrassa superior, [[merlet]]s i quatre [[Lladronera|matacans]].<ref name=ipac/>
+
+== Referències ==
+{{referències}}
+
+== Vegeu també ==
+{{commonscat}}
+* [[Casa Torres (Barcelona)]]
+* [[Casa Ferran-Civil]]
+* [[Casa Ferran-Tusquets]]
+
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Masies de Riudoms|Don Felip]]
+[[Categoria:Torres de guaita del Baix Camp|Mas de Don Felip]]

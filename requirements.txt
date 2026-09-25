@@ -1,0 +1,11 @@
+numpy>=2.0
+shapely>=2.1
+pyproj>=3.6
+rasterio>=1.4
+pillow>=10
+requests>=2.31
+mapbox_earcut>=1.0
+lxml>=5
+scipy>=1.13
+laspy[lazrs]>=2.5
+beautifulsoup4>=4.12

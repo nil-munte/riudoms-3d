@@ -1,0 +1,562 @@
+[
+  {
+    "file": "data/raw/heritage/photos/Sant_Jaume_de_Riudoms_800.jpg",
+    "commons_title": "File:Sant Jaume de Riudoms.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Sant_Jaume_de_Riudoms.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Sant_Jaume_de_Riudoms.jpg/960px-Sant_Jaume_de_Riudoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Sant_Jaume_de_Riudoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4160,
+      3120
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-04-05 10:51:01",
+    "description": "Església parroquial de Sant Jaume (Riudoms)",
+    "camera_coord": {
+      "lat": 41.139104,
+      "lon": 1.051104,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Façana principal de Sant Jaume i campanar (vista frontal)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Sant_Jaume_de_Riudoms_-_P1130379_800.jpg",
+    "commons_title": "File:Sant Jaume de Riudoms - P1130379.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Sant_Jaume_de_Riudoms_-_P1130379.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Sant_Jaume_de_Riudoms_-_P1130379.jpg/960px-Sant_Jaume_de_Riudoms_-_P1130379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sant_Jaume_de_Riudoms_-_P1130379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      3240,
+      4320
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:29:35",
+    "description": "Sant Jaume de Riudoms",
+    "camera_coord": null,
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Façana de Sant Jaume, vista vertical: portalada, rosassa, coronament",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Riudoms_esglesia_800.jpg",
+    "commons_title": "File:Riudoms esglesia.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Riudoms_esglesia.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Riudoms_esglesia.jpg/960px-Riudoms_esglesia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Riudoms_esglesia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      1872,
+      1794
+    ],
+    "author": "Toniher",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "date": "2006-03-11",
+    "description": "Saint James church and Church Square in Riudoms",
+    "camera_coord": null,
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Façana i campanar de Sant Jaume des de la plaça",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Esgl_sia_i_pla_a_de_Riudoms_01_800.jpg",
+    "commons_title": "File:Església i plaça de Riudoms 01.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Església_i_plaça_de_Riudoms_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_01.jpg/960px-Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2020-09-27 21:24:54",
+    "description": "Saint James church and Church Square in Riudoms",
+    "camera_coord": {
+      "lat": 41.138794,
+      "lon": 1.051532,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_esglesia",
+    "subject": "Església i plaça de l'Església (vista general)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Esgl_sia_i_pla_a_de_Riudoms_02_800.jpg",
+    "commons_title": "File:Església i plaça de Riudoms 02.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Església_i_plaça_de_Riudoms_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_02.jpg/960px-Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Esgl%C3%A9sia_i_pla%C3%A7a_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2020-09-27 21:25:08",
+    "description": "Saint James church and Church Square in Riudoms",
+    "camera_coord": {
+      "lat": 41.138763,
+      "lon": 1.051688,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_esglesia",
+    "subject": "Església i plaça de l'Església (vista general, altre angle)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_del_Comte_Arnau_i_esgl_sia_de_Sant_Jaume_de_Riudoms_-_panoramio_800.jpg",
+    "commons_title": "File:Plaça del Comte Arnau i església de Sant Jaume de Riudoms - panoramio.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_del_Comte_Arnau_i_església_de_Sant_Jaume_de_Riudoms_-_panoramio.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Pla%C3%A7a_del_Comte_Arnau_i_esgl%C3%A9sia_de_Sant_Jaume_de_Riudoms_-_panoramio.jpg/960px-Pla%C3%A7a_del_Comte_Arnau_i_esgl%C3%A9sia_de_Sant_Jaume_de_Riudoms_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Pla%C3%A7a_del_Comte_Arnau_i_esgl%C3%A9sia_de_Sant_Jaume_de_Riudoms_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      1200,
+      900
+    ],
+    "author": "jordi domènech",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "Taken on 8 July 2011",
+    "description": "Plaça Arnau de Palomar i església de Sant Jaume de Riudoms. \n\n\n\n\n\nThis is a photo of a monument listed in the Catalan heritage register of Béns Culturals d'Interès Nacional and the Spanish heritage register of Bienes de Interés Cultural under the reference 4402-MH-EN.",
+    "camera_coord": {
+      "lat": 41.13972,
+      "lon": 1.050949,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Lateral/posterior de l'església des de la plaça Arnau de Palomar, amb el monument a Gaudí",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Esgl_sia_de_Riudoms_800.jpg",
+    "commons_title": "File:Església de Riudoms.jpeg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Església_de_Riudoms.jpeg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Esgl%C3%A9sia_de_Riudoms.jpeg/960px-Esgl%C3%A9sia_de_Riudoms.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Esgl%C3%A9sia_de_Riudoms.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      1574,
+      720
+    ],
+    "author": "Josep Salvany i Blanch",
+    "license": "Public domain",
+    "license_url": null,
+    "date": "1916date QS:P571,+1916-00-00T00:00:00Z/9",
+    "description": "Església de Riudoms. Josep Salvany i Blanch (1916)",
+    "camera_coord": null,
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Fotografia històrica (1916) de l'església i el campanar",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Part_superior_del_campanar_de_Riudoms_800.jpg",
+    "commons_title": "File:Part superior del campanar de Riudoms.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Part_superior_del_campanar_de_Riudoms.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Part_superior_del_campanar_de_Riudoms.jpg/960px-Part_superior_del_campanar_de_Riudoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Part_superior_del_campanar_de_Riudoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      3120,
+      4160
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-06-16 13:23:03",
+    "description": "Penell que hi ha a la part superior del campanar de l'església de Sant Jaume de Riudoms",
+    "camera_coord": {
+      "lat": 41.139104,
+      "lon": 1.051104,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Part superior del campanar amb el penell",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Teulada_de_Sant_Jaume_de_Riudoms_02_800.jpg",
+    "commons_title": "File:Teulada de Sant Jaume de Riudoms 02.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Teulada_de_Sant_Jaume_de_Riudoms_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Teulada_de_Sant_Jaume_de_Riudoms_02.jpg/960px-Teulada_de_Sant_Jaume_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Teulada_de_Sant_Jaume_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4160,
+      3120
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-06-16 14:33:15",
+    "description": "Teulada de Sant Jaume de Riudoms",
+    "camera_coord": {
+      "lat": 41.139104,
+      "lon": 1.051104,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "esglesia_sant_jaume",
+    "subject": "Teulada de l'església vista des del campanar",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_de_l_esgl_sia_vista_des_del_campanar_01_800.jpg",
+    "commons_title": "File:Plaça de l'església vista des del campanar 01.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_de_l'església_vista_des_del_campanar_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_01.jpg/960px-Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4160,
+      3120
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-06-16 13:25:03",
+    "description": "Plaça de l'Església i plaça Petita (Riudoms)",
+    "camera_coord": {
+      "lat": 41.138694,
+      "lon": 1.051649,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_esglesia",
+    "subject": "Plaça de l'Església i plaça Petita vistes des del campanar (planta, porxos, font)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_de_l_esgl_sia_vista_des_del_campanar_02_800.jpg",
+    "commons_title": "File:Plaça de l'església vista des del campanar 02.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_de_l'església_vista_des_del_campanar_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_02.jpg/960px-Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Pla%C3%A7a_de_l%27esgl%C3%A9sia_vista_des_del_campanar_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4160,
+      3120
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-06-16 13:25:30",
+    "description": "Plaça de l'Església i plaça Petita (Riudoms)",
+    "camera_coord": {
+      "lat": 41.138694,
+      "lon": 1.051649,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_esglesia",
+    "subject": "Plaça de l'Església vista des del campanar (altre angle)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Porxos_de_la_Pla_a_de_Riudoms_02_800.jpg",
+    "commons_title": "File:Porxos de la Plaça de Riudoms 02.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Porxos_de_la_Plaça_de_Riudoms_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Porxos_de_la_Pla%C3%A7a_de_Riudoms_02.jpg/960px-Porxos_de_la_Pla%C3%A7a_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Porxos_de_la_Pla%C3%A7a_de_Riudoms_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-04-18 09:02:29",
+    "description": "Porxos de la plaça de l'Església i plaça Petita (Riudoms)",
+    "camera_coord": {
+      "lat": 41.138592,
+      "lon": 1.05204,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "porxos_placa",
+    "subject": "Porxos de la plaça (arcades)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Porxos_de_la_pla_a_de_Riudoms_-_P1130369_800.jpg",
+    "commons_title": "File:Porxos de la plaça de Riudoms - P1130369.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Porxos_de_la_plaça_de_Riudoms_-_P1130369.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Porxos_de_la_pla%C3%A7a_de_Riudoms_-_P1130369.jpg/960px-Porxos_de_la_pla%C3%A7a_de_Riudoms_-_P1130369.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Porxos_de_la_pla%C3%A7a_de_Riudoms_-_P1130369.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:25:55",
+    "description": "Porxos de la plaça de Riudoms",
+    "camera_coord": null,
+    "landmark_id": "porxos_placa",
+    "subject": "Porxos de la plaça, detall de les arcades",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Font_de_la_Dama_Oferent_-_Riudoms_-_P1130380_800.jpg",
+    "commons_title": "File:Font de la Dama Oferent - Riudoms - P1130380.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Font_de_la_Dama_Oferent_-_Riudoms_-_P1130380.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Font_de_la_Dama_Oferent_-_Riudoms_-_P1130380.jpg/960px-Font_de_la_Dama_Oferent_-_Riudoms_-_P1130380.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Font_de_la_Dama_Oferent_-_Riudoms_-_P1130380.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      3240,
+      4320
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:29:44",
+    "description": "Font de la Dama Oferent - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "placa_petita",
+    "subject": "Font hexagonal de la Dama Oferent a la plaça Petita",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Capella_Verge_Maria_800.jpg",
+    "commons_title": "File:Capella Verge Maria.JPG",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Capella_Verge_Maria.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Capella_Verge_Maria.JPG/960px-Capella_Verge_Maria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Capella_Verge_Maria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      2112,
+      2816
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2015-11-29 13:03:33",
+    "description": "Capella de la Verge Maria de Gràcia (Riudoms)",
+    "camera_coord": {
+      "lat": 41.137612,
+      "lon": 1.050755,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "hospital_capella_verge_maria",
+    "subject": "Façana de la capella de la Verge Maria (carrer Major)",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Mosaic_amb_l_escut_de_Riudoms_-_pla_a_de_l_Esgl_sia_-_Riudoms_-_P1130398_800.jpg",
+    "commons_title": "File:Mosaic amb l'escut de Riudoms - plaça de l'Església - Riudoms - P1130398.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Mosaic_amb_l'escut_de_Riudoms_-_plaça_de_l'Església_-_Riudoms_-_P1130398.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Mosaic_amb_l%27escut_de_Riudoms_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_-_Riudoms_-_P1130398.jpg/960px-Mosaic_amb_l%27escut_de_Riudoms_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_-_Riudoms_-_P1130398.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mosaic_amb_l%27escut_de_Riudoms_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_-_Riudoms_-_P1130398.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:36:33",
+    "description": "Mosaic amb l'escut de Riudoms - plaça de l'Església - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "placa_esglesia",
+    "subject": "Mosaic de l'escut de Riudoms al paviment de la plaça",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Abadia_-_casa_de_la_Parr_quia_-_pla_a_de_l_Esgl_sia_1_-_Riudoms_-_P1130377_800.jpg",
+    "commons_title": "File:Abadia - casa de la Parròquia - plaça de l'Església 1 - Riudoms - P1130377.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Abadia_-_casa_de_la_Parròquia_-_plaça_de_l'Església_1_-_Riudoms_-_P1130377.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Abadia_-_casa_de_la_Parr%C3%B2quia_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_1_-_Riudoms_-_P1130377.jpg/960px-Abadia_-_casa_de_la_Parr%C3%B2quia_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_1_-_Riudoms_-_P1130377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Abadia_-_casa_de_la_Parr%C3%B2quia_-_pla%C3%A7a_de_l%27Esgl%C3%A9sia_1_-_Riudoms_-_P1130377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:29:13",
+    "description": "Abadia - casa de la Parròquia - plaça de l'Església 1 - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "abadia",
+    "subject": "Abadia (casa de la parròquia), plaça de l'Església 1",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Casal_Riudomenc_-_Riudoms_-_P1130400_800.jpg",
+    "commons_title": "File:Casal Riudomenc - Riudoms - P1130400.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Casal_Riudomenc_-_Riudoms_-_P1130400.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Casal_Riudomenc_-_Riudoms_-_P1130400.jpg/960px-Casal_Riudomenc_-_Riudoms_-_P1130400.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Casal_Riudomenc_-_Riudoms_-_P1130400.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:37:29",
+    "description": "Casal Riudomenc - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "casal_riudomenc",
+    "subject": "Façana del Casal Riudomenc",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Ermita_de_Sant_Antoni_de_Riudoms_800.jpg",
+    "commons_title": "File:Ermita de Sant Antoni de Riudoms.JPG",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Ermita_de_Sant_Antoni_de_Riudoms.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Ermita_de_Sant_Antoni_de_Riudoms.JPG/960px-Ermita_de_Sant_Antoni_de_Riudoms.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ermita_de_Sant_Antoni_de_Riudoms.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      2048,
+      1536
+    ],
+    "author": "Montserrat Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2005-02-16 15:12:35",
+    "description": "Ermita de Sant Antoni de Pàdua a Riudoms",
+    "camera_coord": {
+      "lat": 41.142139,
+      "lon": 1.048382,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "ermita_sant_antoni",
+    "subject": "Façana de l'ermita de Sant Antoni amb l'espadanya",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Casa_de_la_Vila_de_Riudoms_02_800.jpg",
+    "commons_title": "File:Casa de la Vila de Riudoms 02.JPG",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Casa_de_la_Vila_de_Riudoms_02.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Casa_de_la_Vila_de_Riudoms_02.JPG/960px-Casa_de_la_Vila_de_Riudoms_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Casa_de_la_Vila_de_Riudoms_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      2048,
+      1536
+    ],
+    "author": "Montserrat Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2005-05-19 18:44:14",
+    "description": "Town Hall of Riudoms",
+    "camera_coord": {
+      "lat": 41.137701,
+      "lon": 1.050835,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "casa_de_la_vila",
+    "subject": "Façana de la Casa de la Vila amb esgrafiats i balcó",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_de_l_Arbre_-_Riudoms_01_800.jpg",
+    "commons_title": "File:Plaça de l'Arbre - Riudoms 01.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_de_l'Arbre_-_Riudoms_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Pla%C3%A7a_de_l%27Arbre_-_Riudoms_01.jpg/960px-Pla%C3%A7a_de_l%27Arbre_-_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Pla%C3%A7a_de_l%27Arbre_-_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2021-07-13 19:12:46",
+    "description": "La Plaça de l'Arbre a Riudoms, obra de l'arquitecte Hiroya Tanaka",
+    "camera_coord": {
+      "lat": 41.13926,
+      "lon": 1.055075,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_arbre",
+    "subject": "Plaça de l'Arbre (Hiroya Tanaka), al costat de la Casa Pairal de Gaudí",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_de_la_Palmera_Riudoms_01_800.jpg",
+    "commons_title": "File:Plaça de la Palmera (Riudoms) 01.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_de_la_Palmera_(Riudoms)_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Pla%C3%A7a_de_la_Palmera_%28Riudoms%29_01.jpg/960px-Pla%C3%A7a_de_la_Palmera_%28Riudoms%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Pla%C3%A7a_de_la_Palmera_%28Riudoms%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "date": "2025-05-23 19:42:26",
+    "description": "Plaça de la Palmera (Riudoms)",
+    "camera_coord": {
+      "lat": 41.140901,
+      "lon": 1.050791,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "placa_palmera",
+    "subject": "Plaça de la Palmera, gespa i arbres",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Pla_a_de_l_Om_-_Riudoms_-_P1130363_800.jpg",
+    "commons_title": "File:Plaça de l'Om - Riudoms - P1130363.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Plaça_de_l'Om_-_Riudoms_-_P1130363.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Pla%C3%A7a_de_l%27Om_-_Riudoms_-_P1130363.jpg/960px-Pla%C3%A7a_de_l%27Om_-_Riudoms_-_P1130363.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Pla%C3%A7a_de_l%27Om_-_Riudoms_-_P1130363.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:17:31",
+    "description": "Plaça de l'Om - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "placa_om",
+    "subject": "Plaça de l'Om",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Carrer_Major_-_Riudoms_01_800.jpg",
+    "commons_title": "File:Carrer Major - Riudoms 01.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Carrer_Major_-_Riudoms_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Carrer_Major_-_Riudoms_01.jpg/960px-Carrer_Major_-_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Carrer_Major_-_Riudoms_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      3096,
+      4128
+    ],
+    "author": "Jordi Gili",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "date": "2026-04-10 08:46:14",
+    "description": "Carrer Major - Riudoms",
+    "camera_coord": {
+      "lat": 41.137761,
+      "lon": 1.051835,
+      "note": "Commons camera/location coordinate; several are copied from the IPAC/Wikidata monument coordinate rather than true camera GPS"
+    },
+    "landmark_id": "carrer_major",
+    "subject": "Carrer Major, façanes típiques",
+    "attribution_required": true
+  },
+  {
+    "file": "data/raw/heritage/photos/Monument_a_Gaud_-_Riudoms_-_P1130403_800.jpg",
+    "commons_title": "File:Monument a Gaudí - Riudoms - P1130403.jpg",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:Monument_a_Gaudí_-_Riudoms_-_P1130403.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Monument_a_Gaud%C3%AD_-_Riudoms_-_P1130403.jpg/960px-Monument_a_Gaud%C3%AD_-_Riudoms_-_P1130403.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Monument_a_Gaud%C3%AD_-_Riudoms_-_P1130403.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "original_size": [
+      3240,
+      4320
+    ],
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-03-01 14:44:16",
+    "description": "Monument a Gaudí - Riudoms",
+    "camera_coord": null,
+    "landmark_id": "monument_gaudi",
+    "subject": "Monòlit del Monument a Gaudí (1975)",
+    "attribution_required": true
+  }
+]

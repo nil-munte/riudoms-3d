@@ -1,0 +1,34 @@
+{{Infotaula edifici
+| nom = Sant Jaume Apòstol de Riudoms
+| mapa_nom = Espanya Catalunya
+| localitzacio = Pl. de l'Església. [[Riudoms]] (Baix Camp)
+| construit = 1593-1616
+| designacio1 = BCIN
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9668 9668]
+| designacio1_data = 17/9/2019
+|activitat_principal = culte religiós
+}}
+'''Sant Jaume de Riudoms''' és una [[església (arquitectura)|església]] de la vila de [[Riudoms]] (el [[Baix Camp]]) dedicada a [[Sant Jaume el Major]]. Adjudicada erròniament a [[Pere Blai]], la traça fou dissenyada pels constructors de l'església d'Ulldemolins, dirigida pel mestre d'obres biscaí Joan Sans amb la col·laboració de [[Jaume Amigó]]. El cap d'obres fou el mestre occità [[Joan Mas (mestre d'obres)|Joan Mas]], que estigué al capdavant de la construcció durant trenta-tres anys (1593-1626). El seu aixecament s'inicia a finals del 1593 i s'inaugura el 1617.<ref name="Perea">{{Ref-publicació|cognom=Perea Simón|nom=Eugeni|article=L'església de Riudoms (s. XVI a XXI), obra, usos i funcions|publicació=Lo Floc|data=gener-març 2017|pàgines=6-13}}</ref> Està protegida com a [[bé cultural d'interès nacional]] des del 17 de setembre de 2019.<ref name="invarquit">{{ref-web| url=https://invarquit.cultura.gencat.cat/card/9668 | títol=Església parroquial de Sant Jaume Apòstol | obra=Pat.mapa: arquitectura | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref><ref>{{Ref-web|títol=El Govern declara bé cultural d'interès nacional l'església de Sant Jaume Apòstol de Riudoms|url=https://www.vilaweb.cat/noticies/el-govern-declara-be-cultural-dinteres-nacional-lesglesia-de-sant-jaume-apostol-de-riudoms/|editor=Vilaweb|data=17-9-2019}}{{Enllaç no actiu|bot=InternetArchiveBot |data=2021}}</ref>
+
+== Descripció ==
+Església amb una nau central de gran amplària i amb sis capelles laterals per banda, i capçalera poligonal. Façana molt singular, amb columnes clàssiques flanquejant la porta i dos pisos de fornícules, buides d'imatges i, en el centre, un alt relleu de l'escut de la vila (1606), i un pis superior amb dues fornícules laterals i una de central més gran que acaba amb un frontó amb un alt relleu del Pare Etern (1608). La part escultòrica fou realitzada pels mestres Pujol. La façana té un gran rosetó on es descriu la intervenció de Sant Jaume a la llegendària batalla de Clavijo. Cobertes de creueria quatripartites i estrellades. Gran capella del Santíssim, al costat de l'evangeli. El campanar, als peus, resta inconclús. Portalada renaixentista important tot i que la traça de l'església és bàsicament gòtica.<ref name="invarquit"/>
+
+== Història ==
+El 1588 se'n posà la primera pedra, i s'inaugurà el 26 de juliol de 1617. A l'escut de la façana hi ha la data de 1606 i a la volta de l'absis hi ha la de 1610. La sagristia fou aixecada en una segona fase el 1686. El campanar no s'acabà fins al 1877 i la capella del Santíssim fou construïda el 1878.<ref name="Perea"/> Va ser incendiada durant la [[Guerra civil espanyola|guerra civil]] de 1936-1939, i fou restaurada posteriorment.
+
+El 2016, coincidint amb la celebració dels 400 anys de l'església, s'inaugurà la capella de la reconciliació, amb pintures de l'artista tarragoní Jaume Queralt. El 2017 es restaurà la capella del Santíssim, on s'hi guarden les despulles del [[Beat Bonaventura Gran]].<ref>{{ref-web| url=http://www.diarimes.com/noticies/camp_tarragona/2016/06/02/riudoms_celebra_els_400_anys_vida_seva_parroquia_4264_1093.html| títol=Riudoms celebra els 400 anys de la seva parròquia| editor=Diari Més}}</ref> El 2023 s'inaugurà un nou paviment de la nau central i el presbiteri que posava al descobert les antigues laudes sepulcrals que hi havia sota el paviment anterior i que també foren restaurades.<ref>{{Ref-web|títol=La Parròquia de Sant Jaume Apòstol de Riudoms inaugura les obres del nou paviment de l'església|url=https://www.arquebisbattarragona.cat/2023/11/21/la-parroquia-de-sant-jaume-apostol-de-riudoms-inaugura-les-obres-del-nou-paviment-de-lesglesia/|llengua=català|editor=Arquebisbat de Tarragona|data=2023-11-21}}</ref><ref>{{Ref-web|títol=Riudoms ja gaudeix de l'església parroquial renovada|url=https://www.canalreustv.cat/noticies/riudoms-ja-gaudeix-lesglesia-parroquial-renovada|llengua=ca|editor=Canal Reus|data=2023-11-20|consulta=2023-11-21|arxiuurl=https://web.archive.org/web/20231121124805/https://www.canalreustv.cat/noticies/riudoms-ja-gaudeix-lesglesia-parroquial-renovada|arxiudata=2023-11-21}}</ref>
+
+== Referències ==
+{{referències}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web| url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/esglesia-parroquial-de-sant-jaume | títol=Església parroquial de Sant Jaume | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+* [https://www.facebook.com/Parr%C3%B2quia-de-Sant-Jaume-de-Riudoms-433434396733900/ Pàgina de facebook de la parròquia de Sant Jaume Apòstol de Riudoms]
+
+{{Autoritat}}
+
+{{ORDENA:Sant Jaume de Riudoms}}
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Esglésies renaixentistes del Baix Camp]]
+[[Categoria:Edificis de Riudoms]]

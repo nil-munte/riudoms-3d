@@ -1,0 +1,25 @@
+{{Infotaula edifici
+| nom = Centre històric de Riudoms
+| imatge = Plaça a Riudoms - panoramio.jpg
+| lat_dec = 41.138694
+| long_dec = 1.051649
+| coord_par = region:ES-CT_type:landmark
+| designacio1 = BCIL
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9667 9667]
+}}
+El '''Centre històric de Riudoms''' és el centre de la vila de [[Riudoms]] (el [[Baix Camp]]) protegit com a [[Bé Cultural d'Interès Local]].
+
+== Descripció ==
+El municipi de [[Riudoms]], limita a l'est amb [[Reus]], al nord amb [[Maspujols]], nord-oest amb [[les Borges del Camp]] i a l'oest amb [[Montbrió del Camp]]. El nucli històric s'ubica al voltant de l'església de Sant Jaume, ubicació històrica per l'emplaçament de l'antic Castell. Els edificis del centre es caracteritzen per la disposició entre mitgeres, de dues o tres altures i coberta a doble vessant. Ocupen parcel·les característiques de casa de pagès, estretes i llargues.<ref name=ipac/>
+
+== Història ==
+L'origen del poble se situa el dia 25 de gener de [[1151]], quan el príncep normand [[Robert d'Aguiló]] dona per segona vegada [[Riudoms]] al cavaller [[Arnau de Palomar]], amb el pacte de bastir-hi un castell a mitges. A partir d'aquest moment, Riudoms es convertí en feu de la seu arquebisbal de Tarragona. Al llarg del {{segle|XIII}} la vila degué experimentar un notable creixement demogràfic i econòmic, que causà la construcció de la nova [[Sant Jaume de Riudoms|església de Sant Jaume]].<ref name=ipac/>
+
+== Referències ==
+{{Commonscat}}
+{{referències|refs=
+<ref name=ipac>{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9667 | títol=Centre històric de Riudoms | obra=Inventari del Patrimoni Arquitectònic | consulta=19 octubre 2018 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Centres històrics de Catalunya]]

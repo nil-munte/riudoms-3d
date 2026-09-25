@@ -1,0 +1,31 @@
+{{Infotaula edifici
+| nom = Convent de Sant Joan dels Franciscans
+| imatge = Convent de Sant Joan2.JPG
+| mapa_nom = Espanya Catalunya
+| lat_dec = 41.138362
+| long_dec = 1.057976
+| localitzacio = Av. de Reus, 26. [[Riudoms]] ([[Baix Camp]])
+| construit = Segles XVI-XVII
+| estil = [[arquitectura barroca|Barroc]], [[arquitectura popular|obra popular]]
+| designacio1 = IPA
+| designacio1_id = [[Inventari del Patrimoni Arquitectònic de Catalunya|IPAC]]: [https://invarquit.cultura.gencat.cat/card/9677 9677]
+}}
+'''Convent de Sant Joan dels Franciscans''' era un edifici religiós a la vila de [[Riudoms]] (Baix Camp) inclòs en l'[[Inventari del Patrimoni Arquitectònic de Catalunya]]. Antic [[convent]], en ruïnes, al final de l'Avinguda de Reus. Es tracta d'una edificació de planta rectangular de la qual només resten alguns murs de paredat comú, de pedres i [[còdol]]s, amb reforços de maons, i diversos arcs de maons i [[dovella|dovelles]] de pedra, així com [[petxina (arquitectura)|petxines]] entre [[arc toral|arcs torals]].<ref name="patmapa">{{ref-web | url=https://invarquit.cultura.gencat.cat/card/9677 | títol=Convent de Sant Joan dels Franciscans | obra=Inventari del Patrimoni Arquitectònic de Catalunya | consulta=28 agost 2014 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}</ref>
+
+La seva fundació va ser a iniciativa de la comunitat franciscana de Valls que ho van proposar a la vila l'any 1580. Al principi amb la construcció de l'ermitori o capella de Sant Joan. A posterior va ser ampliat. La fundació com a convent fou autoritzada per l'arquebisbe [[Antoni Agustí i Albanell|Antoni Agustí]] l'any 1582. Els frares franciscans en prengueren possessió el mateix any, quedant la construcció propietat de la vila. L'any 1787 hi havia vint-i-quatre frares. En 1827 en sortí el famós [[Pau Orri|pare Orri]] per aixecar-se a favor dels [[carlins]]. L'any 1835, en què fou derruït pràcticament, tenia vint-i-cinc frares, que l'hagueren d'abandonar davant els fets generalitzats. Les pedres del [[claustre]] s'utilitzaven per refer, segons diuen, els porxos de la plaça de l'Església. Molt probablement el convent s'adobà sobre una altra edificació preexistent. Un document de 1560 esmenta que ''volen fer les rexes a la Verge Maria de Sant Joan'', prova que els treballs començaren uns anys abans de la donació. Un altre document de 1805 parla de la comunitat religiosa del pares de Sant Joan extramurs.<ref name="patmapa"/>
+
+== Referències ==
+{{Referències}}
+* {{ref-llibre|cognom=Perea|nom=Eugeni|títol=Onomàstica de Riudoms|pàgines=34|lloc=Barcelona|editorial=Institut d'Estudis Catalans|any=2006|isbn=84-7283-855-2|consulta= 13 novembre 2015}}
+
+== Enllaços externs ==
+{{commonscat}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/convent-de-sant-joan-dels-franciscans | títol=Convent de Sant Joan dels Franciscans | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+* {{citar ref| tipus = llibre | cognom1 = Barraquer y Roviralta | nom1 = Cayetano | enllaçautor1 = Gaietà Barraquer i Roviralta| títol = Las Casas de religiosos en Cataluña durante el primer tercio del siglo XIX | urlcapítol = https://ddd.uab.cat/pub/llibres/1906/56959/casrelcatdur_a1906t1c7.pdf | editorial = Impr. de F.J. Altés y Alabart | capítol = Capítulo séptimo. Franciscos. Artículo vigésimo. San Juan, de Riudoms| lloc = Barcelona | data = 1906| consulta = 3 d'agost de 2015| pàgines =528 - 529 | llengua =castellà}}
+{{Autoritat}}
+
+[[Categoria:Convents de Catalunya|Joan dels Franciscans]]
+[[Categoria:Convents franciscans|Joan dels Franciscans]]
+[[Categoria:Edificis de Riudoms]]
+[[Categoria:Esglésies barroques del Baix Camp|Joan dels Franciscans]]
+[[Categoria:Patrimoni monumental de Riudoms]]

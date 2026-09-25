@@ -1,0 +1,24 @@
+{{Infotaula edifici
+| localitzacio = Partida del Mas de Gomandí [[Riudoms]] (Baix Camp)
+| construit = Segle {{Romanes|XIX}}
+| estil = [[arquitectura popular|Obra popular]]
+}}
+El '''Mas Blau''' és una [[masia]] de [[Riudoms]] ([[Baix Camp]]) inclosa a l'[[Inventari del Patrimoni Arquitectònic de Catalunya]].
+
+== Descripció ==
+Es tracta d'un mas amb una base de tres plantes i dues més construïdes en forma de torre [[Modernisme|modernista]]. Dalt de la torre hi ha una petita torrassa. La coberta de tot l'edifici és plana excepte la de la torrassa que és de quatre vessants. Hi destaquen els estucats blaus i grocs.
+
+És un edifici de propietat privada de fàcil accés des de la carretera [[N-420]], antigament ''Carretera d'Alcolea''. Té un bon estat de conservació.
+
+== Història ==
+Durant la [[Guerra civil espanyola|Guerra Civil]] fou una caserna de comunicacions. Porta aquest nom perquè tot el mas estava pintat de blau.
+
+== Referències ==
+{{Commonscat}}
+* {{ref-web | url=https://invarquit.cultura.gencat.cat/card/9675 | títol=Mas Blau | obra=Invarquit, Patrimoni Gencat | consulta=13 de novembre de 2015 | editor=Direcció General del Patrimoni Cultural de la Generalitat de Catalunya}}
+* {{ref-web | url=http://www.diputaciodetarragona.cat/marc/web/diputacio-de-tarragona/riudoms/mas-blau | títol=Mas Blau | obra=Mapa de recursos culturals | editor=Diputació de Tarragona}}
+* {{Ref-llibre|cognom = Perea|nom = Eugeni|títol = Onomàstica de Riudoms|llengua = català|data = Setembre 2006|editorial = Institut d'Estudis Catalans|lloc = Barcelona|pàgines = 34|isbn = 84-7283-855-2}}
+{{Autoritat}}
+
+[[Categoria:Patrimoni monumental de Riudoms]]
+[[Categoria:Masies de Riudoms|Blau]]
