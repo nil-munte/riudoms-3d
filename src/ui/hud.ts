@@ -6,7 +6,7 @@ import type { Meta } from '../data/types';
 const $ = (id: string) => document.getElementById(id)!;
 
 export interface MenuHandlers {
-  teleport: (x: number, y: number) => void;
+  teleport: (x: number, y: number, name?: string) => void;
   setHour: (h: number) => void;
   setRunning: (on: boolean) => void;
   setShadows: (on: boolean) => void;
@@ -35,7 +35,7 @@ export class Hud {
     for (const t of teleports) {
       const b = document.createElement('button');
       b.textContent = t.name;
-      b.addEventListener('click', () => { h.teleport(t.x, t.y); this.toggleMenu(false); });
+      b.addEventListener('click', () => { h.teleport(t.x, t.y, t.name); this.toggleMenu(false); });
       tp.appendChild(b);
     }
     // sources & credits

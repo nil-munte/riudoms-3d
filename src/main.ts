@@ -19,6 +19,7 @@ import { ThirdPersonCamera } from './camera/thirdPerson';
 import { Minimap, type FieldsFile, type RoadsFile } from './minimap/minimap';
 import { Hud } from './ui/hud';
 import { Relief, type ReliefFile } from './world/relief';
+import { GameStats, countVisit, track } from './analytics';
 
 const DATA = './data/';
 const $ = (id: string) => document.getElementById(id)!;
@@ -48,6 +49,7 @@ async function loadTextures(meta: Meta, onP: (f: number) => void) {
 }
 
 async function main() {
+  countVisit();
   const canvas = $('scene') as HTMLCanvasElement;
   const mobile = matchMedia('(pointer: coarse)').matches;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mobile, powerPreference: 'high-performance' });
@@ -159,14 +161,16 @@ async function main() {
   const minimap = new Minimap($('minimap') as HTMLCanvasElement, meta, bdata, roads, fields,
     lmData.signs.filter((s) => s.r >= 12).map((s) => ({ x: s.x, y: s.y, name: s.name })));
 
+  const stats = new GameStats();
   const hud = new Hud({
-    teleport: (x, y) => {
+    teleport: (x, y, name) => {
+      if (name) stats.teleport(name);
       const best = freeSpot(x, y);
       player.teleport(best[0], best[1]);
       terrain.update(best[0], best[1], true);
       veg.update(cam.camera, true);
     },
-    setHour: (h) => { sky.hour = h; },
+    setHour: (h) => { sky.hour = h; stats.action('hour', "Canvi d'hora"); },
     setRunning: (on) => { sky.running = on; },
     setShadows: (on) => { sky.setShadows(on); },
     setFarTrees: (on) => { veg.farEnabled = on; veg.update(cam.camera, true); },
@@ -182,10 +186,12 @@ async function main() {
   });
 
   progress(1, 'Llest!');
+  stats.loaded(performance.now() / 1000);
   $('loading').classList.add('hidden');
   $('hud').classList.remove('hidden');
 
   const timer = new THREE.Timer();
+  let statT = 0;
   let placeT = 0;
   (window as any).__game = { player, cam, scene, renderer, sky, buildings, terrain, hf, collision, streets, veg, landmarks, propsObj, minimap, hud, bikes, reliefObj };
   // adaptive resolution: keep the frame time under ~22 ms on modest GPUs
@@ -201,8 +207,8 @@ async function main() {
   };
 
   const frame = (dt: number) => {
-    if (input.pressed.has('KeyM')) { minimap.big = !minimap.big; $('minimap-wrap').classList.toggle('big', minimap.big); }
-    if (input.pressed.has('KeyT')) sky.hour = (sky.hour + 1) % 24;
+    if (input.pressed.has('KeyM')) { minimap.big = !minimap.big; $('minimap-wrap').classList.toggle('big', minimap.big); stats.action('minimap', 'Minimapa gran'); }
+    if (input.pressed.has('KeyT')) { sky.hour = (sky.hour + 1) % 24; stats.action('hour', "Canvi d'hora"); }
     if (!hud.paused) {
       player.update(dt, input, cam.yaw);
       sky.update(dt, player.position);
@@ -237,10 +243,21 @@ async function main() {
     const dt = Math.min(timer.getDelta(), 0.05);
     frame(dt);
     adapt(dt);
+    stats.frame(dt);
+    statT -= dt;
+    if (statT <= 0) {
+      statT = 0.5;
+      if (player.bike) stats.action('bike', 'Ha pujat a la bici');
+      if (input.touch) stats.action('touch', 'Controls tàctils');
+      if (sky.isNight) stats.action('night', 'Ha vist el poble de nit');
+      const sg = landmarks.signAt(player.x, player.y);
+      if (sg) stats.place(sg.id, sg.name);
+    }
   });
 }
 
 main().catch((e) => {
   console.error(e);
+  track('error/' + String(e?.message ?? e).toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50), "Error en carregar");
   progress(0, 'Error: ' + (e?.message ?? e));
 });

@@ -173,6 +173,20 @@ i queda a `demo/riudoms-3d-demo.mp4`:
 
 Al vídeo, de nit l'exposició és una mica més alta que al joc perquè s'hi vegi alguna cosa.
 
+## Estadístiques
+
+La web publicada compta les visites de manera **anònima i sense galetes** amb [GoatCounter](https://www.goatcounter.com)
+(tauler: <https://riudoms-3d.goatcounter.com>). No es recull cap dada personal ni cap adreça IP, només recomptes:
+
+- visites, d'on venen (X, cercadors, enllaç directe), país, tipus de dispositiu i navegador;
+- alguns esdeveniments del joc, com a màxim un cop per visita (`src/analytics.ts`): càrrega completada i temps de càrrega,
+  errors en carregar, rendiment (fotogrames per segon, per franges), temps de joc (1, 5 i 15 minuts), ús de la bici,
+  del minimapa gran, del canvi d'hora i dels controls tàctils, si s'ha vist el poble de nit, quins llocs s'han visitat
+  (rètols) i quins teletransports s'han fet servir.
+
+En local (`npm run dev`) no es compta res. Per afegir la procedència a un enllaç, posa-hi `?ref=nom`,
+per exemple `https://nil-munte.github.io/riudoms-3d/?ref=x`.
+
 ## Contribuir
 
 Els canvis entren per *pull request*: no es pot fer push directe a `main`.
