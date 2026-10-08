@@ -9,13 +9,67 @@ la recerca i la descàrrega de les dades, el pipeline, el joc, la lectura de les
 
 ![Vite](https://img.shields.io/badge/Vite-8-646cff) ![Three.js](https://img.shields.io/badge/three.js-r186-000) ![TypeScript](https://img.shields.io/badge/TypeScript-7-3178c6)
 
-## Posar-lo en marxa
+## Provar-lo
+
+### Requisits
+
+| | Mínim | Notes |
+|---|---|---|
+| Navegador | Chrome, Edge, Firefox o Safari recents amb **WebGL2** | També funciona al mòbil, amb controls tàctils |
+| Gràfica | Integrada moderna | Mesurat en una AMD Radeon 740M integrada: ~9 ms per fotograma a peu de carrer, amb ombres, a 1280×720. La resolució s'adapta sola si l'equip va just |
+| Memòria | ~160 MB de memòria del navegador | Mesura de la memòria JavaScript un cop carregat el poble |
+| Descàrrega | ~27 MB de dades la primera vegada | Edificis, carrers, relleu i ortofoto del nucli (42 fitxers) |
+| Per executar-lo en local | [Node.js](https://nodejs.org/) 20.19 o més nou | Git és opcional (es pot baixar en ZIP) |
+| Per regenerar les dades | Python 3.11 o més nou i ~2,5 GB de disc | Només si vols tornar a processar les dades des de zero |
+
+No cal cap clau d'API ni cap compte.
+
+### 1. Al navegador, sense instal·lar res
+
+**▶ <https://nil-munte.github.io/riudoms-3d/>**
+
+Funciona en qualsevol navegador modern amb WebGL2 (Chrome, Edge, Firefox o Safari recents), també al mòbil.
+La primera càrrega baixa uns 25 MB de dades.
+
+### 2. En local, des del codi
+
+Cal tenir **[Node.js](https://nodejs.org/) 20.19 o més nou** (la versió LTS ja serveix) i, opcionalment, Git.
+
+1. Descarrega el projecte: o bé el clones,
+
+   ```bash
+   git clone https://github.com/nil-munte/riudoms-3d.git
+   ```
+
+   o bé el baixes en ZIP (botó verd **Code → Download ZIP** de GitHub) i el descomprimeixes.
+2. Entra a la carpeta i instal·la les dependències (només el primer cop):
+
+   ```bash
+   cd riudoms-3d
+   npm install
+   ```
+
+3. Arrenca'l:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Obre <http://localhost:5173> al navegador.
+
+Les dades processades ja són a `public/data/`: no cal descarregar res més ni tenir Python.
+Python només cal per [regenerar les dades](#regenerar-les-dades) des de zero.
+
+### 3. Com a web estàtica pròpia
 
 ```bash
-npm install && npm run dev
+npm run build     # genera dist/ (el web + les dades, ~28 MB)
+npm run preview   # la serveix a http://localhost:4173
 ```
 
-Després obre <http://localhost:5173>. Les dades processades ja són a `public/data/`: no cal descarregar res per jugar.
+`dist/` fa servir camins relatius (`base: './'`): es pot penjar tal qual a qualsevol servidor estàtic o subcarpeta.
+Aquest repositori la publica sol a GitHub Pages a cada `push` a `main` (`.github/workflows/pages.yml`).
+Per activar-ho el primer cop: **Settings → Pages → Source: GitHub Actions**.
 
 ## Controls
 
@@ -30,18 +84,9 @@ Després obre <http://localhost:5173>. Les dades processades ja són a `public/d
 | Avançar una hora | `T` | — |
 | Menú de pausa (controls, hora del dia, qualitat, teletransport, crèdits) | `Esc` / botó ☰ | botó ☰ |
 
-Hi ha bicicletes aparcades a la plaça de l'Església, la de la Palmera, la de l'Om, la d'Arnau de Palomar,
-el parc de Sant Antoni, la plaça de l'Arbre, el parc de la Via Romana i als aparcaments de bicis de l'OSM.
+Hi ha bicicletes aparcades a la plaça de l'Església, la de l'Om, la d'Arnau de Palomar, el parc de la Palmera,
+el parc de la Via Romana i als aparcaments de bicis de l'OSM.
 Quan t'acostes a un emblemàtic, apareix un rètol amb una dada històrica verificada.
-
-## Build estàtica
-
-```bash
-npm run build     # genera dist/ (el web + public/data, ~28 MB)
-npm run preview   # serveix dist/ a http://localhost:4173
-```
-
-`dist/` fa servir camins relatius (`base: './'`), de manera que es pot penjar a qualsevol servidor estàtic o carpeta.
 
 ## Regenerar les dades
 
