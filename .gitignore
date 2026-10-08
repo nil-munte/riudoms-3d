@@ -2,13 +2,22 @@ node_modules/
 dist/
 .venv/
 __pycache__/
-data/work/
-# large raw files that the download scripts recreate
-data/raw/icgc/lidar/*.laz
-data/raw/icgc/lidar/*.part
-data/raw/cadastre/gml/
-data/raw/cadastre/facades/
 *.log
 .claude/
+
+# intermediate pipeline files
+data/work/
+
+# raw downloads: the scripts in scripts/download_*.py fetch them again (npm run data)
+data/raw/icgc/
+data/raw/cadastre/
+data/raw/opendata/
+data/raw/osm/
+
+# copies of third-party web pages used during the heritage research (not ours to republish);
+# the facts taken from them, with their sources, are in data/raw/heritage/landmarks.json
+data/raw/heritage/sources/web/
+
+# demo video output and social media images
 demo-out/
-demo/*.mp4
+demo/

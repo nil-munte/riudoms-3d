@@ -4,6 +4,9 @@ Recreació 3D navegable de **Riudoms (Baix Camp)** feta amb dades obertes reals:
 alçades del LiDAR de l'ICGC, ortofoto i relleu de l'ICGC, carrers d'OpenStreetMap i cultius declarats a la DUN.
 És per passejar pel poble a peu o en bicicleta i reconèixer-lo. No té cap mecànica d'acció.
 
+Tot el projecte l'ha fet una IA, **Claude Opus 5.5** (Anthropic) amb Claude Code, a partir d'un encàrrec i de les revisions de Nil Munté:
+la recerca i la descàrrega de les dades, el pipeline, el joc, la lectura de les fotos de façana i el vídeo de demostració.
+
 ![Vite](https://img.shields.io/badge/Vite-8-646cff) ![Three.js](https://img.shields.io/badge/three.js-r186-000) ![TypeScript](https://img.shields.io/badge/TypeScript-7-3178c6)
 
 ## Posar-lo en marxa
@@ -108,8 +111,9 @@ La recerca de patrimoni (`data/raw/heritage/`) és una dada curada, amb la font 
 
 ## Vídeo de demostració
 
-`demo/riudoms-3d-demo.mp4` (720p, 30 fps, ~2 min 18 s): vol aeri, passeig a peu i en bicicleta,
-menú i teletransport, pas del dia a la nit. Es genera amb el mateix joc, sense gravar la pantalla:
+Vídeo de 720p, 30 fps i ~2 min 18 s (no s'inclou al repositori): vol aeri, passeig a peu i en bicicleta,
+menú i teletransport, pas del dia a la nit. Es genera amb el mateix joc, sense gravar la pantalla,
+i queda a `demo/riudoms-3d-demo.mp4`:
 
 1. `npm run dev` i obrir `http://localhost:5173` en una finestra de 1280×720 o més gran.
 2. A la consola del navegador: `(await import('/tools/demo/director.ts')).record()`.
@@ -126,10 +130,17 @@ Al vídeo, de nit l'exposició és una mica més alta que al joc perquè s'hi ve
 
 ## Dades i llicències
 
+El codi és MIT (vegeu [LICENSE](LICENSE)). Les dades conserven la llicència de la seva font i cal citar-les si es reutilitzen:
+
 - © col·laboradors d'OpenStreetMap (ODbL).
 - Dirección General del Catastro.
 - Institut Cartogràfic i Geològic de Catalunya (CC BY 4.0).
 - Generalitat de Catalunya, dades obertes (DUN 2025, Equipaments).
 - Wikimedia Commons (fotos de referència; autors i llicències a `data/raw/heritage/photos.json` i als crèdits del joc).
+- Fitxes de façana (`data/raw/facade_survey/`): lectura feta per IA de les fotos de façana del Cadastre.
+  Les fotos no s'inclouen al repositori; `scripts/download_cadastre.py` les descarrega.
+
+Les descàrregues en brut (ICGC, Cadastre, DUN, OSM) no es versionen: `npm run data` les torna a baixar.
+Els fitxers ja processats de `public/data/` sí que hi són, perquè el joc funcioni sense descarregar res.
 
 La llista completa del que és dada real i del que és estimat és a [CLAUDE.md](CLAUDE.md).
