@@ -46,8 +46,8 @@ export class Hud {
       <b>Patrimoni</b><ul><li>Inventari del Patrimoni Arquitectònic de Catalunya, Viquipèdia, Wikidata, riudoms.cat,
       riudomsturisme.cat, campaners.com, revista <i>Lo Floc</i> (CERAP)</li></ul>
       <b>Fotografies de referència (Wikimedia Commons)</b><ul>${ph}</ul>
-      <p>Dades generades el ${meta.generated}. Els elements estimats (fanals, espècies d'arbres fora dels camps declarats,
-      alguns detalls ornamentals) estan documentats a CLAUDE.md.</p>`;
+      <p>Dades generades el ${meta.generated}. És una recreació aproximada: molts detalls no coincideixen amb el poble real.
+      Què és dada real i què és estimat: <a href="https://github.com/nil-munte/riudoms-3d/blob/main/DADES.md" target="_blank" rel="noopener">DADES.md</a>.</p>`;
   }
 
   toggleMenu(open = !this.paused) {

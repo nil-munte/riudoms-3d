@@ -200,7 +200,7 @@ Els canvis entren per *pull request*: no es pot fer push directe a `main`.
 Abans de pujar res, `python tools/secret_scan.py` comprova que no hi hagi cap clau ni credencial; els fluxos de GitHub també ho comproven i aturen la publicació si en troben.
 No copiïs al repositori pàgines web senceres de tercers: poden contenir les claus d'altres persones.
 
-Si toques dades, explica'n la font. Si és una estimació, marca-la com a tal a [CLAUDE.md](CLAUDE.md).
+Si toques dades, explica'n la font. Si és una estimació, marca-la com a tal a [DADES.md](DADES.md).
 
 ## Dades i llicències
 
@@ -217,4 +217,4 @@ El codi és MIT (vegeu [LICENSE](LICENSE)). Les dades conserven la llicència de
 Les descàrregues en brut (ICGC, Cadastre, DUN, OSM) no es versionen: `npm run data` les torna a baixar.
 Els fitxers ja processats de `public/data/` sí que hi són, perquè el joc funcioni sense descarregar res.
 
-La llista completa del que és dada real i del que és estimat és a [CLAUDE.md](CLAUDE.md).
+La llista completa del que és dada real i del que és estimat és a [DADES.md](DADES.md). Les notes tècniques de treball de la IA són a [CLAUDE.md](CLAUDE.md).
