@@ -173,6 +173,18 @@ i queda a `demo/riudoms-3d-demo.mp4`:
 
 Al vídeo, de nit l'exposició és una mica més alta que al joc perquè s'hi vegi alguna cosa.
 
+## Contribuir
+
+Els canvis entren per *pull request*: no es pot fer push directe a `main`.
+
+1. Fes un *fork* del repositori i crea-hi una branca.
+2. Prova els canvis en local (`npm run dev`) i comprova que compila (`npm run build`).
+3. Obre un *pull request* cap a `main`. GitHub el compila automàticament (*Comprova*, `.github/workflows/ci.yml`).
+   Si surt ❌, cal arreglar-ho abans de fusionar-lo.
+4. Quan es fusiona, la web es torna a publicar sola a <https://nil-munte.github.io/riudoms-3d/>.
+
+Si toques dades, explica'n la font. Si és una estimació, marca-la com a tal a [CLAUDE.md](CLAUDE.md).
+
 ## Dades i llicències
 
 El codi és MIT (vegeu [LICENSE](LICENSE)). Les dades conserven la llicència de la seva font i cal citar-les si es reutilitzen:
