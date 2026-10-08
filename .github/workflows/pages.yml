@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: No credentials in what gets published
+        run: python3 tools/secret_scan.py --tree .
       - uses: actions/setup-node@v4
         with:
           node-version: 22

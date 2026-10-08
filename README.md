@@ -183,6 +183,9 @@ Els canvis entren per *pull request*: no es pot fer push directe a `main`.
    Si surt ❌, cal arreglar-ho abans de fusionar-lo.
 4. Quan es fusiona, la web es torna a publicar sola a <https://nil-munte.github.io/riudoms-3d/>.
 
+Abans de pujar res, `python tools/secret_scan.py` comprova que no hi hagi cap clau ni credencial; els fluxos de GitHub també ho comproven i aturen la publicació si en troben.
+No copiïs al repositori pàgines web senceres de tercers: poden contenir les claus d'altres persones.
+
 Si toques dades, explica'n la font. Si és una estimació, marca-la com a tal a [CLAUDE.md](CLAUDE.md).
 
 ## Dades i llicències

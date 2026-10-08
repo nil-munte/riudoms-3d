@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: No credentials (history and files)
+        run: |
+          python3 tools/secret_scan.py
+          python3 tools/secret_scan.py --tree .
       - uses: actions/setup-node@v4
         with:
           node-version: 22
